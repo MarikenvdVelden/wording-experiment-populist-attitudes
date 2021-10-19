@@ -38,6 +38,7 @@ renv::snapshot()
 This code chuck downloads the data from Qualtrics using the API and cleans the raw data.
 
 ```{r "get data from Qualtrics", results="hide"}
+## Match data with RESPONDI quota questions
 d <- fetch_survey(surveyID = "SV_7PoXOEVMUF1JZn8", 
                     verbose = TRUE, force_request = T,
                     label = FALSE, convert = FALSE)
@@ -107,28 +108,23 @@ d %>%
 
 
 ### Correlations Matrix
-```{r "Correlations Matrix", eval = F, echo=F, message=T, warning=T, fig.width=15, fig.height=15}
+```{r "Correlations Matrix", echo=F, message=T, warning=T, fig.width=15, fig.height=15}
 d %>%
-  select(`Gender` = F1,
-         `Age` = F2,
-         `Education` = F9,
-         `Region`  = F3,
-         `Urbanness`  = F4,
-         `Migration Background`  = F5,
-         `Job`  = F7,
-         `Income`  = F8,
-         `Position: Immigration (%)`  = PreT1,
-         `Position: Immigration`  = PreT2,
-         `Position: Defense`  = PreT3,
-         `Position: Education`  = PreT4,
-         `Position: Attitude Women in Politics`  = PreT5,
-         `Ideology`  = PreT6,
-         `Political Efficacy` = PreT7, 
-         `Position: COVID-19 Policy` = PreT8,
-         `DV: Trait Evaluation` = PT1,
-         `DV: Favorability` = PT2,
-         `DV: Representation` = PT3,
-         `DV: Career Prospects` = PT4) %>%
+  mutate(HT4 = (HT4_1 + HT4_2 + HT4_3 + HT4_4)/4) %>%
+  select(#`Gender` = D1,
+         #`Age` = D2,
+         #`Education` = D3,
+         `Region`  = D9,
+         `Birth-place` = D10,
+         `Urbanness`  = D4,
+         `Job`  = D7,
+         `Income`  = D8,
+         `Political Knowledge (1)`  = PT4,
+         `Political Knowledge (2)`  = PT5,
+         `Political Knowledge (3)`  = PT6,
+         `Political Interest`  = PT7,
+         `Ideology`  = PT8,
+         `Exclusive National Identity` = HT4) %>%
   ggcorrmat(
   type = "robust", # correlation method
   cor.vars = c(everything()), # a range of variables can be selected

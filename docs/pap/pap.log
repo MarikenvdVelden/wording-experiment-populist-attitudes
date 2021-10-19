@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  19 OCT 2021 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  19 OCT 2021 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -914,26 +914,26 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 333.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 352
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 351
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 1924) in paragraph at lines 362--370
+Underfull \hbox (badness 1924) in paragraph at lines 361--369
 \T1/lmtt/m/n/10 Part-time employed\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 Entrep
 reneur\T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 Unemployed and searching for a job
 \T1/lmr/m/n/10 (+20) , \T1/lmtt/m/n/10 Unemployed and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--370
+Underfull \hbox (badness 10000) in paragraph at lines 361--369
 \T1/lmtt/m/n/10 not searching for a job or incapacitated\T1/lmr/m/n/10 (+20) , 
 \T1/lmtt/m/n/10 Housewife/Househusband or else\T1/lmr/m/n/10 (+20) , \T1/lmtt/m
 /n/10 Retired\T1/lmr/m/n/10 (+20) ,
  []
 
 
-Overfull \hbox (49.9418pt too wide) in paragraph at lines 393--409
+Overfull \hbox (49.9418pt too wide) in paragraph at lines 392--408
  [][] 
  []
 
@@ -941,7 +941,7 @@ Overfull \hbox (49.9418pt too wide) in paragraph at lines 393--409
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4]
-Overfull \hbox (49.9418pt too wide) in paragraph at lines 438--455
+Overfull \hbox (49.9418pt too wide) in paragraph at lines 437--454
  [][] 
  []
 
@@ -949,12 +949,12 @@ Overfull \hbox (49.9418pt too wide) in paragraph at lines 438--455
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5] [6] [7] [8] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 717.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 716.
 [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 717.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 716.
 (./pap.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 717.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 717.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 716.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 716.
 Package rerunfilecheck Info: File `pap.out' has not changed.
 (rerunfilecheck)             Checksum: 05C409546455ED5EEBD691009C42F753;2318.
 
@@ -962,11 +962,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16096 strings out of 492616
- 236515 string characters out of 6129481
+ 16098 strings out of 492616
+ 236533 string characters out of 6129481
  389182 words of memory out of 5000000
  19573 multiletter control sequences out of 15000+600000
- 69487 words of font info for 117 fonts, out of 8000000 for 9000
+ 69570 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,38p,809b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
@@ -986,7 +986,7 @@ ype1/public/lm/lmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
 019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/lm/lmtt10.pfb>
-Output written on pap.pdf (10 pages, 738024 bytes).
+Output written on pap.pdf (10 pages, 737959 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  251 compressed objects within 3 object streams

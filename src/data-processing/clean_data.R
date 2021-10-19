@@ -18,7 +18,7 @@ pret <- d %>%
          tic != "f6b4160f5ab5dee05b7e925d50e5414") %>%
   select(matches("PT\\d"), matches("HT4_\\d+"), id = tic) %>%
   select(-matches("PT8_NPS_GROUP"), -matches("PT[13]"), -matches("PT[13]_\\d+")) %>%
-  select(id, PT4:HT4_4)%>%
+  select(id, PT4, PT5 = PT5_1, PT6:HT4_4)%>%
   drop_na()
 
 treat <- d %>%

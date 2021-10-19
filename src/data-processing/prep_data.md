@@ -27,6 +27,7 @@ This code chuck downloads the data from Qualtrics using the API and
 cleans the raw data.
 
 ``` r
+## Match data with RESPONDI quota questions
 d <- fetch_survey(surveyID = "SV_7PoXOEVMUF1JZn8", 
                     verbose = TRUE, force_request = T,
                     label = FALSE, convert = FALSE)
@@ -50,3 +51,5 @@ save(d, file = here("data/intermediate/cleaned_experiment.RData"))
 <img src="../../report/figures/Independent Variables-1.png" style="display: block; margin: auto;" />
 
 ### Correlations Matrix
+
+<img src="../../report/figures/Correlations Matrix-1.png" style="display: block; margin: auto;" />

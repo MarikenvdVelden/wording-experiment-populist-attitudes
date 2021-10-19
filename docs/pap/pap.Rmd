@@ -130,7 +130,7 @@ As control variables, the following _demographics_ are measured: gender, age, ed
 For the analysis, only variables that are unbalanced over the experimental conditions will be included.
 Table \ref{tab:demographics} gives an overview of the questions asked in the survey as well as their English translations.
 
-- _Gender_ is measured as `sex` based on the advice of Kieskompas. The answer categories are `Male` (value of `1`), `Female` (value of `0`), and `No answer` (value of `999`).
+- _Gender_ is measured as `sex`. The answer categories are `Male` (value of `1`), `Female` (value of `0`), and `No answer` (value of `999`).
 
 - _Age_ is measured using 6 categories: `17 or younger`, `18--29`, `30--39`, `40--49`, `50--59`, `60--74`. 
 
