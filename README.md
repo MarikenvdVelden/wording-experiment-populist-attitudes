@@ -1,5 +1,5 @@
 # 'Das Volk' or 'Bürger'? 
-Online research compendium of the paper entitled _'Das Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes_ . This repository combines the pre-registration plan (see also [here](https://osf.io/d6q5b/)) with a data &amp; analysis compendium.
+Online research compendium of the paper entitled _'Das Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes_ . This repository combines the [pre-registration plan](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes/blob/master/docs/pap/pap.pdf) (see also [here](https://osf.io/d6q5b/)) with a data &amp; analysis compendium.
 
 ## Draft
 View the [draft of the paper here](report/draft.pdf).
