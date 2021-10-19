@@ -36,7 +36,7 @@ source(here("src/data-processing/clean_data.R"))
 ## Save Data for Analysis
 
 ``` r
-save(d, file = here("data/intermediate/cleaned_data.RData"))
+save(d, file = here("data/intermediate/cleaned_experiment.RData"))
 ```
 
 ## Visualization of Data
