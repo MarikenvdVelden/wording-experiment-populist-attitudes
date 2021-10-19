@@ -5,7 +5,7 @@ Online research compendium of the paper entitled _'Das Volk' or 'Bürger'? The I
 View the [draft of the paper here](report/draft.pdf).
 
 ## Pre-Registration Plan
-* [Experiment](src/pre-analysis-plan/experiment.md) The theoretical underpinnings and research design to test the implications of an ethnic or civic conception on the people for the measurement of populist attitudes (_hypotheses 1--2_).
+* [Experiment](docs/pap/pap.pdf) The theoretical underpinnings and research design to test the implications of an ethnic or civic conception on the people for the measurement of populist attitudes (_hypotheses 1--2_).
 
 ## Data
 The following data files might be of interest:
