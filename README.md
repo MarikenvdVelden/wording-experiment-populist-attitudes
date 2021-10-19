@@ -10,7 +10,7 @@ View the [draft of the paper here](report/draft.pdf).
 ## Data
 The following data files might be of interest:
 
-* [Experiment ](data/intermediate/cleaned_experiment.csv) Cleaned data with constructed scales for analysis of the experiment 1 in which we test whether the ethnic conception of the people makes people less populist compared to a civic conception (_hypothesis 1_), conditional upon strength of national identity and strength of partisan id for a far right party (_hypotheses 2_).
+* [Experiment ](data/intermediate/cleaned_experiment.RData) Cleaned data with constructed scales for analysis of the experiment 1 in which we test whether the ethnic conception of the people makes people less populist compared to a civic conception (_hypothesis 1_), conditional upon strength of national identity and strength of partisan id for a far right party (_hypotheses 2_).
 
 See the scripts in [src/data-processing](src/data-processing/prep_data.md) for details on how these files were constructed.
 
