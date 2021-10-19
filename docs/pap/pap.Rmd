@@ -1,5 +1,5 @@
 ---
-title: "Pre-Analysis Plan: Give a Little, Take a Little. Political Parties’ Reputational Cost of Compromise"
+title: "Pre-Analysis Plan: The People as 'Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes"
 date: "`r format(Sys.time(), '%d %B, %Y - %X (%Z)')`"
 output: 
   pdf_document:
@@ -45,15 +45,11 @@ options(kableExtra.latex.load_packages = FALSE)
 
 # Expectations
 
-**Steadfast hypothesis** (_H1_):  All else equal, in-partisans view their party more positively when a party remains steadfast in coalition talks, compared to accepting a compromise.
+**Ethnic Conception hypothesis** (_H1_):  All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to 'the people' is lower for an ethnic conception of the 'the people' (i.e., das Volk) than for a civic conception of 'the people' (i.e., Bürger).e.
 
-**Outcome hypothesis** (_H2_):  All else equal, in-partisans view their party more positively when coalition talks continue compared to stalling of the coalition talks.
+**Exclusive National Identity hypothesis** (_H2a_):  All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to 'the people' is higher for an ethnic conception of 'the people' (i.e., das Volk) than for a civic conception of 'the people' (i.e., Bürger) when the respondent adheres to an exclusive national identity.
 
-**Compromise hypothesis** (_H3_): All else equal, in-partisans view their party that accepts a compromise more positively when coalition talks continue compared to stalling of the coalition talks.
-
-**Principled hypothesis** (_H4_): All else equal, the more principled a respondent is, the higher the evaluation of a steadfast party.
-
-**Mutual Trust hypothesis** (_H5_): All else equal, the more distrusting a respondent is, the higher the evaluation of a steadfast party.
+**Far Right Party ID hypothesis** (_H2b_): All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to 'the people' is higher for an ethnic conception of 'the people' (i.e., das Volk) than for a civic conception of 'the people' (i.e., Bürger) when the respondent votes for a far right party. 
 
 # Research Desing and Protocol
 
@@ -67,17 +63,8 @@ The study has been approved by the [Research Ethics Review Committee](https://fs
 To ensure good quality of our data, two attention checks (discussed in more detail in [Section 3.3](\#attention-checks)) are included.
 Each respondent failing the attention check will be excluded and replaced with another 'good' response.
 
-I will conduct this survey experiment in the Netherlands in April 2021.
-The sample, recruited through [KiesKompas](https://www.kieskompas.nl/en/), will consist of 2,000 participants (based on the power analysis presented in Figure \ref{fig:power1}) of 18 years and older.
-Kieskompas works with non-random opt-in respondents.
-Therefore, I measure many demographic background variables (see [Section 3.2](#control-variables)).
-Balance checks will be conducted to demonstrate whether certain categories are over represented in a certain experimental group.
-The study has been approved by the [Research Ethics Review Committee](https://fsw.vu.nl/nl/onderzoek/research-ethics-review/index.aspx) of the _Vrije Universiteit Amsterdam_ (see the approval [here](https://github.com/MarikenvdVelden/willingness-to-accept-compromises/blob/main/docs/RERC_VU_compromises.pd)).
-To ensure good quality of our data, two attention checks (discussed in more detail in [Section 3.3](#attention-checks)) are included.
-Each respondent failing the attention check will be excluded and replaced with another 'good' response.
-
 ## Experimental Protocol
-The study is conducted online and in German
+The study is conducted online and in German.
 Participants are told that they are taking part in a survey to get an overview of how German people form their views on politics.
 After reading an informed consent message participants are forwarded to the main questionnaire (or the survey will be terminated if they do not agree to the consent form).
 
@@ -85,67 +72,43 @@ First, participants complete a set of demographic variables (i.e. income, employ
 This block ends with one of the two attention checks included in this survey.
 When participants fail this attention check, a warning appears asking them to read the question again
 carefully  and  to  answer  again.
-Thereafter, a set of background variables are asked on their stances on the political issues, some are used in the experiment (i.e. top tax, speed limit, education, legalization of Cannabis), their political interest and knowledge, as well as on their ideological position -- the full codeboek can be viewed [here](#).
-Next, participants are forced to choose between one of four parties -- CDU, SPD, Greens, or FDP -- as their in-party. 
-To account for variation of in-party strength, respondents are surveyed on this too.
+Thereafter, a set of background variables are asked on their stances on the political issues, some are used in the experiment (i.e. top tax, speed limit, education, legalization of Cannabis), their political interest and knowledge, as well as on their ideological position -- the full codeboek can be viewed [here](#).[^1]
 Before entering the experimental condition, respondents get a second attention check.
 Only when they have answered it correctly, they enter the first round of the experiment -- if they fail to answer the question correctly, they are thrown out of the survey.
-After the experimental treatment, the heterogeneous treatments (principledness and mutual trust) and a post-treatmnet question (populist attitudes) are asked. 
+The stimuli in the experiment are to translate the word _people_ into it's civic conception (i.e. _Bürger_) or it's ethnic conception (i.e. _Volk_) for the items 2, 3, and 4 of the populism attitude scale [@akkerman2014populist].
 
-The stimuli in the experiment are Instagram-posts in the same style as the German political parties: [CDU](https://www.instagram.com/cdu),[Greens](https://www.instagram.com/die_gruenen), [FDP](https://www.instagram.com/fdp), [SPD](https://www.instagram.com/spdde).
-We follow Munger et al. [CITE]'s reasoning: Given that people are more used to receiving political information from social media, these short messages are more common and capture people's attention better.
-However, to account for age differences, we have put a press release message on the site of the post (see Figure \ref{fig:treatment_example}).
-In these messages, we manipulate: a) the _potential coalition parter_ of the party (SPD and the Greens for CDU or FDP, CDU and FDP for SPD and the Greens); b) whether or not a party is _steadfast_ or _willing to compromise_; and c) whether the coalition talks are _stalled or continue_.
-This creates a full `2*2*2` factorial experiment -- whereas the first manipulation is in-build to mimic reality, and will be controlled for in the analyses, but does not play a role in the hypotheses testing.
-For an illustration of the stimulus material, see Figure \ref{fig:treatment_example}.
-
-```{r treatment-example, fig.align = 'center', out.width = "85%", fig.cap = "\\label{fig:treatment_example}Example of Stimulus Material", echo = FALSE, fig.topcaption=TRUE}
-knitr::include_graphics(here::here("docs/pre-analysis-plan/example_treatment.jpg"))
-```
+[^1]: Participants are also part of another experiment -- see details [here](https://github.com/MarikenvdVelden/willingness-to-accept-compromises).
 
 ## Power Analysis
-As detailed in [Section 4](#analysis), we conduct an OLS regression for each of the dependent variables: a) trust in the party; b) sincerity of the party; and c) representation of the party, and the three manipulations (potential coalition partner, being steadfast, and the outcome) as independent variables.
-Each hypothesis is tested separately for the two issues.
+As detailed in [Section 4](#analysis), we conduct an OLS regression for each of the dependent variables (i.e. items 2--4): a) "The people, not politicians, should make the most important political decisions"; b) "The politicians in the German Bundestag need to follow the will of the people"; and c) "The political differences between elites and the people are greater than the differences among citizens".
+  The manipulation, i.e. the civic conception (i.e. _Bürger_) or th ethnic conception (i.e. _Volk_) as well as respondents national identity and far right party ID are the main independent variables.
+  
 To calculate power for the hypotheses, the R package `DeclareDesign` is used [@blair2019declaring].
-Based on the study of @fortunato2021cycle, the effect sizes are between `b = 0.2` and `b = 0.1` -- i.e. a small effect visualized by the purple and blue lines in Figure \ref{fig:power1}.
-The hypothesis are directional, Figure \ref{fig:power1} therefore displays one-tailed tests with $\alpha$ `= 0.05`.
-The power analysis shows that testing hypotheses 1 and 2 requires a sample size of `4,000` participants (x-axis) to reach `95`\% power (black dashed line, in the left-panel of Figure \ref{fig:power}). 
-Note that if the effect size is bigger then \texttt{0.2}, smaller sample sizes are sufficient to reach `95\%` power.
-To test H3, the combination of steadfast and outcome, we can detect an effect $\beta = 0.1$ (purple line) with reasonable levels of power (`80`\%, as indicated by the gray dotted line) and a one-tailed test of significance at $\alpha =0.05$ with a sample of `4,000` participants (Middle Left-Panel of Figure \ref{fig:power}). 
-A probability of approximately `20`\% remains for a Type II error remains when testing Hypotheses 3. 
-We will therefore test all hypotheses first by issue and second, by pooling our data across issues.
-As the right-hand panel of Figure \ref{fig:power} demonstrates, this will give sufficient power -- yellow and purple lines are approximating `100`\% with 8,000 respondents.
-
+The effect sizes are between $b = 0.2$ and $b = 0.1$ -- i.e. a small effect visualized by the purple and blue lines in Figure \ref{fig:power1}.
+The hypothesis are directional, Figure \ref{fig:power1} therefore displays one-tailed tests with $\alpha = 0.05$.
+The power analysis shows that testing hypotheses 1 and 2 requires a sample size of $8,000$ participants (x-axis) to reach very high levels of power, i.e. $>95\%$, (indicated by the black dashed line in Figure \ref{fig:power}). 
+  
 ```{r power-example, eval = FALSE, echo = TRUE}
-source(here::here("docs/pre-analysis-plan/poweranalysis.R"))
+  source(here::here("docs/pre-analysis-plan/poweranalysis.R"))
 ```
-
+  
 ```{r power, fig.align = 'center', out.width = "100%", fig.cap = "\\label{fig:power1}Power Analysis", fig.topcaption=TRUE}
-knitr::include_graphics(here::here("docs/pre-analysis-plan/power_analysis-pooled.png"))
+  knitr::include_graphics(here::here("report/figures/power_analysis.png"))
 ```
-
+  
 # Measures
 
 ## Dependent Variables
-We rely on three measures reflecting different aspects of how people evaluate parties as trustworthy.
-Measure 1 is used to test the hypothesis, measure 2 and 3 are used exploratively. 
+We rely on the three items in the populism scale that mention the people: a) "The people, not politicians, should make the most important political decisions"; b) "The politicians in the German Bundestag need to follow the will of the people"; and c) "The political differences between elites and the people are greater than the differences among citizens". All items are measured on a 5-point Likert-scale: `very much disagree`, `disagree`, `neutral`, `agree`, `very much agree`.
 
-1. _General trust_ This measure exists of a statement on whether or not you trust a party -- see Table \ref{tab:dv} `DV1`.
-The statement is measured on a 10-point scale: From `do not trust at all` to `trust completely`.
-
-2. _Sincerity_ In this measure respondents are asked to rank the party from very insincere (value of `0`) to very sincere (value of `10`) for the decision to (not) strike a compromise on the issue at stake.
-See Table \ref{tab:dv} `DV2` for the exact phrasing of the question.
-
-3. _Representation_ In this measure, respondents are surveyed on how well  the party is a good representative of  the voters.
-The party can be evaluated on an 11-point scale from `very poorly` (value of `0`) till `very well` (value of 10).
-See Table \ref{tab:dv} `DV3` for the exact phrasing of the question.
+See Table \ref{tab:dv} for the exact phrasing of the question.
 
 ```{r dv, topcaption=TRUE}
-d <- tibble(Variable = c("trust (DV1)",
-                         "sincere (DV2)",
-                         "representation (DV3)"), 
-            `Wording ENG` = c("Based on the Instagram post, to what extent do you trust [PARTY]","Based on the Instagram post, to what extent do you think [PARTY] is sincere?","Based on the Instagram post, to what extent do you think [PARTY] does a good job in representing its voters?"),
-            `Wording DE` = c("Der Instagram-Nachricht nach zu urteilen, wie sehr würden Sie [PARTY] vertrauen?",  "Und inwieweit denken Sie, dass [PARTY] der Instagram-Nachricht nach aufrichtig gehandelt hat?", "Und inwiefern denken Sie, dass [PARTY] ihre Wähler gut vertritt in Anbetracht der Instagram-Nachricht?"))
+d <- tibble(Variable = c("Item 2 (DV1)",
+                         "Item 3 (DV2)",
+                         "Item 4 (DV3)"), 
+            `Wording ENG` = c("The people, not politicians, should make the most important political decisions","he politicians in the German Bundestag need to follow the will of the people", "The political differences between elites and the people are greater than the differences among citizens"),
+            `Wording DE` = c("[Die Bürger/Das Volk], und nicht die Politiker, sollte(n) die wichtigsten politischen Entscheidungen treffen", "Die Abgeordneten des Deutschen Bundestags müssen dem Willen [der Bürger/des Volkes] Folge leisten", "Die politischen Unterschiede zwischen den Eliten und [den Bürgern/dem Volk] sind größer als die Unterschiede (zwischen Bürgern)"))
 
 kbl(d, booktabs =T, caption = "\\label{tab:dv}Survey Questions - DV") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
@@ -155,6 +118,9 @@ kbl(d, booktabs =T, caption = "\\label{tab:dv}Survey Questions - DV") %>%
   column_spec(3, width = "7cm")
 
 ```
+
+## Treatment
+Respondents are randomly assigned to the populism items translated into German using either the civic conception (i.e. _Bürger_) or the ethnic conception (i.e. _Volk_).
 
 &nbsp;
 
@@ -213,60 +179,32 @@ kbl(d, booktabs =T, caption = "\\label{tab:demographics}Survey Questions - Demog
 
 ```
 
-In addition, pre-treatment, respondents' ideological position, position on and salience of the issues speed limit, top tax, and Cannabis legalization, political knowledge and interest are measured (see Tables \ref{tab:pret1} and \ref{tab:pret2}).
+In addition, pre-treatment, respondents' ideological position, political knowledge, interest, and attitude towards national identity are measured (see Table \ref{tab:pret}).
 Those variables will only be included in the analyses if balance checks indicate they are necessary.
 Moreover, the variables will be used to explore heterogeneous relationships. 
 
 - _Ideological position_ is measured using an 11-point scale ranging from left (`0`) to right (`10`).
 
-- _Position on issues_ is measured by forcing participants to choose whether or not the government should implement a policy: `implement speed limit`, `increase of top tax`, `legalize cannabis`.
-
-- _Salience of issues_ is measured using an 11-point scale ranging from not at all important (`0`) to very important (`10`).
+- _Exclusive national identity_ is measured with four statements ("being born in Germany", "having German ancestors", "being able to speak German", "adhering to German traditions and customs") on a 5-point Likert-scale: `very much disagree`, `disagree`, `neutral`, `agree`, `very much agree`. If `Cronbach's` $\alpha =>0.8$, we will construct an additive scale for this measure.
+When `Cronbach's` $\alpha <0.8$, we will add the statement as seperate dependent variables in the multiverse analysis. 
 
 
 ```{r pret, topcaption=TRUE}
-d <- tibble(Variable = c("issue-pref-forced (PT1)",
-                         "general speed limit (PT1-1)","increase of top tax (PT1-2)","legalization of cannabis (PT1-3)","issue-importance (PT3)",  "general speed limit (PT3-1)","increase of top tax (PT3-2)","legalization of cannabis (PT3-3)",
-                         "political-knowledge1 (PT4)", "political-knowledge2 (PT5)", "political-knowledge3 (PT6)", "political-interest (PT7)","RILE (PT8)", "in-party (S1)", "in-party-strength (S2)"), 
-            `Wording ENG` = c("In your opinion, should the federal government implement the following policy proposals? Please select the response option that most closely matches your opinion.",
-                             "General speed limit.",
-                             "Increase the top tax rate",
-                             "Cannabis Legalization.",
-                             "How important are the following issues to you?", 
-                             "General speed limit",
-                             "Increasing the top tax rate",
-                             "Cannabis legalization",
-                             "In the federal election, you have two votes, a first vote and a second vote. How is that actually, which of the two votes is decisive for the distribution of seats in the Bundestag?",
+d <- tibble(Variable = c("political-knowledge1 (PT4)", "political-knowledge2 (PT5)", "political-knowledge3 (PT6)", "political-interest (PT7)","RILE (PT8)", "Exclusive national identity (HT4)", "Exclusive national identity (HT4-1)", "Exclusive national identity (HT4-2)", "Exclusive national identity (HT4-3)", "Exclusive national identity (HT4-4)" ), 
+            `Wording ENG` = c("In the federal election, you have two votes, a first vote and a second vote. How is that actually, which of the two votes is decisive for the distribution of seats in the Bundestag?",
                              "Now we would like to know from you, from what percentage of the second votes a party can send deputies in any case in the Bundestag?",
                              "And can you say approximately what the current unemployment rate is in Germany? Is it lower or higher than 10 percent?", 
                              "Once speaking in general terms: How interested are you in politics - very strongly, strongly, moderately, less strongly, or not at all?",
-                            "In politics, people often talk about 'left' and 'right.' Where would you classify yourself?", 
-                            "If you had to choose, which of the following parties would you be most likely to vote for in the next federal election?",
-                            "How strongly or how weakly do you identify with this party: very strongly, fairly strongly, moderately, fairly weakly, or very weakly?"),
-            `Wording DE` = c("Sollte die Bundesregierung Ihrer Meinung nach die folgenden politischen Vorschläge umsetzen? Bitte wählen Sie die Antwortoption, die Ihrer Meinung am ehesten entspricht.",
-                             "Generelles Tempolimit",
-                             "Erhöhung des Spitzensteuersatzes",
-                             "Cannabis-Legalisierung",
-                             "Wie wichtig sind die folgenden Themen für Sie?", 
-                             "Generelles Tempolimit",
-                             "Erhöhung des Spitzensteuersatzes",
-                             "Cannabis-Legalisierung",
-                             "Bei der Bundestagswahl haben Sie ja zwei Stimmen, eine Erststimme und eine Zweitstimme. Wie ist das eigentlich, welche der beiden Stimmen ist ausschlaggebend für die Sitzverteilung im Bundestag?",
+                            "In politics, people often talk about 'left' and 'right.' Where would you classify yourself?",
+                            "Some people think that the following points are important to be truly German. Others do not think they are important. How important do you think the following points are to being German?", "being born in Germany", "having German ancestors", "being able to speak German", "adhering to German traditions and customs"),
+            `Wording DE` = c("Bei der Bundestagswahl haben Sie ja zwei Stimmen, eine Erststimme und eine Zweitstimme. Wie ist das eigentlich, welche der beiden Stimmen ist ausschlaggebend für die Sitzverteilung im Bundestag?",
                              "Jetzt möchten wir gerne von Ihnen wissen, ab wie viel Prozent der Zweitstimmen eine Partei auf jeden Fall Abgeordnete in den Bundestag entsenden kann? ",
-                             "Und können Sie ungefähr sagen, wie hoch die derzeitige Arbeitslosenquote in Deutschland ist? Ist sie niedriger oder höher als 10 Prozent?", "Einmal ganz allgemein gesprochen: Wie stark interessieren Sie sich für Politik – sehr stark, stark, mittelmäßig, weniger stark oder überhaupt nicht?",
-                            "In der Politik reden die Leute häufig von 'links' und 'rechts'. Wo würden Sie sich selbst einordnen?", 
-                            "Wenn Sie sich entscheiden müssten, welche der folgenden Parteien würden Sie bei der nächsten Bundestagswahl am ehesten wählen?",
-                            "Wie stark oder wie schwach indentifizieren Sie sich mit dieser Partei: sehr stark, ziemlich stark, mäßig, ziemlich schwach, oder sehr schwach?"))
+                             "Und können Sie ungefähr sagen, wie hoch die derzeitige Arbeitslosenquote in Deutschland ist? Ist sie niedriger oder höher als 10 Prozent?", 
+                             "Einmal ganz allgemein gesprochen: Wie stark interessieren Sie sich für Politik – sehr stark, stark, mittelmäßig, weniger stark oder überhaupt nicht?",
+                            "In der Politik reden die Leute häufig von 'links' und 'rechts'. Wo würden Sie sich selbst einordnen?",
+                            "Manche Leute meinen, dass die folgenden Punkte wichtig sind, um wirklich deutsch zu sein. Andere halten diese nicht für wichtig. Für wie wichtig halten Sie die folgenden Punkte, um deutsch zu sein?", "in Deutschland geboren sein", "deutsche Vorfahren haben", "deutsch sprechen können", "sich an deutsche Traditionen und Gepflogenheiten halten"))
 
-kbl(d[1:11,], booktabs =T, caption = "\\label{tab:pret1}Survey Questions - PreTreatment Questions (1)") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "3cm") %>%
-  column_spec(2, width = "7cm") %>%
-  column_spec(3, width = "7cm")
-
-
-kbl(d[12:dim(d)[1],], booktabs =T, caption = "\\label{tab:pret2}Survey Questions - PreTreatment Questions (2)") %>%
+kbl(d, booktabs =T, caption = "\\label{tab:pret}Survey Questions - PreTreatment Questions") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "3cm") %>%
@@ -278,10 +216,6 @@ kbl(d[12:dim(d)[1],], booktabs =T, caption = "\\label{tab:pret2}Survey Questions
 
 - _Political interest_ is measured by asking people how strongly they are interested in politics using a 5-point Likert-scale (`very strong`, `strong`, `medium`, `less strong`, `not at all`) and a `don't know/won't say` option.
 
-- _In-party_ is measured by forcing people to choose beween the four parties of the experiment (`CDU`, `die Grünen`, `FDP`, and `SPD`) to determine which treatment they will be shown.
-
-- _In-party strength_ is measured by asking people how strongly they identify with the party uing a 5-point Likert-scale: `very strong`, `strong`, `medium`, `less strong`, `not at all`
-
 ## Attention Checks
 We include two attention checks in the survey.
 The first one is after the demographic covariates, the second one is asked just before respondents enter the round of the experimental treatments.
@@ -289,153 +223,22 @@ The attention checks are taken from @berinsky2014separating and adapted to the G
 If a respondents fails the first attention check, a warning appears and the respondent can only continue with the survey once the respondent has correctly answered the question correctly.
 The second attention check also has a warning -- meaning that respondents have to select two options -- but if they fail to correctly pass the check, they are excluded.
 Each excluded respondent due to failing an attention check is replaced with another ``good respondent".
-
+  
 **Attention Check 1**  When a big news story breaks people often go online to get up-to-the-minute details on what is going on.
 We want to know which websites people trust to get this information.
 We also want to know if people are paying attention to the question.
 To show that you have read this much, please ignore the question and select BILD-Zeitung and Süddeutsche Zeitung as your two answers.
-When there is a big news story, which is the one news website you would visit first? (Please
-only choose one).
+When there is a big news story, which is the one news website you would visit first? (Please only choose one).
 Eight (German) news outlets are provided to choose from.
 Respondents pass the attention check if they select _BILD-Zeitung_ and _Süddeutsche Zeitung_.
-
+  
 **Attention Check 2**:
 We would like to get a sense of your general preferences.
 Most  modern  theories  of  decision  making  recognize  that  decisions  do  not take  place  in  a  vacuum.
 Individual  preferences  and  knowledge,  along  with  situational variables can greatly impact the decision process.
-To demonstrate that you've read this much,  just  go  ahead  and  select  both  red  and  green  among  the  alternatives  below,  no matter what your favourite color is.  Yes, ignore the question below and select both of
-those options.
+To demonstrate that you've read this much,  just  go  ahead  and  select  both  red  and  green  among  the  alternatives  below,  no matter what your favourite color is.  Yes, ignore the question below and select both of those options.
 What is your favourite color?
 Six colors are provided to choose from, respondents pass the attention check if they select red and green.
-
-## Post-Treatment Variables
-Post-treatment, the heterogeneous treatments (H4 and H5), manipulation checks, cultural position, and populist attitudes are surveyed. 
-
-- _Principledness_ This is measured in two different ways. First, following @arceneaux2019roots, , we measure principledness with using the Ethical Positions Questionnaire using a 7-point Likert scale (`Strongly Disagree`, `Disagree`, `Somewhat Disagree`, `Neither Agree nor Disagree`, `Somewhat Agree`, `Agree`, `Strongly Agre`). We reduce the initial 20 statements to 12 based on this [analysis](https://github.com/MarikenvdVelden/willingness-to-accept-compromises/blob/main/docs/pre-analysis-plan/absolutism_irt.pdf), where statements 1–6 measure idealism and statements 7– 12 measure relativism; absolutism is the combination of idealism with the rejection of relativism. If `Cronbach's` $\alpha$ `=>0.8`, we will construct an additive scale for this measure.When `Cronbach's` $\alpha$ `<0.8`, we will add the statement as seperate dependent variables in the multiverse analysis. Secondly, we use @ryan2017no's measure of Willingness to Accept (WtA) Benefits, where participants imagine to receive money (\texteuro `0`, \texteuro `1`, \texteuro `2`, \texteuro `3`, \texteuro `4`) but donate the same amount of money to an organization that is against their preferred policy position. 
-
-- _Mutual trust_ is measured using three items from the European Social Survey using an 11-point scale, where `0` is the most negative answer, and `10` the most positive one. Respondents are asked whether they think most people can be trusted, most people try to take advantage of you, and most people are willing to help others. If `Cronbach's` $\alpha$ `=>0.8`, we will construct an additive scale for this measure.
-When `Cronbach's` $\alpha$ `<0.8`, we will add the statement as seperate dependent variables in the multiverse analysis. 
-
-- _Cultural position_ is measured by asking if people find it important if people are born in Germany, have German ancestors, are able to speak German, and conform to the German norms and values using a 5-point Likert-scale (`Very importnat`, `Important`, `Neutral`, `Unimportant`, `Very unimportant`).
-
-- _Populism attitudes_ We measure populist attitudes with the scale developed by @akkerman2014populist with a 5-point Likert-scale ranging (`Very much disagree`, `Disagree`, `Neutral`, `Agree`, `Very much agree`). For the statements, see Table XX.
-
-```{r post, topcaption=TRUE}
-d <- tibble(Variable = c("princpledness2 (HT1a)",
-                         "princpledness2 (HT1a-1)",
-                         "princpledness2 (HT1a-2)",
-                         "princpledness2 (HT1a-3)",
-                         "princpledness2 (HT1a-4)",
-                         "princpledness2 (HT1a-5)",
-                         "princpledness2 (HT1a-6)",
-                         "princpledness2b (HT1b)",
-                         "princpledness2 (HT1b-1)",
-                         "princpledness2 (HT1b-2)",
-                         "princpledness2 (HT1b-3)",
-                         "princpledness2 (HT1b-4)",
-                         "princpledness2 (HT1b-5)",
-                         "princpledness2 (HT1b-6)",
-                         "princpledness1 (HT2)",
-                         "mutual-trust1 (HT3a)",
-                         "mutual-trust2 (HT3b)",
-                         "mutual-trust3 (HT3c)",
-                         "cultural-position (HT4)",
-                         "cultural-position (HT4-1)",
-                         "cultural-position (HT4-2)",
-                         "cultural-position (HT4-3)",
-                         "cultural-position (HT4-4)",
-                         "populist-attitudes (POST1)",
-                         "populist-attitudes (POST1-1)",
-                         "populist-attitudes (POST1-2)",
-                         "populist-attitudes (POST1-3)",
-                         "populist-attitudes (POST1-4)",
-                         "populist-attitudes (POST1-5)",
-                         "populist-attitudes (POST1-6)",
-                         "populist-attitudes (POST1-7)",
-                         "populist-attitudes (POST1-8)",
-                         "manipulation-check1 (MC1)",
-                         "manipulation-check2 (MC2)",
-                         "reality-check (MC3)"),
-            `Wording ENG` = c("Below you will find a selection of general statements. We are interested in the extent to which you agree or disagree with the individual statements.", 
-                              "A person should be careful that their actions never intentionally cause harm to another person, even in a small way.", 
-                              "Putting others at risk should never be tolerated, no matter how small the risks.", 
-                              "The occurrence of potential harm to others is always wrong, regardless of the benefits.", 
-                              "One should never hurt another person psychologically or physically.", 
-                              "One should not take any action that could in any way threaten the dignity and well-being of another person.", 
-                              "If an act could harm an innocent third party, it should not be done.", 
-                              "Im Folgenden finden Sie eine Auswahl an allgemeinen Aussagen. Uns interessiert, inwieweit Sie den einzelnen Aussagen zustimmen oder nicht zustimmen.",
-                              "There are no ethical principles that are so important that everyone must follow them.", 
-                              "What is ethical varies from situation to situation and from society to society.", 
-                              "You cannot say that a certain kind of morality is more correct than another.", 
-                              "The question of what is ethical for all can never be settled, for what is moral or immoral should be left to the individual.",
-                              "Moral values are simply personal rules that indicate how a person should behave and should not be used to judge others.", 
-                              "Whether something is considered moral or immoral depends on the circumstances.", 
-                              "Imagine being able to choose an amount from the list below, and the amount you choose will be credited to your account. The catch is that the amount you choose will also be donated to an association that vehemently for/against the introduction of a top tax/ speed limit. What amount would you choose?",
-                              "Do you think that most people can be trusted, or that you can't be careful enough when dealing with other people? Please tell us using this scale from 0 to 10. 0 means that you can't be careful enough, and 10 means that you can trust most people.", 
-                              "Do you think most people try to take advantage of you when they have the opportunity, or do most people try to be fair?",
-                              "And do you think that people are mostly trying to be helpful, or that people are mostly looking out for their own advantage?",
-                              "Some people think that the following points are important to be truly German. Others do not think they are important. How important do you think the following points are to being German?",
-                              "To be born in Germany", 
-                              "to have German ancestors", 
-                              "to be able to speak German", 
-                              "to adhere to German traditions and customs",
-                              "Now we would like to know your opinion on some general statements about politics. For each of the following statements, please indicate the extent to which you agree or disagree with it.",
-                              "What is called compromise in politics is really just a betrayal of principles.",
-                              "Citizens, not politicians, should make the most important policy decisions.",
-                              "The members of the German Bundestag must follow the will of the citizens.", 
-                              "The political differences between elites and citizens are greater than the differences between citizens.", "Elected officials talk too much and take too little action", "A citizen would better represent my interests than a professional politician.", "In a democracy, it is important to compromise between different points of view.", "It is important to listen to the opinions of other groups.", "Can you please tell us if [PARTY] would compromise(s) according to the Instagram message?", "Can you please tell us if the two parties have agreed to start coalition talks according to the Instagram message?", "The Instagram message you just saw represented a fictional scenario of coalition talks. Do you know which parties are currently holding exploratory talks in reality? Please select all applicable parties."),
-            `Wording DE` = c("Im Folgenden finden Sie eine Auswahl an allgemeinen Aussagen. Uns interessiert, inwieweit Sie den einzelnen Aussagen zustimmen oder nicht zustimmen.",
-            "Eine Person sollte darauf achten, dass ihre Handlungen niemals absichtlich einen anderen Menschen Schaden zufügen, auch nicht in geringem Maße.", 
-            "Die Gefährdung anderer sollte niemals toleriert werden, unabhängig davon, wie gering die Risiken auch sein mögen.", 
-            "Das Eintreten eines potenziellen Schadens für andere ist immer falsch, unabhängig von den Vorteilen, die sich daraus ergeben.", 
-            "Man sollte eine andere Person niemals psychisch oder physisch verletzen.", 
-            "Man sollte keine Handlung vornehmen, die in irgendeiner Weise die Würde und das Wohlbefinden eines anderen Menschen bedrohen könnte.", 
-            "Wenn eine Handlung einem unschuldigen Dritten schaden könnte, sollte sie nicht vorgenommen werden.", 
-            "Im Folgenden finden Sie eine Auswahl an allgemeinen Aussagen. Uns interessiert, inwieweit Sie den einzelnen Aussagen zustimmen oder nicht zustimmen.",
-            "Es gibt keine ethischen Grundsätze, die so wichtig sind, dass jeder sie befolgen muss.",
-            "Was ethisch ist, variiert von Situation zu Situation und von Gesellschaft zu Gesellschaft.",
-            "Man kann nicht sagen, dass eine bestimmte Art von Moral richtiger ist als eine andere.", 
-            "Die Frage, was für alle ethisch ist, kann nie geklärt werden, denn was moralisch oder unmoralisch ist, sollte dem Einzelnen überlassen werden.",
-            "Moralische Werte sind einfach persönliche Regeln, die angeben, wie sich eine Person verhalten sollte, und sollten nicht dazu dienen, über andere zu urteilen.",
-            "Ob etwas als moralisch oder unmoralisch eingestuft wird, hängt von den Umständen ab.",
-            "Stellen Sie sich vor, Sie können einen Betrag aus der unten stehenden Liste auswählen, und der von Ihnen gewählte Betrag wird Ihrem Konto gutgeschrieben. Der Haken an der Sache ist, dass der von Ihnen gewählte Betrag auch an einen Verband gespendet wird, der sich vehement gegen/für die Einführung eines Spitzensteuersatzes/Generellen Tempolimits einsetzt. Welchen Betrag würden Sie auswählen?", 
-            "Glauben Sie, dass man den meisten Menschen vertrauen kann, oder dass man im Umgang mit anderen Menschen nicht vorsichtig genug sein kann? Bitte sagen Sie es uns anhand dieser Skala von 0 bis 10. 0 bedeutet, dass man nicht vorsichtig genug sein kann, und 10 bedeutet, dass man den meisten Menschen vertrauen kann.",
-            "Glauben Sie, dass die meisten Menschen versuchen, Sie auszunutzen, wenn sie die Gelegenheit dazu haben, oder versuchen die meisten Menschen, sich fair zu verhalten?",
-            "Und glauben Sie, dass die Menschen meistens versuchen, hilfsbereit zu sein, oder dass die Menschen meistens auf den eigenen Vorteil bedacht sind?",
-            "Manche Leute meinen, dass die folgenden Punkte wichtig sind, um wirklich deutsch zu sein. Andere halten diese nicht für wichtig. Für wie wichtig halten Sie die folgenden Punkte, um deutsch zu sein?", "in Deutschland geboren sein","deutsche Vorfahren haben", "deutsch sprechen können", "sich an deutsche Traditionen und Gepflogenheiten halten", "Jetzt möchten wir gerne Ihre Meinung zu einigen allgemeinen Aussagen zur Politik wissen. Bitte geben Sie zu jeder der folgenden Aussagen an, inwieweit Sie dieser zustimmen oder diese ablehnen.",
-"Was in der Politik Kompromiss genannt wird, ist in Wirklichkeit nur ein Verrat von Prinzipien.","Die Bürger, und nicht die Politiker, sollten die wichtigsten politischen Entscheidungen treffen.","Die Abgeordneten des Deutschen Bundestags müssen dem Willen der Bürger Folge leisten.","Die politischen Unterschiede zwischen den Eliten und den Bürgern sind größer als die Unterschiede zwischen Bürgern.", "Die Politiker reden zu viel und machen zu wenig.","Ein Bürger würde besser meine Interessen vertreten als ein Berufspolitiker.","In einer Demokratie ist es wichtig, Kompromisse zwischen unterschiedlichen Standpunkten zu schließen.","Es ist wichtig, die Meinung anderer Gruppen anzuhören.", "Können Sie uns bitte sagen, ob [PARTY] der Instagram-Nachricht zufolge einen Kompromiss eingehen würde(n)?", "Können Sie uns bitte sagen, ob die beide Parteien der Instagram-Nachricht zufolge sich geinigt haben, Koalitionsverhandlungen aufzunehmen?", "Die Instagram-Nachricht, die Sie gerade gesehen haben, stellte ein fiktives Szenario der Koalitionsverhandlungen dar. Wissen Sie, welche Parteien derzeit in der Wirklichkeit Sondierungsgespräche führen? Bitte wählen Sie alle zutreffenden Parteien aus."))
-
-kbl(d[1:10,], booktabs =T, caption = "\\label{tab:post1}Survey Questions - PostTreatment Questions (1)") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "3cm") %>%
-  column_spec(2, width = "7cm") %>%
-  column_spec(3, width = "7cm")
-
-
-kbl(d[11:20,], booktabs =T, caption = "\\label{tab:post2}Survey Questions - PostTreatment Questions (2)") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "3cm") %>%
-  column_spec(2, width = "7cm") %>%
-  column_spec(3, width = "7cm")
-
-kbl(d[21:30,], booktabs =T, caption = "\\label{tab:post3}Survey Questions - PostTreatment Questions (3)") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "3cm") %>%
-  column_spec(2, width = "7cm") %>%
-  column_spec(3, width = "7cm")
-
-kbl(d[31:dim(d)[1],], booktabs =T, caption = "\\label{tab:post4}Survey Questions - PostTreatment Questions (4)") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "3cm") %>%
-  column_spec(2, width = "7cm") %>%
-  column_spec(3, width = "7cm")
-```
-
-- _Manipulation checks_ 
 
 ## Exclusion Criteria
 Participants are required to respond to each question.
@@ -448,332 +251,123 @@ We will only add control variables in the analyses that are unbalanced, as expla
 
 ## Balance Checks
 We will conduct a balance test based on demographics (age, gender, education, geographical region, level of urbanness,employment, and income), vote choice in the 2021 parliamentary elections, ideological self-placement, political knowledge, political interest, party identity strength, and positions on and salience of the three issues, using the `cobalt` R package [@greifer2021]. 
-If the groups are unbalanced on one of these variables -- i.e. standardized mean differences `<0.05` -- I will add the covariates to the analyses.
+If the groups are unbalanced on one of these variables -- i.e. standardized mean differences $<0.05$ -- I will add the covariates to the analyses.
 I will use the code below to conduct the balance tests (see [here](https://github.com/MarikenvdVelden/compromise-punish/tree/main/src/analysis/balance-test.R) for the R script).
 
 ```{r balance, eval=FALSE, echo = TRUE}
 covs <- d %>%
-  mutate(treatment = paste(compromise, outcome, sep = "-")) %>%
-  select(treatment, D1:D10, PT1:PT8, S2) 
+  mutate(treatment = populism) %>%
+  select(populism, D1:D10, PT1:PT8, HT4) 
 
 balanced <-bal.tab(treatment ~ factor(D1) + D2 +
                      factor(D3) + D4 + D5 + 
                      factor(D6) + D7 + D8 + D9 +
-                     D10 + PT1_1 + PT1_2 + PT1_3 +
-                     PT3_1 + PT3_2 + PT3_3 + PT4 + 
-                     PT5 + PT6 + PT7 + PT8 + S2
-                     factor(F1) + F2 + factor(F9),
+                     D10 + PT4 + PT5 + PT6 + PT7 + 
+                     PT8 + HT4,
                      data = covs,
           thresholds = c(m = 0.05))[[1]] 
 ```
 
 ## Hypothesis 1
-We test the _steadfast hypothesis_ using the equation and the code chunk below.
-The coefficient of $\beta_{1}$ denotes the difference in the evaluation of steadfast and compromising parties
-If the effect of $\beta_{1}$ is positive and statistically significant, the \textit{steadfast hypothesis} will be confirmed.
-
-$$\begin{aligned}
-    \hat{Y}_{Party \ Evaluation} = \beta_{0} + \beta_{1}Steadfast  +
-    \beta_{2}Outcome + \beta_{4}Party\ ID + 
-    \beta_{5}Party \ ID \ Strength + \nonumber \\
-    \beta_{5}Unbalanced \ Covariates + \varepsilon
-  \end{aligned}$$
+We test the _Ethnic Conception hypothesis_, we will conduct a difference in means for the group who received the ethnic and the civic question wording, for all populist items containing a reference to _the people_ -- see code chunck below.
 
 ```{r h1, eval = FALSE, echo = TRUE}
 source(here::here("src/lib/functions.R"))
 
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 0, 1)) %>%
-  filter(issue == "SpeedLimit") %>%
-  select(DV1, outcome, steadfast, S1, S2) %>%
-h1_1 <- lm(DV1 ~  steadfast + outcome + factor(S1) + S2,
-                   data = df)
-
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 0, 1)) %>%
-  filter(issue == "TopTax") %>%
-  select(DV1, outcome, steadfast, S1, S2) %>%
-h1_2 <- lm(DV1 ~  steadfast + outcome + factor(S1) + S2, 
-                   data = df)
+df %>% 
+  mutate(ethnic == if_else(populist=="Volk", "Ethnic", "Civic")) %>%
+  select(`POST-2`, `POST-3`, `POST-4`, ethnic) %>%
+  gather(key = variable, value = value, -ethnic) %>%
+  group_by(ethnic, variable) %>%
+  summarise(value = list(value)) %>% 
+  spread(ethnic, value) %>% 
+  group_by(variable) %>% 
+  mutate(p_value = t.test(unlist(Ethnic), unlist(Civic))$p.value,
+         t_value = t.test(unlist(Ethnic), unlist(Civic))$statistic)
 ```
 
-## Hypothesis 2
+## Hypothesis 2a
 
-We test the _responsibility hypothesis_ using the equation and the code chunk below.
-The coefficient of $\beta_{2}$ denotes the difference in the evaluation of parties negotiating for coalition government and those who stop talking to potential coalition partners.
-If the effect of $\beta_{2}$ is positive and statistically significant, the _responsibility hypothesis_ will be confirmed.
-
-
-$$\begin{aligned}
-    \hat{Y}_{Party \ Evaluation} = \beta_{0} + \beta_{1}Compromise  +
-    \beta_{2}Outcome + \beta_{3}Party \ ID + \nonumber \\
-    \beta_{4}Party \ ID \ Strength +
-    \beta_{5}Unbalanced \ Covariates + \varepsilon
-  \end{aligned}$$
-
-```{r h2, eval = FALSE, echo = TRUE}
-source(here::here("src/lib/functions.R"))
-
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "SpeedLimit") %>%
-  select(DV1, negotiation, compromise, S1, S2) %>%
-h2_1 <- lm(DV1 ~  compromise + negotiation + factor(S1) + S2,
-                   data = df)
-
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "TopTax") %>%
-  select(DV1, negotiation, compromise, S1, S2) %>%
-h2_2 <- lm(DV1 ~  compromise + negotiation + factor(S1) + S2,
-                   data = df)
-```
-
-
-## Hypothesis 3
-
-We test the _compromise hypothesis_ using the equation and the code chunk below.
-The coefficient of $\beta_{1}$ denotes the difference in the evaluation of steadfast and compromising parties.
-The coefficient of $\beta_{2}$ denotes the difference in the evaluation of parties negotiating for coalition government and those who stop talking to potential coalition partners.
+We test the _Exclusive National Identity hypothesis_ using the equation and the code chunk below.
+The coefficient of $\beta_{1}$ denotes the difference in populist attitude for civic and ethnic conceptions of the people.
+The coefficient of $\beta_{2}$ denotes the difference in populist attitude for different levels of national identity.
 The coefficient of $\beta_{3}$ is the interaction of the  $\beta_{1}$ and  $\beta_{2}$.
-If the Average Marginal Effect of $\beta_{1}$ is positive and statistically significant when $\beta_{2} = 1$ (i.e. congruence), then H3 will be confirmed.
+If the Average Marginal Effect of $\beta_{1}$ is positive and statistically significant for higher values of $\beta_{2}$ (i.e. stronger national identity), then H2a will be confirmed.
+
 
 $$\begin{aligned}
-    \hat{Y}_{Party \ Evaluation} = \beta_{0} + \beta_{1}Compromise  + 
-    \beta_{2}Outcome + \beta_{3}Compromise * Outcome + \nonumber \\
-    \beta_{4}Party\ ID + \beta_{5}Party \ ID \ Strength + 
-    \beta_{6}Unbalanced \ Covariates + \varepsilon
+    \hat{Y}_{item} = \beta_{0} + \beta_{1}Ethnic  +
+    \beta_{2}National \ Identity + \beta_{3} Ethnic * National \ Identity + \nonumber \\
+    \beta_{4}Unbalanced \ Covariates + \varepsilon
   \end{aligned}$$
 
-```{r h3, eval = FALSE, echo = TRUE}
+```{r h2a, eval = FALSE, echo = TRUE}
 source(here::here("src/lib/functions.R"))
 
 df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "SpeedLimit") %>%
-  select(DV1, negotiation, compromise, S1, S2) %>%
-h3_1 <- lm(DV1 ~  compromise*negotiation + factor(S1) + S2,
+  mutate(ethnic == if_else(populist=="Volk", "Ethnic", "Civic"))  %>%
+  select(`POST-2`, ethnic, HT4)
+h2a_1 <- lm(`POST-2` ~  ethnic * HT4,
                    data = df)
 
 df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "TopTax") %>%
-  select(DV1, negotiation, compromise, S1, S2) %>%
-h3_2 <- lm(DV1 ~  compromise*negotiation + factor(S1) + S2,
+  mutate(ethnic == if_else(populist=="Volk", "Ethnic", "Civic"))  %>%
+  select(`POST-3`, ethnic, HT4)
+h2a_2 <- lm(`POST-3` ~  ethnic * HT4,
+                   data = df)
+
+df <- d %>% 
+  mutate(ethnic == if_else(populist=="Volk", "Ethnic", "Civic"))  %>%
+  select(`POST-4`, ethnic, HT4)
+h2a_3 <- lm(`POST-4` ~  ethnic * HT4,
                    data = df)
 ```
 
 
-## Hypothesis 4
+## Hypothesis 2b
 
-We test the _principled hypothesis_ using the equation and the code chunk below.
-The coefficient of $\beta_{1}$ denotes the difference in the evaluation of steadfast and compromising parties.
-The coefficient of $\beta_{3}$ denotes the difference in the evaluation of parties for people with different levels of principledness.
-The coefficient of $\beta_{4}$ is the interaction of the  $\beta_{1}$ and  $\beta_{3}$.
-When the Average Marginal Effect of $\beta_{1}$ is negative and statistically significant for higher values of $\beta_{3} = >$ (i.e. principledness), H4 will be confirmed.
+We test the _Far Right Party ID hypothesis_ using the equation and the code chunk below.
+The coefficient of $\beta_{1}$ denotes the difference in populist attitude for civic and ethnic conceptions of the people.
+The coefficient of $\beta_{2}$ denotes the difference in populist attitude for whether or not a respondent has voted for a far right party.
+The coefficient of $\beta_{3}$ is the interaction of the  $\beta_{1}$ and  $\beta_{2}$.
+If the Average Marginal Effect of $\beta_{1}$ is positive and statistically significant for higher values of $\beta_{2}=1$ (i.e. voted for a radical right party), then H2b will be confirmed.
 
 $$\begin{aligned}
-      \hat{Y}_{Party \ Evaluation} = \beta_{0} + \beta_{1}Compromise  +
-      \beta_{2}Outcome + \beta_{3}Principled  +\nonumber \\
-      \beta_{4}Outcoume * Principled + 
-      \beta_{5}Party\ ID + \beta_{6}Party \ ID \ Strength +\nonumber \\
-      \beta_{5}Unbalanced \ Covariates + \varepsilon
-    \end{aligned}$$
+    \hat{Y}_{item} = \beta_{0} + \beta_{1}Ethnic  +
+    \beta_{2}Far \ Right \ Party \ ID + \beta_{3} Ethnic * Far \ Right \ Party \ ID + \nonumber\\
+    \beta_{4}Unbalanced \ Covariates + \varepsilon
+  \end{aligned}$$
 
-```{r h4, eval = FALSE, echo = TRUE}
+```{r h2b, eval = FALSE, echo = TRUE}
 source(here::here("src/lib/functions.R"))
 
 df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "SpeedLimit") %>%
-  select(DV1, negotiation, compromise, HT1, S1, S2) %>%
-h4_1a <- lm(DV1 ~  compromise + negotiation*HT1 +
-                      factor(S1) + S2,
-                    data = df)
+  mutate(afd_vote == if_else(`D6-3`==1, 1, 0),
+         ethnic == if_else(populist=="Volk", "Ethnic", "Civic"))  %>%
+  select(`POST-2`, ethnic, afd_vote)
+h2a_1 <- lm(`POST-2` ~  ethnic * afd_vote,
+                   data = df)
 
 df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "SpeedLimit") %>%
-  select(DV1, negotiation, compromise, HT2, S1, S2) %>%
-h4_1b <- lm(DV1 ~  compromise + negotiation*HT2 +
-                      factor(S1) + S2,
-                    data = df)
+  mutate(afd_vote == if_else(`D6-3`==1, 1, 0),
+         ethnic == if_else(populist=="Volk", "Ethnic", "Civic"))  %>%
+  select(`POST-3`, ethnic, afd_vote)
+h2a_2 <- lm(`POST-3` ~  ethnic * afd_vote,
+                   data = df)
 
 df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "topTax") %>%
-  select(DV1, negotiation, compromise, HT1, S1, S2) %>%
-h4_2a <- lm(DV1 ~  compromise + negotiation*HT1 +
-                      factor(S1) + S2,
-                    data = df)
-
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "topTax") %>%
-  select(DV1, negotiation, compromise, HT2, S1, S2) %>%
-h4_2b <- lm(DV1 ~  compromise + negotiation*HT2 +
-                      factor(S1) + S2,
-                    data = df)
+  mutate(afd_vote == if_else(`D6-3`==1, 1, 0),
+         ethnic == if_else(populist=="Volk", "Ethnic", "Civic"))  %>%
+  select(`POST-4`, ethnic, afd_vote)
+h2a_3 <- lm(`POST-4` ~  ethnic * afd_vote,
+                   data = df)
 ```
 
-## Hypothesis 5
-
- We test the _distrust hypothesis_ using the equation and the code chunk below.
-The coefficient of $\beta_{1}$ denotes the difference in the evaluation of steadfast and compromising parties.
-The coefficient of $\beta_{3}$ denotes the difference in the evaluation of parties for people with different levels of distrust.
-The coefficient of $\beta_{4}$ is the interaction of the  $\beta_{1}$ and  $\beta_{3}$.
-When the Average Marginal Effect of $\beta_{1}$ is negative and statistically significant for higher values of $\beta_{3} = >$ (i.e. distrust), H5 will be confirmed.
-
-$$\begin{aligned}
-  \hat{Y}_{Party \ Evaluation} = \beta_{0} + \beta_{1}Compromise  +
-      \beta_{2}Outcome + \beta_{3}Mutual \ Trust  +\nonumber \\
-      \beta_{4}Outcoume * Mutual \ Trust + 
-      \beta_{5}Party\ ID + \beta_{6}Party \ ID \ Strength +\nonumber \\
-      \beta_{5}Unbalanced \ Covariates + \varepsilon
-    \end{aligned}$$
-
-```{r h5, eval = FALSE, echo = TRUE}
-source(here::here("src/lib/functions.R"))
-
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "SpeedLimit") %>%
-  select(DV1, negotiation, compromise, HT3, S1, S2) %>%
-h5_1 <- lm(DV1 ~  compromise + negotiation*HT3 +
-                      factor(S1) + S2,
-                    data = df)
-
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  filter(issue == "topTax") %>%
-  select(DV1, negotiation, compromise, HT3, S1, S2) %>%
-h5_2 <- lm(DV1 ~  compromise + negotiation*HT3 +
-                      factor(S1) + S2,
-                    data = df)
-```
-
-## Pooled Data
-Using the pooled data, we will estimate a within groups fixed effects model. 
-$\hat{Y}_{r, i}$ in the equation below denotes  the  evaluation  of  a party of respondent $r$, during issue $i$.
-$\alpha_{i}$ is the issue specific intercept.  
-The standard errors are clustered at the individual level.  
-If the Average Marginal Effect of $\beta_{2}$ is negative and statistically significant when $\beta_{3} = 1$ (i.e. parties continue to negotiate), the _compromise hypothesis_ will be confirmed.
-
-$$\begin{aligned}
-      \hat{Y}_{r, i} =\beta_{0} + \beta_{1}Compromise{r, i} + \beta_{2}Outcome + 
-      \beta_{3}Compromise * Outcome + \nonumber \\
-      \beta_{4}Party\ ID + \beta_{5}Party \ ID \ Strength +
-      \beta_{6}Unbalanced \ Covariates + \varepsilon\alpha_{i} + \varepsilon_{r, i}
-    \end{aligned}$$
-
-
-```{r pooled, echo = TRUE, eval = FALSE}
-df <- d %>% 
-  mutate(steadfast == if_else(compromise=="yes", 1, 0),
-         negotiation = if_else(outcome=="negotiation", 1, 0)) %>%
-  select(DV1, negotiation, compromise, issue, S1, S2) %>%
-h3_p <- lmer(DV1 ~  compromise*negotiation + factor(S1) + S2 +
-               (1 | issue), data = df)
-```
-
-```{r stimulus, topcaption=TRUE}
-d <- tibble(` ` = c(1:64),
-            `In-Party` = c(rep("CDU", 16), rep("FDP", 16), 
-                           rep("SPD", 16), rep("die Grünen", 16)),
-            Partner = c(rep("SPD",8), rep("die Grünen",8),
-                        rep("SPD",8), rep("die Grünen",8),
-                        rep("CDU",8), rep("FDP",8),
-                        rep("CDU",8), rep("FDP",8)),
-            Compromise = c(rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2),
-                           rep("Yes",2), rep("No", 2)),
-            Outcome = c("Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation", 
-                        "Stalled", "Negotation",
-                        "Stalled", "Negotation"),
-            Issue = c(rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4),
-                      rep("TopTax", 4), rep("SpeedLimit", 4)))
-
-kbl(d[1:32,], booktabs =T, caption = "\\label{tab:treat}Experimental Conditions (1)",
-    align = c("l", "l", "c", "c", "c")) %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = ".5cm") 
-
-
-kbl(d[33:dim(d)[1],], booktabs =T, caption = "\\label{tab:treat}Experimental Conditions (2)",
-    align = c("l", "l", "c", "c", "c")) %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
- column_spec(1, width = ".5cm") 
-```
 
 ## Statistical Significance
 All the hypotheses are directional, and therefore all of the tests will be one-tailed.
-We will use an $\alpha$-value of `0.05` as the value for statistical significance in all models above.
+We will use an $\alpha$-value of $0.05$ as the value for statistical significance in all models above.
 
-# Stimulus Material
-
-Table \ref{tab:treat} show the manipulations of the `2*2` experimental design, for two issues for four different in-partiies and two different potential coalition partners leading to 64 experimental treatments. 
-All stimulus material is developed by the [Network Institute of the _Vrije Universiteit Amsterdam_](https://networkinstitute.org/) and can be accessed [here](https://github.com/MarikenvdVelden/willingness-to-accept-compromises/tree/main/docs/pre-analysis-plan/treatments). 
-The treatment's texts are in German.
-
+  
 \newpage
 # References
