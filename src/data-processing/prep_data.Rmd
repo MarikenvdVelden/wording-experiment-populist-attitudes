@@ -1,0 +1,196 @@
+---
+title: 'Prepare Data'
+author: 
+output: 
+  github_document:
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r "setup", include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.align = "center",
+                      fig.path=('../../report/figures/'))
+library(printr)
+options(digits = 2)
+library(rmarkdown)
+```
+
+# Scripts
+- [Required Packages &amp; Reproducibility](#required-packages-&amp;-reproducibility)
+- [Tidy Data](#tidy-data)
+- [Save Data for Analysis](#save-data-for-analysis)
+- [Check Missing Values](#check-missing-values)
+- [Visualization of Data](#visualization-of-data)
+  - [Dependent Variable](#dependent-variable)
+  - [Treatment Conditions](#treatment-conditions)
+  - [Correlations Matrix](#correlations-matrix)
+
+## Required Packages &amp; Reproducibility
+```{r "env", message=FALSE, warning=F}
+rm(list=ls())
+source(here::here("src/lib/functions.R"))
+renv::snapshot()
+```
+
+## Tidy Data
+This code chuck downloads the data from Qualtrics using the API and cleans the raw data.
+
+```{r "get data from Qualtrics", results="hide"}
+source(here("src/data-processing/tidy_data.R"))
+source(here("src/data-processing/Urbaness.R"))
+```
+
+## Save Data for Analysis
+```{r "save data",eval=FALSE}
+save(d, file = here("data/intermediate/cleaned_data.RData"))
+```
+
+## Visualization of Data
+
+### Dependent Variable
+```{r "Dependent Variable", echo=F, fig.width=10, fig.height=8}
+d <- d %>%
+  mutate(PT_D1 = round((PT_D1_1 + PT_D1_2 + PT_D1_3 + PT_D1_4 + PT_D1_5 + PT_D1_6)/6, 0),
+         PT_E1 = round((PT_E1_1 + PT_E1_2 + PT_E1_3 + PT_E1_4 + PT_E1_5 + PT_E1_6)/6, 0),
+         PT_C1 = round((PT_C1_1 + PT_C1_2 + PT_C1_3 + PT_C1_4 + PT_C1_5 + PT_C1_6)/6, 0),
+         PT_I1 = round((PT_I1_1 + PT_I1_2 + PT_I1_3 + PT_I1_4 + PT_I1_5 + PT_I1_6)/6, 0),
+         PreT5 = round((PreT5_1 + PreT5_2 + PreT5_3 + PreT5_4)/4,0),
+         PreT7 = round((PreT7_1 + PreT7_2 + PreT7_3 + PreT7_4 + PreT7_5 + PreT7_6 + PreT7_7)/7,0)) %>%
+  pivot_longer(cols = c(name_D, name_I, name_E, name_C),
+               values_to = "name",
+               names_to = "issue") %>%
+  drop_na(name) %>%
+  mutate(issue = recode(issue, 
+                        name_C = "COVID",
+                        name_D = "Defense",
+                        name_E = "Education",
+                        name_I = "Immigration")) %>%
+  pivot_longer(cols = c(PT_D1, PT_E1, PT_C1, PT_I1),
+               values_to = "PT1",
+               names_to = "issue1") %>%
+  drop_na(PT1) %>%
+  mutate(issue1 = recode(issue1, 
+                        PT_C1 = "COVID",
+                        PT_D1 = "Defense",
+                        PT_E1 = "Education",
+                        PT_I1 = "Immigration")) %>%
+  pivot_longer(cols = c(PT_D2, PT_E2, PT_C2, PT_I2),
+               values_to = "PT2",
+               names_to = "issue2") %>%
+  mutate(issue2 = recode(issue2, 
+                        PT_C2 = "COVID",
+                        PT_D2 = "Defense",
+                        PT_E2 = "Education",
+                        PT_I2 = "Immigration")) %>%
+  pivot_longer(cols = c(PT_D3, PT_E3, PT_C3, PT_I3),
+               values_to = "PT3",
+               names_to = "issue3") %>%
+  mutate(issue3 = recode(issue3, 
+                         PT_C3 = "COVID",
+                         PT_D3 = "Defense",
+                         PT_E3 = "Education",
+                         PT_I3 = "Immigration")) %>%
+  pivot_longer(cols = c(PT_D4, PT_E4, PT_C4, PT_I4),
+               values_to = "PT4",
+               names_to = "issue4") %>%
+  mutate(issue4 = recode(issue4, 
+                         PT_C4 = "COVID",
+                         PT_D4 = "Defense",
+                         PT_E4 = "Education",
+                         PT_I4 = "Immigration"),
+        check = if_else(issue == issue1 & issue == issue2 & issue == issue3 & issue == issue4, 1,0)) %>%
+  filter(check == 1) 
+  
+
+d %>%
+  select(PT1, PT2, PT3, PT4, issue = issue1) %>%
+  mutate(PT1 = PT1 * 2) %>%
+  #mutate_at(c("PT1", "PT2", "PT3", "PT4"), ~(scale(.) %>% as.vector)) %>%
+  pivot_longer(cols = PT1:PT4,
+               names_to = "dvs") %>%
+  mutate(dvs = recode(dvs,
+                       PT1 = "DV: Trait Evaluation",
+                       PT2 = "DV: Favorability",
+                       PT3 = "DV: Representation",
+                       PT4 = "DV: Career Prospects")) %>%
+  group_by(issue, dvs) %>%
+  summarise(means = mean(value, na.rm=T),
+            stdev = sd(value, na.rm=T)) %>%
+  mutate(lower = means - (1.56 * stdev),
+         upper = means + (1.56 * stdev)) %>% 
+  ggplot(aes(x = dvs, y = means, colour = issue,
+             ymin = lower, ymax = upper, label = issue)) +
+  geom_point(position = position_dodge(.5)) + 
+  geom_errorbar(position = position_dodge(.5), width = 0) +
+  geom_text(aes(y = upper +.5), 
+            position = position_dodge(.5),na.rm = TRUE) + 
+  labs(y = "0 (negative) - 10 (positive)", 
+       x = "") +
+  geom_hline(yintercept = 5, linetype = "dotted", color = "darkgrey") +
+  theme_minimal() +
+  scale_color_manual(values = fig_cols) +
+  coord_flip() +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="none",
+        legend.title = element_blank()) 
+```
+
+### Treatment Conditions
+```{r "Independent Variables", echo=F, message=FALSE, warning=FALSE,fig.width=10, fig.height=10}
+d %>%
+  pivot_longer(cols = c(compromise_D, compromise_I, compromise_E, compromise_C),
+               names_to = "value",
+               values_to = "compromise") %>%
+  mutate(compromise = recode(compromise, `een compromis` = "Compromise", `geen compromis` = "No Compromise")) %>%
+  unite("treatment", c("name", "compromise"), sep = "\n ") %>%
+  select(treatment, issue) %>%
+  group_by(issue, treatment) %>%
+  summarise(n = n()) %>%
+  mutate(perc = round(n/sum(n),2),
+         perc2 = paste0(perc*100, "%")) %>%
+  ggplot(aes(x = perc, y = issue, fill = treatment, label = perc2)) +
+  geom_col(position = 'fill', width=0.75) + 
+  geom_text(position = position_fill(vjust=0.5), color = "white", fontface = "bold") +
+  labs(y = "", x = "", title = "Distribution of Treatments") +
+  scale_x_continuous(labels=scales::percent) +
+  theme_minimal() +
+  scale_fill_manual(values = fig_cols) +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position="bottom",
+        legend.title = element_blank()) +
+  guides(fill=guide_legend(ncol=4,byrow=TRUE))
+```
+
+
+### Correlations Matrix
+```{r "Correlations Matrix", echo=F, message=T, warning=T, fig.width=15, fig.height=15}
+d %>%
+  select(`Gender` = F1,
+         `Age` = F2,
+         `Education` = F9,
+         `Region`  = F3,
+         `Urbanness`  = F4,
+         `Migration Background`  = F5,
+         `Job`  = F7,
+         `Income`  = F8,
+         `Position: Immigration (%)`  = PreT1,
+         `Position: Immigration`  = PreT2,
+         `Position: Defense`  = PreT3,
+         `Position: Education`  = PreT4,
+         `Position: Attitude Women in Politics`  = PreT5,
+         `Ideology`  = PreT6,
+         `Political Efficacy` = PreT7, 
+         `Position: COVID-19 Policy` = PreT8,
+         `DV: Trait Evaluation` = PT1,
+         `DV: Favorability` = PT2,
+         `DV: Representation` = PT3,
+         `DV: Career Prospects` = PT4) %>%
+  ggcorrmat(
+  type = "robust", # correlation method
+  cor.vars = c(everything()), # a range of variables can be selected
+  colors = c(fig_cols[1], fig_cols[4], fig_cols[8]),
+  title = "Correlalogram for Variables under Study"
+)
+```
