@@ -1,0 +1,179 @@
+---
+title: 'Analyses'
+author: 
+output: 
+  github_document:
+always_allow_html: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r "setup", include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.align = "center",
+                      fig.path=('../../report/figures/'))
+library(rmarkdown)
+```
+
+# Scripts
+- [Required Packages &amp; Reproducibility](#required-packages-&amp;-reproducibility)
+- [Analyses](#analyses)
+  - [Descriptive Results](#descriptive-results)
+  - [Balance Checks](#balance-checks)
+  - [Gender Hypothesis](#gender-hypothesis)
+  - [Migration Hypothesis](#migration-hypothesis)
+  - [Intersection Hypothesis](#intersection-hypothesis)
+  - [Intersection Hypothesis -- Pooled](#intersection-hypothesis--pooled)
+
+# Required Packages &amp; Reproducibility
+```{r "env", message=FALSE, warning=F}
+rm(list=ls())
+source(here::here("src/lib/functions.R"))
+```
+
+# Analyses
+
+```{r "data for analyses",  eval = F}
+source(here("src/analysis/data-for-analyses.R"))
+```
+
+## Check Missing Values
+I employ the following criteria:
+
+- If 10% or less of the values on the dimension are missing, then we re-code the missing values to the overall mean.
+- If 11% or more of the values on the dimension are missing, then we re-code the missing values to a constant (for instance 0) and include a dummy variable indicating whether the response on the covariate was missing or not.
+
+```{r "check missings",  eval = F}
+descr <- d %>%
+  summarise(`DV: Trait Evaluation` = round(sum(is.na(PT1))/n(),4),
+            `DV: Favorability` = round(sum(is.na(PT2))/n(),4),
+            `DV: Representation` = round(sum(is.na(PT3))/n(),4),
+            `DV: Career Prospects` = round(sum(is.na(PT4))/n(),4),
+            `Immigration (%)` = round(sum(is.na(PreT1))/n(),4),
+            `Position: Immigration` = round(sum(is.na(PreT2))/n(),4),
+            `Position: Defense` = round(sum(is.na(PreT3))/n(),4),
+            `Position: Education` = round(sum(is.na(PreT4))/n(),4),
+            `Attitude: Women in Politics` = round(sum(is.na(PreT5))/n(),4),
+            `Ideology` = round(sum(is.na(PreT6))/n(),4),
+            `Political Efficacy (1)` = round(sum(is.na(PreT7_1))/n(),4),
+            `Political Efficacy (2)` = round(sum(is.na(PreT7_2))/n(),4),
+            `Political Efficacy (3)` = round(sum(is.na(PreT7_3))/n(),4),
+            `Political Efficacy (4)` = round(sum(is.na(PreT7_4))/n(),4),
+            `Political Efficacy (5)` = round(sum(is.na(PreT7_5))/n(),4),
+            `Political Efficacy (6)` = round(sum(is.na(PreT7_6))/n(),4),
+            `Political Efficacy (7)` = round(sum(is.na(PreT7_7))/n(),4),
+            `Position: COVID-19` = round(sum(is.na(PreT8))/n(),4),
+            `Gender` = round(sum(is.na(F1))/n(),4),
+            `Age` = round(sum(is.na(F2))/n(),4),
+            `Region` = round(sum(is.na(F3))/n(),4),
+            `Urbaness` = round(sum(is.na(F4))/n(),4),
+            `Migration Background` = round(sum(is.na(F5))/n(),4),
+            `Party Preference` = round(sum(is.na(F6))/n(),4),
+            `Employment` = round(sum(is.na(F7))/n(),4),
+            `Income` = round(sum(is.na(F8))/n(),4),
+            `Education` = round(sum(is.na(F9))/n(),4)) %>%
+  pivot_longer(cols = `DV: Trait Evaluation`:`Education`,
+              names_to = "Variables", values_to = "% Missing Values") %>%
+  filter(`% Missing Values` > 0) 
+
+kable(descr) %>%
+  kable_styling(full_width = F, position = "center")
+```
+
+I recode the missing values of the variables `Urbaness`, `Migration Background`, `Income`, and `Education` to the mean value of the respective variables.
+
+```{r "add missings",  eval = F}
+d <- d %>%
+  mutate(F4 = replace_na(F4, round(mean(F4, na.rm = T),0)),
+         F5 = replace_na(F5, round(mean(F5, na.rm = T),0)),
+         F8 = replace_na(F8,round(mean(F8, na.rm = T),0)),
+         F9 = replace_na(F9,round(mean(F9, na.rm = T),0)))
+rm(descr, scales)
+```
+
+Next, we automatically extract a `.md` file for the online appendix, as well as a  latex table for the manuscript. 
+We are using jinja2 template [src/analysis/table_descriptives.tex.j2](table.tex.j2) which is called with a json string containing the data.
+To replicate, make sure `env/bin/pip install -U j2cli` is installed via your command line.
+
+
+## Descriptive Results
+```{r "descriptive-results",  eval = F,echo=FALSE, fig.height=15, fig.width=10}
+d %>%
+  select(PT1, PT2, PT3, PT4, issue, name, compromise) %>%
+  mutate(PT1 = PT1 * 2) %>%
+  pivot_longer(cols = PT1:PT4,
+               names_to = "dvs") %>%
+  mutate(dvs = recode(dvs,
+                      `PT1` = "DV: Trait Evaluation",
+                      `PT2` = "DV: Favorability",
+                      `PT3` = "DV: Representation",
+                      `PT4` = "DV: Career Prospects"),
+         compromise = if_else(compromise==1, "Compromise", "No Compromise"),
+         compromise = factor(compromise,
+                             level = c("No Compromise", "Compromise"))) %>%
+  unite("treatment", c("issue", "name"), sep = ": ") %>%
+  group_by(treatment, compromise, dvs) %>%
+  summarise(means = round(mean(value, na.rm=T),1),
+            stdev = sd(value, na.rm=T)) %>%
+  mutate(lower = means - (1.56 * stdev),
+         upper = means + (1.56 * stdev),
+         type = if_else(means <= 5, "below", "above")) %>%
+  ggplot(aes(x = treatment, 
+             y =means, label = means, color=type,
+             ymin = lower, ymax = upper)) +
+  geom_point(stat='identity', size=6)  +
+  scale_color_manual(values = c("above"=fig_cols[3],
+                                "below"=fig_cols[2])) +
+  geom_errorbar(width = 0) +
+  geom_text(color="white", size=2) +
+  facet_grid(dvs~compromise) +
+  labs(y = "0 (negative) - 10 (positive)", 
+       x = "", title = "Bend or Break") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="none",
+        legend.title = element_blank(),
+        axis.text=element_text(size=8)) +
+  geom_hline(yintercept = 5, linetype = "dotted", color = "darkgrey") +
+  coord_flip() 
+```
+
+## Balance Checks
+
+The figure below shows that the data is unbalanced for the variables: `Education`,`Income`, `Employment`, `Urbaness`, `Age`, `Position: COVID`, `Political Efficacy`, `Ideology`,
+`Attitudes: Women in Politics`, `Position: Education`, `Position: Defense`, `Position: Immigration`, and `Immigration (%)`.
+As described in the Pre-Analysis Plan (p.10), I will add these covariates to the analyses as controls.
+
+```{r "balance-checks", eval = F, fig.height=10, fig.width=10}
+source(here("src/analysis/balance-test.R"))
+df
+```
+
+```{r "visualize-unbalanced-vars",  eval = F, fig.height=15, fig.width=20}
+source(here("src/analysis/distribution_unbalanced_vars.R"))
+p1 + p2 + p3 + p4 + plot_layout(ncol=2)
+```
+
+## Ethnic Conception Hypothesis 
+```{r "h1",  eval = F, fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/h1.R"))
+p1
+```
+
+## National Identity Hypothesis
+```{r "h2a", eval = F, fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/h2.R"))
+p2
+```
+
+## Far Right Party ID Hypothesis
+```{r "h2b",  eval = F,fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/h2b.R"))
+p3
+```
+
+
+## Exploration
+
