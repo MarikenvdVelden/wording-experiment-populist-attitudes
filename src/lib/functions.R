@@ -25,3 +25,33 @@ render_j2 = function(template, output, data, auto_unbox=TRUE, na="string") {
   data = jsonlite::toJSON(data, pretty=TRUE, auto_unbox=auto_unbox, na=na)
   system(glue::glue("env/bin/j2 --format json {template} -o {output}"), input=data)
 }
+
+regression <- function(df, a, ethnic){
+  
+  depVarList <- df %>% select(matches("POST_[234]"))
+  indepVarList <- df %>% select(a, ethnic) 
+  allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic,
+                                                 data= indepVarList))
+  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  
+  for(i in 1:length(depVarList)){
+    if(i==1){
+      m <- summary(margins(allModels[[i]], variables = "a", at = list(ethnic = 0:1))) %>%
+        mutate(y = depVarList[i],
+               lower = AME - (1.56 * SE),
+               upper = AME + (1.56 * SE)) %>%
+        select(AME, upper, lower, y, ethnic)
+    }
+    else{
+      tmp <- summary(margins(allModels[[i]], variables = "a", at = list(ethnic = 0:1))) %>%
+        mutate(y = depVarList[i],
+               lower = AME - (1.56 * SE),
+               upper = AME + (1.56 * SE)) %>%
+        select(AME, upper, lower, y, ethnic)
+      m <- m %>%
+        add_case(tmp)
+      
+    }
+  }
+  return(m)
+}

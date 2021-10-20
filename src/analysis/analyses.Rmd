@@ -34,7 +34,7 @@ source(here::here("src/lib/functions.R"))
 
 # Analyses
 
-```{r "data for analyses",  eval = F}
+```{r "data for analyses"}
 load(here("data/intermediate/cleaned_experiment.RData"))
 source(here("src/analysis/data-for-analyses.R"))
 ```
@@ -58,7 +58,7 @@ rm(descr, methodnames, table, fn, table2)
 ```
 
 ## Descriptive Results
-```{r "descriptive-results",  eval = F,echo=FALSE, fig.height=15, fig.width=10}
+```{r "descriptive-results", echo=FALSE, fig.height=15, fig.width=10}
 d %>%
   select(POST_2, POST_3, POST_4, ethnic) %>%
   pivot_longer(cols = POST_2:POST_4,
@@ -100,14 +100,9 @@ d %>%
 The figure below shows that the data is unbalanced for the variables: `Education`,`Income`, `Employment`, `Urbaness`, `Living Place`, `Birth Place`, `Age`, `Political Knowledge`, `Political Interest`, and `Ideology`.
 As described in the Pre-Analysis Plan (p.10), I will add these covariates to the analyses as controls.
 
-```{r "balance-checks", eval = F, fig.height=10, fig.width=10}
+```{r "balance-checks", fig.height=10, fig.width=10}
 source(here("src/analysis/balance-test.R"))
 df
-```
-
-```{r "visualize-unbalanced-vars",  eval = F, fig.height=15, fig.width=20}
-source(here("src/analysis/distribution_unbalanced_vars.R"))
-p1 + p2 + p3 + p4 + plot_layout(ncol=2)
 ```
 
 ## Ethnic Conception Hypothesis 
@@ -117,15 +112,15 @@ p1
 ```
 
 ## National Identity Hypothesis
-```{r "h2a", eval = F, fig.align="center", fig.height=8, fig.width=8}
-source(here("src/analysis/h2.R"))
-p2
+```{r "h2a", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/h2a.R"))
+p2a
 ```
 
 ## Far Right Party ID Hypothesis
-```{r "h2b",  eval = F,fig.align="center", fig.height=8, fig.width=8}
+```{r "h2b", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/h2b.R"))
-p3
+p2b
 ```
 
 
