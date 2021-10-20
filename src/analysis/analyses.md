@@ -3,17 +3,6 @@ Analyses
 
 # Scripts
 
-  - [Required Packages &
-    Reproducibility](#required-packages-&-reproducibility)
-  - [Analyses](#analyses)
-      - [Descriptive Results](#descriptive-results)
-      - [Balance Checks](#balance-checks)
-      - [Gender Hypothesis](#gender-hypothesis)
-      - [Migration Hypothesis](#migration-hypothesis)
-      - [Intersection Hypothesis](#intersection-hypothesis)
-      - [Intersection Hypothesis –
-        Pooled](#intersection-hypothesis--pooled)
-
 # Required Packages & Reproducibility
 
 ``` r
@@ -21,7 +10,7 @@ rm(list=ls())
 source(here::here("src/lib/functions.R"))
 ```
 
-# Analyses
+# Pre-Registered Analyses
 
 ``` r
 load(here("data/intermediate/cleaned_experiment.RData"))
@@ -94,4 +83,10 @@ p2b
 
 <img src="../../report/figures/h2b-1.png" style="display: block; margin: auto;" />
 
-## Exploration
+# Exploration
+
+## Scaling fit
+
+``` r
+source(here("src/analysis/explorative_cfa.R"))
+```

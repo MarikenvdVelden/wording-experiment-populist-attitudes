@@ -17,14 +17,7 @@ library(rmarkdown)
 ```
 
 # Scripts
-- [Required Packages &amp; Reproducibility](#required-packages-&amp;-reproducibility)
-- [Analyses](#analyses)
-  - [Descriptive Results](#descriptive-results)
-  - [Balance Checks](#balance-checks)
-  - [Gender Hypothesis](#gender-hypothesis)
-  - [Migration Hypothesis](#migration-hypothesis)
-  - [Intersection Hypothesis](#intersection-hypothesis)
-  - [Intersection Hypothesis -- Pooled](#intersection-hypothesis--pooled)
+
 
 # Required Packages &amp; Reproducibility
 ```{r "env", message=FALSE, warning=F}
@@ -32,7 +25,7 @@ rm(list=ls())
 source(here::here("src/lib/functions.R"))
 ```
 
-# Analyses
+# Pre-Registered Analyses
 
 ```{r "data for analyses"}
 load(here("data/intermediate/cleaned_experiment.RData"))
@@ -124,5 +117,11 @@ p2b
 ```
 
 
-## Exploration
+# Exploration
 
+## Scaling fit
+
+```{r "scale", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/explorative_cfa.R"))
+
+```

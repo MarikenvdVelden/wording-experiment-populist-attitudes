@@ -13,6 +13,7 @@ library(haven)
 library(sjlabelled)
 library(patchwork)
 library(qualtRics)
+library(lavaan)
 
 fig_cols <- yarrr::piratepal(palette = "basel", 
              trans = .2)
