@@ -1,0 +1,167 @@
+---
+title: "Responsive or Responsible? The Reputational Cost of Political Compromises"
+date: "`r format(Sys.time(), '%d %B, %Y - %X (%Z)')`"
+author:
+  - Maurits Meijers, Radboud University Nijmegen
+  - Mariken A.C.G. van der Velden, Vrije Universiteit Amsterdam
+output: 
+  pdf_document:
+   number_sections: false
+   includes:
+      in_header: header.tex
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+urlcolor: blue
+linkcolor: blue
+abstract: "_ADD Abstract_"
+header-includes:
+   - \usepackage{floatrow}
+   - \floatsetup[figure]{capposition=top}
+   - \floatsetup[table]{capposition=top}
+   - \usepackage{booktabs}
+   - \usepackage{longtable}
+   - \usepackage{array}
+   - \usepackage{multirow}
+   - \usepackage{wrapfig}
+   - \usepackage{float}
+   - \usepackage{colortbl}
+   - \usepackage{pdflscape}
+   - \usepackage{tabu}
+   - \usepackage{threeparttable}
+   - \usepackage{threeparttablex}
+   - \usepackage[normalem]{ulem}
+   - \usepackage{makecell}
+   - \usepackage{xcolor}
+---
+
+```{r setup, include=FALSE}
+## include this at top of your RMarkdown file for pretty output
+## make sure to have the printr package installed: install.packages('printr')
+library(knitr)
+opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+options(kableExtra.latex.load_packages = FALSE)
+here::i_am("report/draft.Rmd")
+source(here::here("src/lib/functions.R"))
+load(here("data/intermediate/cleaned_experiment.RData"))
+source(here("src/analysis/data-for-analyses.R"))
+```
+
+# Introduction
+
+# Ethnic or Civic Conception of _the People_
+
+**Ethnic Conception hypothesis** (_H1_):  All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to 'the people' is lower for an ethnic conception of the 'the people' (i.e., das Volk) than for a civic conception of 'the people' (i.e., Bürger).e.
+
+**Exclusive National Identity hypothesis** (_H2a_):  All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to 'the people' is higher for an ethnic conception of 'the people' (i.e., das Volk) than for a civic conception of 'the people' (i.e., Bürger) when the respondent adheres to an exclusive national identity.
+
+**Far Right Party ID hypothesis** (_H2b_): All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to 'the people' is higher for an ethnic conception of 'the people' (i.e., das Volk) than for a civic conception of 'the people' (i.e., Bürger) when the respondent votes for a far right party. 
+
+
+# Data, Measurement & Method
+
+## Data
+The survey experiment is conducted in Germany between the 13th of October 2021 and the 11th of November 2021.
+The sample, recruited through [Respondi](https://www.respondi.com/EN/), consists of 8,000 participants (based on the power analysis presented in Figure \ref{fig:power}) of 18 years and older.
+Respondi works with opt-in respondents, so we have implemented quota on age, gender, and education.
+Moreover, we measure some more demographic background variables (see the [Measurement Section](#control-variables)).
+Balance checks are conducted to demonstrate whether certain categories are over represented in a certain experimental group (see [the Methods Section](#method), Figure \ref{fig:balance}).
+The study has been approved by the [Research Ethics Review Committee](https://fsw.vu.nl/nl/onderzoek/research-ethics-review/index.aspx) of the \textit{Vrije Universiteit Amsterdam} (see the approval [here](../docs/RERC_VU_wording-experiment.pdf)).
+To ensure good quality of our data, two attention checks are included.
+Each respondent failing the attention check will be excluded and replaced with another 'good' response.
+
+## Measurement
+
+**_Dependent Variables_**
+Measuring populist attitudes, three of the six items mention _the people_.
+We rely on those three items in the populism scale. See Table \ref{tab:dv} in the [Appendix](# Appendix A. Wording of the questionaire) for the exact phrasing of the question.
+Each item is used on a 5-point likert scale: from `very much disagree` (value of `0`) till `very much agree` (value of `5`).
+The average for each of the items lies between 3 and 4 (with a standard deviation around 1), meaning that people are neutral till positive about these statements. 
+
+```{r descriptive-table, echo = FALSE, eval = FALSE}
+descr <- d %>%
+  select(matches("POST_[234]")) %>%
+  pivot_longer(cols = everything()) %>%
+  mutate(Variable = recode(name,
+                       `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                       `POST_3` = "DV: MPs should follow \n the will of the people",
+                       `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people")) %>%
+  group_by(Variable) %>%
+  summarise(`Mean Value` = round(mean(value, na.rm = T),2),
+            `St.dev` = round(sd(value, na.rm = T), 2),
+            `Min. Value` = min(value),
+            `Max. Value` = max(value))
+
+kbl(descr, booktabs =T, caption = "\\label{tab:descr-dv}Descriptive Information of Dependent Variables",
+    digits = 2) %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center")  %>%
+   column_spec(1, width = "5.5cm") %>%
+   column_spec(2, width = "2cm") %>%
+   column_spec(3, width = "1.5cm") %>%
+   column_spec(4, width = "2cm") %>%
+   column_spec(5, width = "2cm")
+rm(descr)  
+```
+
+**_Experimental Condition_**
+Given the historical context of Germany, we randomize whether _the people_ is translated into German using either the civic conception (i.e. _Bürger_) or the ethnic conception (i.e. _Volk_).
+`50.2\%` of the respondents (3347 in total) got the civic conception treatment, and `49.8\%` of the respondents (3317 in total) was randomized into the ethnics conception treatment.
+
+**_Covariates_**
+Because Respondi works with an opt-in sample, we have background information on age, gender, educational level, geographical region, vote recall, emplyment, and income.
+In our [online compendium](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes), we demonstrate all the descriptive information.
+As detailed in our pre-analysis plan, we only include variables as covariates that are unbalanced. 
+As Figure \ref{balance} shows, only the income covariate is unbalanced accross the experimental groups. 
+We therefore add this covariate to the regression analyses (H2a and H2b).
+
+```{r balance, fig.align = 'center', out.width = "95%", fig.cap = "\\label{fig:balance}Balance Checks"}
+include_graphics(here("report/figures", "balance-checks-1.png"))
+```
+
+
+## Method
+To test the _Ethnic Conception hypothesis_ (H1), we conducted a difference in means for the group who received the ethnic and the civic question wording, for all populist items containing a reference to _the people_.
+To test whether H1 is conditional upon having an exclusive national identity (_H2a_) and/or voting for a far right party (_H2b_) we use linear multivariate regressions, with an interaction between the treatment conditions and the variable of interest in the heterogenous treatment (i.e. respectively having a exclusive national identity and voting for a far right party).
+
+# Framing Effects of Ethnic or Civic Conception of _the People_
+ 
+## Pre-Registered Hypotheses
+
+```{r results-h1, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h1h2}Results: H1"}
+include_graphics(here("report/figures", "h1-1.png"))
+```
+
+```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Results: H2"}
+include_graphics(here("report/figures", "h2-1.png"))
+```
+
+
+## Explorations
+
+# Discussion
+
+
+\newpage
+# References
+
+\newpage
+
+# Appendix A. Wording of the questionaire
+
+
+```{r dv, topcaption=TRUE}
+d <- tibble(Variable = c("Item 2 (DV1)",
+                         "Item 3 (DV2)",
+                         "Item 4 (DV3)"), 
+            `Wording ENG` = c("The people, not politicians, should make the most important political decisions","he politicians in the German Bundestag need to follow the will of the people", "The political differences between elites and the people are greater than the differences among citizens"),
+            `Wording DE` = c("[Die Bürger/Das Volk], und nicht die Politiker, sollte(n) die wichtigsten politischen Entscheidungen treffen", "Die Abgeordneten des Deutschen Bundestags müssen dem Willen [der Bürger/des Volkes] Folge leisten", "Die politischen Unterschiede zwischen den Eliten und [den Bürgern/dem Volk] sind größer als die Unterschiede (zwischen Bürgern)"))
+
+kbl(d, booktabs =T, caption = "\\label{tab:dv}Survey Questions - DV") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "7cm")
+
+```

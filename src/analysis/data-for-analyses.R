@@ -60,9 +60,15 @@ d <- d %>%
         PT7 =  na_if(PT7, 7),
         ethnic = if_else(populism=="Volk", 1, 0),
         POST_1 = as_numeric(POST_1),
+        POST_1 = POST_1 - 1,
         POST_2 = as_numeric(POST_2),
+        POST_2 = POST_2 - 1,
         POST_3 = as_numeric(POST_3),
+        POST_3 = POST_3 - 1,
         POST_4 = as_numeric(POST_4),
+        POST_4 = POST_4 - 1,
         POST_5 = as_numeric(POST_5),
-        POST_6 = as_numeric(POST_6)) %>%
+        POST_5 = POST_5 - 1,
+        POST_6 = as_numeric(POST_6),
+        POST_6 = POST_6 - 1,) %>%
   select(id, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_6)
