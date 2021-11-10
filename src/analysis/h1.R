@@ -18,15 +18,19 @@ p1 <- d %>%
                        `POST_3` = "DV: MPs should follow \n the will of the people",
                        `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people")) %>%
   select(name, p_value, t_value, means_difference, lower, higher) %>%
-  ggplot(aes(x = means_difference, y = name,
-         xmin = lower, xmax = higher)) +
-  geom_point(color = fig_cols[1]) + 
-  geom_errorbar(width = 0, color = fig_cols[1]) +
+  ggplot(aes(x = means_difference, 
+             y = name,
+             xmin = lower, 
+             xmax = higher,
+             color = name)) +
+  geom_point() + 
+  geom_errorbar(width = 0) +
   theme_bw() +
   labs(y="", x= "Means Differences Test \n t statistic",
        title = "Ethnic Conception hypothesis") +
   theme(plot.title = element_text(hjust = 0.5),
         legend.position="none") +
+  scale_color_manual(values = fig_cols) +
   geom_vline(xintercept = 0.0, linetype = "dashed", size = .5, color = "gray80")
   
   
