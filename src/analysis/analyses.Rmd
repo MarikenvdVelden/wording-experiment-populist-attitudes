@@ -102,6 +102,8 @@ df
 ```{r "h1", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/h1.R"))
 p1
+# negative values: Ethnic conception > Civic conception 
+# positive values: Ethnic conception < Civic conception 
 ```
 
 ## National Identity Hypothesis

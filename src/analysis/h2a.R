@@ -4,9 +4,9 @@ h2a <- regression2(df, a, ethnic)
   
 p2a <- h2a %>%
   mutate(y = recode(y,
-                    `POST_2` = "DV: Item 2",
-                    `POST_3` = "DV: Item 3",
-                    `POST_4` = "DV: Item 4")) %>%
+                    `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow \n the will of the people",
+                    `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people")) %>%
   ggplot(aes(x = a, 
              y = AME,
              color = y,

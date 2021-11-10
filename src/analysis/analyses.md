@@ -65,6 +65,11 @@ p1
 
 <img src="../../report/figures/h1-1.png" style="display: block; margin: auto;" />
 
+``` r
+# negative values: Ethnic conception > Civic conception 
+# positive values: Ethnic conception < Civic conception 
+```
+
 ## National Identity Hypothesis
 
 ``` r

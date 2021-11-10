@@ -14,15 +14,17 @@ p1 <- d %>%
          lower = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[1],
          higher = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[2],
          name = recode(name,
-                       `POST_2` = "DV: Item 2",
-                       `POST_3` = "DV: Item 3",
-                       `POST_4` = "DV: Item 4")) %>%
+                       `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                       `POST_3` = "DV: MPs should follow \n the will of the people",
+                       `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people")) %>%
   select(name, p_value, t_value, means_difference, lower, higher) %>%
   ggplot(aes(x = means_difference, y = name,
          xmin = lower, xmax = higher)) +
-  geom_point() + geom_errorbar(width = 0) +
+  geom_point(color = fig_cols[1]) + 
+  geom_errorbar(width = 0, color = fig_cols[1]) +
   theme_bw() +
-  labs(y="", x= "Means Differences Test") +
+  labs(y="", x= "Means Differences Test \n t statistic",
+       title = "Ethnic Conception hypothesis") +
   theme(plot.title = element_text(hjust = 0.5),
         legend.position="none") +
   geom_vline(xintercept = 0.0, linetype = "dashed", size = .5, color = "gray80")
