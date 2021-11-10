@@ -99,10 +99,10 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.30",
+      "Version": "1.36",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "eed7ee0d02eee88d53881cdc92457c62"
+      "Hash": "46344b93f8854714cdf476433a59ed10"
     },
     "labeling": {
       "Package": "labeling",
@@ -125,20 +125,6 @@
       "Repository": "CRAN",
       "Hash": "1bb58822a20301cee84a41678e25d9b7"
     },
-    "markdown": {
-      "Package": "markdown",
-      "Version": "1.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "61e4a10781dd00d7d81dd06ca9b94e95"
-    },
-    "mime": {
-      "Package": "mime",
-      "Version": "0.9",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "e87a35ec73b157552814869f45a63aa3"
-    },
     "munsell": {
       "Package": "munsell",
       "Version": "0.5.0",
@@ -148,10 +134,10 @@
     },
     "printr": {
       "Package": "printr",
-      "Version": "0.1",
+      "Version": "0.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a4b103a5f81c11851258533104f3f08a"
+      "Hash": "945cdaf4788a4132c9eb625d62f958cc"
     },
     "renv": {
       "Package": "renv",
@@ -218,10 +204,10 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.18",
+      "Version": "0.28",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d1c0b777b432e4b4c039c8aaecc54e0f"
+      "Hash": "f7f3a61ab62cd046d307577a8ae12999"
     },
     "yaml": {
       "Package": "yaml",

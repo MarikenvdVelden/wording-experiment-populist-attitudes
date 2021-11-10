@@ -56,3 +56,33 @@ regression <- function(df, a, ethnic){
   }
   return(m)
 }
+
+regression2 <- function(df, a, ethnic){
+  
+  depVarList <- df %>% select(matches("POST_[234]"))
+  indepVarList <- df %>% select(a, ethnic) 
+  allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic,
+                                                 data= indepVarList))
+  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  
+  for(i in 1:length(depVarList)){
+    if(i==1){
+      m <- summary(margins(allModels[[i]], variables = "ethnic", at = list(a = 1:5))) %>%
+        mutate(y = depVarList[i],
+               lower = AME - (1.56 * SE),
+               upper = AME + (1.56 * SE)) %>%
+        select(AME, upper, lower, y, a)
+    }
+    else{
+      tmp <- summary(margins(allModels[[i]], variables = "ethnic", at = list(a = 1:5))) %>%
+        mutate(y = depVarList[i],
+               lower = AME - (1.56 * SE),
+               upper = AME + (1.56 * SE)) %>%
+        select(AME, upper, lower, y, a)
+      m <- m %>%
+        add_case(tmp)
+      
+    }
+  }
+  return(m)
+}

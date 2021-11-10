@@ -26,7 +26,8 @@ treat <- d %>%
          tic != "359766d9041e7d8c345c0c2838781095", 
          tic != "daabba41247f457b637205e066bbe39b",
          tic != "f6b4160f5ab5dee05b7e925d50e5414") %>%
-  select(id = tic, populism)
+  select(id = tic, populism) %>%
+  drop_na()
 
 post <- d %>%
   filter(Consent == 4, AC2_1 ==1, AC2_4 == 1,
@@ -44,5 +45,7 @@ post <- d %>%
 
 d <- left_join(dem, pret, by = "id")
 d <- left_join(d, treat, by = "id")
-d <- left_join(d, post, by = "id") 
+d <- left_join(d, post, by = "id") %>%
+  drop_na()
+
 rm(dem, pret, treat, post)

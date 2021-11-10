@@ -10,6 +10,7 @@ p2b <- h2b %>%
          ethnic = recode(ethnic,
                          `1` = "Ethnic Conception",
                          `0` = "Civic Conception")) %>%
+  filter(ethnic == "Ethnic Conception") %>%
   ggplot(aes(x = y, 
              y = AME,
              color = y,

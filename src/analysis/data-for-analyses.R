@@ -31,7 +31,8 @@ d <- d %>%
                     `28` = "Saxony",
                     `29` = "Saxony-Anholt",
                     `30` = "Schleswig-Holstein",
-                    `31` = "Thuringia"),
+                    `31` = "Thuringia",
+                    .default = "NA"),
         D10 = recode(D10,
                     `1` = "Baden-Würtemberg",
                     `17` = "Bavaria",
@@ -51,6 +52,7 @@ d <- d %>%
                     `31` = "Thuringia",
                     `32` = "Not born in Germany", .default = "NA"),
         HT4 = round((HT4_1 + HT4_2 + HT4_3 + HT4_4)/4, 0),
+        HT4 = 6 - HT4,
         PT4 = if_else(PT4 == 3, 1, 0),
         PT5 = if_else(PT5 == 5, 1, 0),
         PT6 = if_else(PT6==1, 1, 0),
@@ -63,5 +65,4 @@ d <- d %>%
         POST_4 = as_numeric(POST_4),
         POST_5 = as_numeric(POST_5),
         POST_6 = as_numeric(POST_6)) %>%
-  select(id, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_6) %>%
-  drop_na()
+  select(id, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_6)

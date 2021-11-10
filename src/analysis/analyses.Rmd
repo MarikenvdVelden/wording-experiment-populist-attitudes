@@ -116,6 +116,10 @@ source(here("src/analysis/h2b.R"))
 p2b
 ```
 
+```{r "h2", fig.align="center", fig.height=6, fig.width=10, echo = FALSE, fig.show = "hide"}
+p2a + p2b + 
+  plot_layout(widths = c(2, 1))
+```
 
 # Exploration
 
