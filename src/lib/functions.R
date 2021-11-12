@@ -30,8 +30,8 @@ render_j2 = function(template, output, data, auto_unbox=TRUE, na="string") {
 regression <- function(df, a, ethnic){
   
   depVarList <- df %>% select(matches("POST_[234]"))
-  indepVarList <- df %>% select(a, ethnic) 
-  allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic,
+  indepVarList <- df %>% select(a, ethnic, D8) 
+  allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic + D8,
                                                  data= indepVarList))
   depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
   
@@ -60,8 +60,8 @@ regression <- function(df, a, ethnic){
 regression2 <- function(df, a, ethnic){
   
   depVarList <- df %>% select(matches("POST_[234]"))
-  indepVarList <- df %>% select(a, ethnic) 
-  allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic,
+  indepVarList <- df %>% select(a, ethnic, D8) 
+  allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic + D8,
                                                  data= indepVarList))
   depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
   

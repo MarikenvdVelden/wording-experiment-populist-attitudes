@@ -99,7 +99,7 @@ df
 ```
 
 ## Ethnic Conception Hypothesis 
-```{r "h1", fig.align="center", fig.height=8, fig.width=8}
+```{r "h1", fig.align="center", fig.height=5, fig.width=6}
 source(here("src/analysis/h1.R"))
 p1
 # negative values: Ethnic conception > Civic conception 
