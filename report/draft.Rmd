@@ -40,12 +40,12 @@ biblio-style: apsr
 title: "The People as 'Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes"
 thanks: "Replication files are available on the author's Github account (http://github.com/MariikenvdVelden/wording-experiment-populist-attitudes). **Current version**: `r format(Sys.time(), '%B %d, %Y')`; **Corresponding author**: "
 author:
-- name: Mariken A.C.G. van der Velden
-  affiliation: Vrije Universiteit Amsterdam
 - name: Maurits Meijers
   affiliation: Radboud University Nijmegen
+- name: Mariken A.C.G. van der Velden
+  affiliation: Vrije Universiteit Amsterdam
 anonymous: FALSE
-abstract: "Populists believe in the sovereignty of the people. Yet, the people can be construed in ethnic terms or in civic terms. Using a novel wording experiment in Germany (N=8000), we examine ethnic or civic conceptions of `the people' affect respondents' adherence agreement to key populist attitude items. We find that there are statistically significant differences between items framed in an ethnic and a civic manner -- and that this differs per item. This relationship is significantly moderated by respondents' degree of exclusive national identity and voting behaviour for the radical right. Our findings suggest that the way in which `the people' is conceptualized has important implications for the measurement of populist attitudes."
+abstract: "Populists believe in the sovereignty of the people. Yet, the people can be construed in ethnic terms or in civic terms. Using a novel wording experiment in Germany (N=8000), we examine ethnic or civic conceptions of `the people' affect respondents' adherence agreement to key populist attitude items. We find that there are statistically significant differences between items framed in an ethnic and a civic manner -- and that this differs per item. This relationship is significantly moderated by respondents' degree of exclusive national identity and voting behaviour for the radical right. Our findings suggest that the way in which 'the people' is conceptualized has important implications for the measurement of populist attitudes."
 keywords: "Experiment, Populist Attitudes"
 geometry: margin=1in
 mainfont: cochineal
