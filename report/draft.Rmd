@@ -45,7 +45,7 @@ author:
 - name: Maurits Meijers
   affiliation: Radboud University Nijmegen
 anonymous: FALSE
-abstract: "ADD ABSTRACT"
+abstract: "Populists believe in the sovereignty of the people. Yet, the people can be construed in ethnic terms or in civic terms. Using a novel wording experiment in Germany (N=8000), we examine ethnic or civic conceptions of `the people' affect respondents' adherence agreement to key populist attitude items. We find that there are statistically significant differences between items framed in an ethnic and a civic manner -- and that this differs per item. This relationship is significantly moderated by respondents' degree of exclusive national identity and voting behaviour for the radical right. Our findings suggest that the way in which `the people' is conceptualized has important implications for the measurement of populist attitudes."
 keywords: "Experiment, Populist Attitudes"
 geometry: margin=1in
 mainfont: cochineal
@@ -80,6 +80,12 @@ options(kableExtra.latex.load_packages = FALSE)
 # Introduction
 
 # Ethnic or Civic Conception of _the People_
+
+Verschil tussen civic and ethnic
+- kloof elite-burgers hogere score kloof elite-volk: waarom, volk primes homogeneity of both elite and people
+- daar waar ethnisch hoger scoren: volk meet populism beter dan burger
+
+
 
 <!-- hypothesis 1 -->
 > **H1** (**Ethnic Conception**):  _All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to the people is lower for an ethnic conception of the the people (i.e., das Volk) than for a civic conception of the people (i.e., Bürger)_.

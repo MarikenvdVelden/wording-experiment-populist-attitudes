@@ -70,5 +70,7 @@ d <- d %>%
         POST_5 = as_numeric(POST_5),
         POST_5 = POST_5 - 1,
         POST_6 = as_numeric(POST_6),
-        POST_6 = POST_6 - 1,) %>%
-  select(id, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_6)
+        POST_6 = POST_6 - 1,
+        POST_8 = as_numeric(POST_8),
+        POST_8 = POST_8 - 1,) %>%
+  select(id, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_8)

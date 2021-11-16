@@ -18,7 +18,7 @@ p2b <- h2b %>%
              ymax = upper)) +
   geom_point(position = position_dodge(.5)) + 
   geom_errorbar(position = position_dodge(.5), width = 0) +
-  theme_minimal() +
+  theme_ipsum() +
   labs(x = "", y = "Average Marginal Effects of Voting for a Far Right Party",
        title = "Far Right Party ID Hypothesis") +
   facet_grid(.~ethnic) +

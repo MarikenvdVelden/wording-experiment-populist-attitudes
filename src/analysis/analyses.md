@@ -19,7 +19,7 @@ source(here("src/analysis/data-for-analyses.R"))
 
 Next, we automatically extract a `.md` file for the online appendix, as
 well as a latex table for the manuscript. We are using jinja2 template
-[src/analysis/table\_descriptives.tex.j2](table.tex.j2) which is called
+[src/analysis/table_descriptives.tex.j2](table.tex.j2) which is called
 with a json string containing the data. To replicate, make sure
 `env/bin/pip install -U j2cli` is installed via your command line.
 
@@ -44,8 +44,8 @@ rm(descr, methodnames, table, fn, table2)
 ## Balance Checks
 
 The figure below shows that the data is unbalanced for the variables:
-`Education`,`Income`, `Employment`, `Urbaness`, `Living Place`, `Birth
-Place`, `Age`, `Political Knowledge`, `Political Interest`, and
+`Education`,`Income`, `Employment`, `Urbaness`, `Living Place`,
+`Birth Place`, `Age`, `Political Knowledge`, `Political Interest`, and
 `Ideology`. As described in the Pre-Analysis Plan (p.10), I will add
 these covariates to the analyses as controls.
 
@@ -94,13 +94,88 @@ p2b
 
 ``` r
 source(here("src/analysis/explorative_analysis.R"))
-pe1 / (pe3 + pe4) #add pe2 (age)
+pe1 
 ```
 
 <img src="../../report/figures/explorative-1.png" style="display: block; margin: auto;" />
+
+``` r
+pe3/ (pe4 + pe5) #add pe2 (age)
+```
+
+<img src="../../report/figures/explorative-2.png" style="display: block; margin: auto;" />
 
 ## Scaling fit
 
 ``` r
 source(here("src/analysis/explorative_cfa.R"))
+
+kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm") 
 ```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Confirmatory Factor Analysis
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variables
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of PCA Constructed Scale for Civic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of PCA Constructed Scale for Ethnic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of Civic Conception - Average of Ethnic Conception
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+p-Value for Differences in Means
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.14
+</td>
+</tr>
+</tbody>
+</table>
+
+## IRT Analyse
+
+``` r
+source(here("src/analysis/IRT.R"))
+```
+
+``` r
+irt1 + irt2 + 
+  plot_layout(widths = c(1, 2))
+```
+
+<img src="../../report/figures/irt-1.png" style="display: block; margin: auto;" />

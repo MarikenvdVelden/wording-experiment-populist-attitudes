@@ -1,6 +1,6 @@
 descr <- d %>%
-  select(D7:D8, pol_know:POST_4, -POST_1) %>%
-  pivot_longer(cols = D7:POST_4,
+  select(D7:D8, pol_know:POST_4, POST_8, -POST_1) %>%
+  pivot_longer(cols = D7:POST_8,
                names_to = "Variables") %>%
   group_by(Variables) %>%
   summarise(`Mean Value` = mean(value, na.rm = T),
@@ -14,14 +14,18 @@ descr <- d %>%
                             `pol_know`  = "Political Knowledge",
                             `PT7`  = "Political Interest",
                             `PT8`  = "Ideology",
-                            `POST_2`  = "DV: Item 2",
-                            `POST_3`  = "DV: Item 3",
-                            `POST_4`  = "DV: Item 4",
+                            `POST_2`  = "DV: People, not politicians, \n should make the most \n important political decisions",
+                            `POST_3` = "DV: MPs should follow \n the will of the people",
+                            `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people",
+                            `POST_8` = "Attitude towards Pluralism",
                             `HT4`  = "National Identity",
                             `Afd_vote` = "Far Right Party ID",
                             `ethnic` = "Treatment: Ethnic Conception"),
          Variables = factor(Variables,
-                            levels = c("DV: Item 2","DV: Item 3", "DV: Item 4",
+                            levels = c("DV: People, not politicians, \n should make the most \n important political decisions",
+                                       "DV: MPs should follow \n the will of the people",
+                                       "DV: Differences between elites and \n the people are bigger than \n differences between the people",
+                                       "Attitude towards Pluralism",
                                        "Treatment: Ethnic Conception",
                                        "National Identity",
                                        "Far Right Party ID",

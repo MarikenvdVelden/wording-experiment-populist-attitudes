@@ -13,6 +13,7 @@ library(knitr)
 opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
                       fig.align = "center",
                       fig.path=('../../report/figures/'))
+options(scipen = 1, digits = 2)
 library(rmarkdown)
 ```
 
@@ -57,9 +58,9 @@ d %>%
   pivot_longer(cols = POST_2:POST_4,
                names_to = "dvs") %>%
   mutate(dvs = recode(dvs,
-                      `POST_2` = "DV: Item 2",
-                      `POST_3` = "DV: Item 3",
-                      `POST_4` = "DV: Item 4"),
+                      `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                       `POST_3` = "DV: MPs should follow \n the will of the people",
+                       `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people"),
          ethnic = if_else(ethnic==0, "Civic Conception", "Ethnic Conception")) %>%
   group_by(ethnic, dvs) %>%
   summarise(means = round(mean(value, na.rm=T),1),
@@ -127,15 +128,31 @@ p2a + p2c +
 
 ## Alternative specifications + Interactions
 
-```{r "explorative", fig.align="center", fig.height=10, fig.width=15}
+```{r "explorative", fig.align="center", fig.height=15, fig.width=15}
 source(here("src/analysis/explorative_analysis.R"))
-pe1 / (pe3 + pe4) #add pe2 (age)
-```
+pe1 
 
+pe3/ (pe4 + pe5) #add pe2 (age)
+```
 
 ## Scaling fit
 
 ```{r "scale", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/explorative_cfa.R"))
 
+kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm") 
+```
+
+## IRT Analyse
+```{r "irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+source(here("src/analysis/IRT.R"))
+
+```
+```{r "irt", fig.align="center", fig.height=8, fig.width=12}
+irt1 + irt2 + 
+  plot_layout(widths = c(1, 2))
 ```

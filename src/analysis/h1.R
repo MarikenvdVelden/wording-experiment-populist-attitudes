@@ -25,7 +25,7 @@ p1 <- d %>%
              color = name)) +
   geom_point() + 
   geom_errorbar(width = 0) +
-  theme_bw() +
+  theme_ipsum() +
   labs(y="", x= "Means Differences Test \n t statistic",
        title = "Ethnic Conception hypothesis") +
   theme(plot.title = element_text(hjust = 0.5),
