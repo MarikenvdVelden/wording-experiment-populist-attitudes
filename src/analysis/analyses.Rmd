@@ -64,8 +64,8 @@ d %>%
   group_by(ethnic, dvs) %>%
   summarise(means = round(mean(value, na.rm=T),1),
             stdev = sd(value, na.rm=T)) %>%
-  mutate(lower = means - (1.56 * stdev),
-         upper = means + (1.56 * stdev),
+  mutate(lower = means - (1.96 * stdev),
+         upper = means + (1.96 * stdev),
          type = if_else(means <= 5, "below", "above")) %>%
   ggplot(aes(x = ethnic, 
              y =means, label = means,
@@ -124,6 +124,14 @@ p2a + p2c +
 ```
 
 # Exploration
+
+## Alternative specifications + Interactions
+
+```{r "explorative", fig.align="center", fig.height=10, fig.width=15}
+source(here("src/analysis/explorative_analysis.R"))
+pe1 / (pe3 + pe4) #add pe2 (age)
+```
+
 
 ## Scaling fit
 

@@ -47,11 +47,13 @@ author:
 anonymous: FALSE
 abstract: "ADD ABSTRACT"
 keywords: "Experiment, Populist Attitudes"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 mainfont: cochineal
 #sansfont: Linux Biolinum O
 fontsize: 11pt
+params:
+  anonymous: ""
+  doublespacing: ""
 twocol: FALSE
 appendix: TRUE
 # doublespacing: TRUE
@@ -190,6 +192,12 @@ For the items a) MPs should follow the will of the people and b) Differences bet
 
 ```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Results: H2"}
 knitr::include_graphics(here::here("report/figures", "h2-1.png"))
+```
+
+[EXPLORATIVE: regressions]
+
+```{r results-explorative, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-explorative}Results: Explorative"}
+knitr::include_graphics(here::here("report/figures", "explorative-1.png"))
 ```
 
 [EXPLORATIVE: PCA]

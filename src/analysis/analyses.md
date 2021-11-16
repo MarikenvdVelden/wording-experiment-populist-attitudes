@@ -90,6 +90,15 @@ p2b
 
 # Exploration
 
+## Alternative specifications + Interactions
+
+``` r
+source(here("src/analysis/explorative_analysis.R"))
+pe1 / (pe3 + pe4) #add pe2 (age)
+```
+
+<img src="../../report/figures/explorative-1.png" style="display: block; margin: auto;" />
+
 ## Scaling fit
 
 ``` r
