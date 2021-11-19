@@ -28,11 +28,11 @@ render_j2 = function(template, output, data, auto_unbox=TRUE, na="string") {
 
 regression <- function(df, a, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[234]"))
+  depVarList <- df %>% select(matches("POST_[23]"))
   indepVarList <- df %>% select(a, ethnic, D8) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic + D8,
                                                  data= indepVarList))
-  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  depVarList <- df %>% select(matches("POST_[23]")) %>% colnames()
   
   for(i in 1:length(depVarList)){
     if(i==1){
@@ -58,11 +58,11 @@ regression <- function(df, a, ethnic){
 
 regression2 <- function(df, a, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[234]"))
+  depVarList <- df %>% select(matches("POST_[23]"))
   indepVarList <- df %>% select(a, ethnic, D8) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic + D8,
                                                  data= indepVarList))
-  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  depVarList <- df %>% select(matches("POST_[23]")) %>% colnames()
   
   for(i in 1:length(depVarList)){
     if(i==1){
@@ -88,11 +88,11 @@ regression2 <- function(df, a, ethnic){
 
 regression3 <- function(df, a, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[234]"))
+  depVarList <- df %>% select(matches("POST_[23]"))
   indepVarList <- df %>% select(a, ethnic, D8) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic + D8,
                                                  data= indepVarList))
-  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  depVarList <- df %>% select(matches("POST_[23]")) %>% colnames()
   
   for(i in 1:length(depVarList)){
     if(i==1){
@@ -118,13 +118,13 @@ regression3 <- function(df, a, ethnic){
 
 regression4 <- function(df, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[234]"))
+  depVarList <- df %>% select(matches("POST_[24]"))
   indepVarList <- df %>% select(ethnic, D8, matches("POST_[156]")) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ ethnic + 
                                                    POST_1 + POST_5 + 
                                                    POST_6 + D8,
                                                  data= indepVarList))
-  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  depVarList <- df %>% select(matches("POST_[23]")) %>% colnames()
   
   for(i in 1:length(depVarList)){
     if(i==1){
@@ -152,11 +152,11 @@ regression4 <- function(df, ethnic){
 
 regression5 <- function(df, a, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[234]"))
+  depVarList <- df %>% select(matches("POST_[23]"))
   indepVarList <- df %>% select(a, ethnic, D8) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ factor(a) * ethnic + D8,
                                                  data= indepVarList))
-  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  depVarList <- df %>% select(matches("POST_[23]")) %>% colnames()
   
   for(i in 1:length(depVarList)){
     if(i==1){
@@ -200,11 +200,11 @@ regression5 <- function(df, a, ethnic){
 
 regression6 <- function(df, a, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[234]"))
+  depVarList <- df %>% select(matches("POST_[23]"))
   indepVarList <- df %>% select(a, ethnic, D8) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ a * ethnic + D8,
                                                  data= indepVarList))
-  depVarList <- df %>% select(matches("POST_[234]")) %>% colnames()
+  depVarList <- df %>% select(matches("POST_[23]")) %>% colnames()
   
   for(i in 1:length(depVarList)){
     if(i==1){

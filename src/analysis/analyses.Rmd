@@ -140,11 +140,21 @@ pe3/ (pe4 + pe5) #add pe2 (age)
 ```{r "scale", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/explorative_cfa.R"))
 
+kbl(m_cfa, booktabs =T, caption = "Confirmatory Factor Analysis - Fit Statistics") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "4cm")  %>%
+  column_spec(2, width = "4cm") %>%
+  column_spec(2, width = "4cm") 
+
 kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "10cm") %>%
   column_spec(2, width = "3cm") 
+
+cfa2
 ```
 
 ## IRT Analyse

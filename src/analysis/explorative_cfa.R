@@ -1,4 +1,4 @@
-pa_model <- 'pa_scale = ~ POST_1 + POST_2 + POST_3 + POST_4 + POST_5 + POST_6
+pa_model <- 'pa_scale = ~ POST_1 + POST_2 + POST_3 + POST_5 + POST_6
   POST_3 ~~ POST_2
   POST_2 ~~ POST_6
 '
@@ -6,13 +6,33 @@ pa_model <- 'pa_scale = ~ POST_1 + POST_2 + POST_3 + POST_4 + POST_5 + POST_6
 de <- d %>%
   filter(ethnic == 1)
 cfa_ethnic <- cfa(model = pa_model, data = de)
-#summary(cfa_ethnic, fit.measures = TRUE, standardized = TRUE)
+#summary(cfa_ethnic, fit.measures = TRUE, standardized = TRUE)[[1]]
 
 dc <- d %>%
   filter(ethnic == 0)
 cfa_civic <- cfa(model = pa_model, data = dc)
 #summary(cfa_civic, fit.measures = TRUE, standardized = TRUE)
 
+pa_model <- 'pa_scale = ~ POST_1 + POST_2 + POST_3 + POST_4 + POST_5 + POST_6
+  POST_3 ~~ POST_2
+  POST_2 ~~ POST_6
+'
+dc <- d %>%
+  filter(ethnic == 0)
+cfa_civic6 <- cfa(model = pa_model, data = dc)
+
+m_cfa <- tibble(
+  `Fit Statistics` = c("CFI", "AIC", "BIC", "RMSEA", "p-value RMSEA", "SRMR"),
+  `Ethnic Conception` = c(fitMeasures(cfa_ethnic)[9], AIC(cfa_ethnic), BIC(cfa_ethnic),
+                          fitMeasures(cfa_ethnic)[23], fitMeasures(cfa_ethnic)[26],
+                          fitMeasures(cfa_ethnic)[29]),
+  `Civic Conception` = c(fitMeasures(cfa_civic)[9], AIC(cfa_civic), BIC(cfa_civic),
+                         fitMeasures(cfa_civic)[23], fitMeasures(cfa_civic)[26],
+                         fitMeasures(cfa_civic)[29]),
+  `Civic Conception (6 Items)` = c(fitMeasures(cfa_civic6)[9], AIC(cfa_civic6), BIC(cfa_civic6),
+                         fitMeasures(cfa_civic6)[23], fitMeasures(cfa_civic6)[26],
+                         fitMeasures(cfa_civic6)[29]))
+             
 cfa1 <- d %>%
   mutate(cfa_pa = ifelse(ethnic == 1, predict(cfa_ethnic), predict(cfa_civic))) %>%
   select(cfa_pa, ethnic) %>%
@@ -39,4 +59,19 @@ cfa1 <- d %>%
                             `p_value` = "p-Value for Differences in Means"))
 
 
-         
+cfa2 <- d %>%
+  mutate(cfa_pa = ifelse(ethnic == 1, predict(cfa_ethnic), predict(cfa_civic)),
+         ethnic = recode(ethnic,
+                         `0` = "Civic Conception",
+                         `1` = "Ethnic Conception"))  %>%
+  ggplot(aes(x = cfa_pa, color = ethnic, fill = ethnic)) +
+  labs(y= "Density", x = "Distribution CFA Construct") +
+  geom_histogram(binwidth=.5) +
+  stat_density(alpha=.2) +
+  facet_grid(.~ethnic) +
+  theme_ipsum()  +
+  scale_color_manual(values = fig_cols) +
+  scale_fill_manual(values = fig_cols) +
+  theme(legend.position="none",
+        legend.title = element_blank())
+  

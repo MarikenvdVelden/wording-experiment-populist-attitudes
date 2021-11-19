@@ -1,7 +1,7 @@
 p1 <- d %>% 
   mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
-  select(POST_2, POST_3, POST_4, ethnic) %>%
-  pivot_longer(cols = POST_2:POST_4) %>%
+  select(POST_2, POST_3, ethnic) %>%
+  pivot_longer(cols = POST_2:POST_3) %>%
   group_by(ethnic, name) %>%
   summarise(value = list(value)) %>%
   spread(ethnic, value) %>%
@@ -15,8 +15,7 @@ p1 <- d %>%
          higher = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[2],
          name = recode(name,
                        `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
-                       `POST_3` = "DV: MPs should follow \n the will of the people",
-                       `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people")) %>%
+                       `POST_3` = "DV: MPs should follow \n the will of the people")) %>%
   select(name, p_value, t_value, means_difference, lower, higher) %>%
   ggplot(aes(x = means_difference, 
              y = name,

@@ -110,6 +110,124 @@ pe3/ (pe4 + pe5) #add pe2 (age)
 ``` r
 source(here("src/analysis/explorative_cfa.R"))
 
+kbl(m_cfa, booktabs =T, caption = "Confirmatory Factor Analysis - Fit Statistics") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "4cm")  %>%
+  column_spec(2, width = "4cm") %>%
+  column_spec(2, width = "4cm") 
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Confirmatory Factor Analysis - Fit Statistics
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Fit Statistics
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Ethnic Conception
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Civic Conception
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Civic Conception (6 Items)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 4cm; ">
+CFI
+</td>
+<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+0.99
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4cm; ">
+AIC
+</td>
+<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+44106.68
+</td>
+<td style="text-align:right;">
+43468.92
+</td>
+<td style="text-align:right;">
+52011.91
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4cm; ">
+BIC
+</td>
+<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+44180.07
+</td>
+<td style="text-align:right;">
+43542.37
+</td>
+<td style="text-align:right;">
+52097.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4cm; ">
+RMSEA
+</td>
+<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+0.06
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4cm; ">
+p-value RMSEA
+</td>
+<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+0.16
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 4cm; ">
+SRMR
+</td>
+<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+0.01
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
@@ -145,7 +263,7 @@ Average of PCA Constructed Scale for Civic Conception of the People
 Average of PCA Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.00
+0.01
 </td>
 </tr>
 <tr>
@@ -161,11 +279,17 @@ Average of Civic Conception - Average of Ethnic Conception
 p-Value for Differences in Means
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.14
+0.11
 </td>
 </tr>
 </tbody>
 </table>
+
+``` r
+cfa2
+```
+
+<img src="../../report/figures/scale-1.png" style="display: block; margin: auto;" />
 
 ## IRT Analyse
 

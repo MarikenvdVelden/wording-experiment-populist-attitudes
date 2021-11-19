@@ -12,11 +12,11 @@ for (p in packages) {
 #Subset for all populist items
 pop_e <- d %>%
   dplyr::filter(ethnic == 1) %>%
-  dplyr::select(matches("POST_[123456]"))
+  dplyr::select(matches("POST_[12356]"))
   
 pop_c <- d  %>%
   dplyr::filter(ethnic == 0) %>%
-  dplyr::select(matches("POST_[123456]"))
+  dplyr::select(matches("POST_[12356]"))
 
 #Descriptive Statistics for all populism items
 stats_e <- psych::describe(pop_e)
@@ -107,12 +107,12 @@ pattern_c<-factor.scores(fit_c, resp.pattern=pop_c)
 
 # Plot Figure 1
 #https://www.dropbox.com/s/xacryjt5kakm6fn/IRT%20measurement%20populism%20%5BPolitics%5D%20replication%20materials.zip?dl=0&file_subpath=%2FVanHauwaertEtAl.2019_R_Script_Replication.R
-vals_e <- plot(fit_e, type = "IIC", items = 0, plot = FALSE, zrange = c(-6,6)) %>%
+vals_e <- plot(fit_e, type = "IIC", items = 0, plot = FALSE, zrange = c(-5,5)) %>%
   as_tibble() %>%
   mutate(id = "Ethnic Conception",
          se = z / sqrt(test.info))
   
-vals_c <- plot(fit_e, type = "IIC", items = 0, plot = FALSE, zrange = c(-6,6))  %>%
+vals_c <- plot(fit_e, type = "IIC", items = 0, plot = FALSE, zrange = c(-5,5))  %>%
   as_tibble() %>%
   mutate(id = "Civic Conception",
          se = z / sqrt(test.info))
@@ -139,39 +139,35 @@ irt1 <- vals_e %>% add_case(vals_c) %>%
 ## Figure 2 
 #Extract IIC for each of the 6 items & convert them into dataframe:
 df_e <- tibble(
-  z = plot(fit_e, type = "IIC", items = 1, plot = T, zrange = c(-6,6))[,1],
-  item1 = plot(fit_e, type = "IIC", items = 1, plot = T, zrange = c(-6,6))[,2],
-  item2 = plot(fit_e, type = "IIC", items = 2, plot = T, zrange = c(-6,6))[,2],
-  item3 = plot(fit_e, type = "IIC", items = 3, plot = T, zrange = c(-6,6))[,2],
-  item4 = plot(fit_e, type = "IIC", items = 4, plot = T, zrange = c(-6,6))[,2],
-  item5 = plot(fit_e, type = "IIC", items = 5, plot = T, zrange = c(-6,6))[,2],
-  item6 = plot(fit_e, type = "IIC", items = 6, plot = T, zrange = c(-6,6))[,2]) %>%
-  pivot_longer(cols = item1:item6) %>% # Reshaping dataset for graphing purposes
+  z = plot(fit_e, type = "IIC", items = 1, plot = T, zrange = c(-5,5))[,1],
+  item1 = plot(fit_e, type = "IIC", items = 1, plot = T, zrange = c(-5,5))[,2],
+  item2 = plot(fit_e, type = "IIC", items = 2, plot = T, zrange = c(-5,5))[,2],
+  item3 = plot(fit_e, type = "IIC", items = 3, plot = T, zrange = c(-5,5))[,2],
+  item4 = plot(fit_e, type = "IIC", items = 4, plot = T, zrange = c(-5,5))[,2],
+  item5 = plot(fit_e, type = "IIC", items = 5, plot = T, zrange = c(-5,5))[,2]) %>%
+  pivot_longer(cols = item1:item5) %>% # Reshaping dataset for graphing purposes
   dplyr::mutate(name = dplyr::recode(name,
                        `item1` = "Item 1 - Compromise is selling out",
                        `item2` = "Item 2 - The people must decide",
                        `item3` = "Item 3 - Follow will of the peopl",
-                       `item4` = "Item 4 - Diff. between people & elites",
-                       `item5` = "Item 5 - Too much talk, no action",
-                       `item6` = "Item 6 - Rep. by ordinary citizen"),
+                       `item4` = "Item 5 - Too much talk, no action",
+                       `item5` = "Item 6 - Rep. by ordinary citizen"),
          id  = "Ethnic Conception")
 
 df_c <- tibble(
-  z = plot(fit_c, type = "IIC", items = 1, plot = T, zrange = c(-6,6))[,1],
-  item1 = plot(fit_c, type = "IIC", items = 1, plot = T, zrange = c(-6,6))[,2],
-  item2 = plot(fit_c, type = "IIC", items = 2, plot = T, zrange = c(-6,6))[,2],
-  item3 = plot(fit_c, type = "IIC", items = 3, plot = T, zrange = c(-6,6))[,2],
-  item4 = plot(fit_c, type = "IIC", items = 4, plot = T, zrange = c(-6,6))[,2],
-  item5 = plot(fit_c, type = "IIC", items = 5, plot = T, zrange = c(-6,6))[,2],
-  item6 = plot(fit_c, type = "IIC", items = 6, plot = T, zrange = c(-6,6))[,2]) %>%
-  pivot_longer(cols = item1:item6) %>% # Reshaping dataset for graphing purposes
+  z = plot(fit_c, type = "IIC", items = 1, plot = T, zrange = c(-5,5))[,1],
+  item1 = plot(fit_c, type = "IIC", items = 1, plot = T, zrange = c(-5,5))[,2],
+  item2 = plot(fit_c, type = "IIC", items = 2, plot = T, zrange = c(-5,5))[,2],
+  item3 = plot(fit_c, type = "IIC", items = 3, plot = T, zrange = c(-5,5))[,2],
+  item4 = plot(fit_c, type = "IIC", items = 4, plot = T, zrange = c(-5,5))[,2],
+  item5 = plot(fit_c, type = "IIC", items = 5, plot = T, zrange = c(-5,5))[,2]) %>%
+  pivot_longer(cols = item1:item5) %>% # Reshaping dataset for graphing purposes
   dplyr::mutate(name = dplyr::recode(name,
                                      `item1` = "Item 1 - Compromise is selling out",
                                      `item2` = "Item 2 - The people must decide",
                                      `item3` = "Item 3 - Follow will of the peopl",
-                                     `item4` = "Item 4 - Diff. between people & elites",
-                                     `item5` = "Item 5 - Too much talk, no action",
-                                     `item6` = "Item 6 - Rep. by ordinary citizen"),
+                                     `item4` = "Item 5 - Too much talk, no action",
+                                     `item5` = "Item 6 - Rep. by ordinary citizen"),
                 id  = "Civic Conception")
 
 irt2 <- df_e %>%
@@ -185,4 +181,6 @@ irt2 <- df_e %>%
   theme_ipsum() +
   scale_color_manual(values = fig_cols) +
   theme(legend.position="bottom",
-        legend.title = element_blank())
+        legend.title = element_blank()) +
+  guides(color=guide_legend(nrow=2,byrow=TRUE))
+
