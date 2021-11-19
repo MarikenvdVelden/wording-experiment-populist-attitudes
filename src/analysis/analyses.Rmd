@@ -137,6 +137,7 @@ pe3/ (pe4 + pe5) #add pe2 (age)
 
 ## Scaling fit
 
+### CFA
 ```{r "scale", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/explorative_cfa.R"))
 
@@ -157,7 +158,34 @@ kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
 cfa2
 ```
 
-## IRT Analyse
+### Additive scale
+```{r "addative", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+source(here("src/analysis/additive-scale.R"))
+
+kbl(add1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+
+add2
+```
+
+### Wüttke et al. Approach
+```{r "wuttke", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+source(here("src/analysis/wuttke-approach.R"))
+
+kbl(wa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+
+wa2
+```
+
+
+### IRT Analyse
 ```{r "irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
 source(here("src/analysis/IRT.R"))
 
@@ -165,4 +193,15 @@ source(here("src/analysis/IRT.R"))
 ```{r "irt", fig.align="center", fig.height=8, fig.width=12}
 irt1 + irt2 + 
   plot_layout(widths = c(1, 2))
+```
+
+## Explanatory Power: Predicting Populist Vote
+```{r "predict-vote-1", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/predict-pop-vote-scales.R"))
+exp
+```
+
+```{r "predict-vote-2", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/predict-pop-vote-items.R"))
+exp
 ```

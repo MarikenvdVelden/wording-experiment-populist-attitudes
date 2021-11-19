@@ -107,6 +107,8 @@ pe3/ (pe4 + pe5) #add pe2 (age)
 
 ## Scaling fit
 
+### CFA
+
 ``` r
 source(here("src/analysis/explorative_cfa.R"))
 
@@ -291,7 +293,35 @@ cfa2
 
 <img src="../../report/figures/scale-1.png" style="display: block; margin: auto;" />
 
-## IRT Analyse
+### Additive scale
+
+``` r
+source(here("src/analysis/additive-scale.R"))
+
+kbl(add1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+
+add2
+```
+
+### Wüttke et al. Approach
+
+``` r
+source(here("src/analysis/wuttke-approach.R"))
+
+kbl(wa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+
+wa2
+```
+
+### IRT Analyse
 
 ``` r
 source(here("src/analysis/IRT.R"))
@@ -303,3 +333,19 @@ irt1 + irt2 +
 ```
 
 <img src="../../report/figures/irt-1.png" style="display: block; margin: auto;" />
+
+## Explanatory Power: Predicting Populist Vote
+
+``` r
+source(here("src/analysis/predict-pop-vote-scales.R"))
+exp
+```
+
+<img src="../../report/figures/predict-vote-1-1.png" style="display: block; margin: auto;" />
+
+``` r
+source(here("src/analysis/predict-pop-vote-items.R"))
+exp
+```
+
+<img src="../../report/figures/predict-vote-2-1.png" style="display: block; margin: auto;" />

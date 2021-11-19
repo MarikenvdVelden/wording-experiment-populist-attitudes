@@ -74,4 +74,11 @@ cfa2 <- d %>%
   scale_fill_manual(values = fig_cols) +
   theme(legend.position="none",
         legend.title = element_blank())
+
+tmp <- d %>%
+  mutate(cfa_pa = ifelse(ethnic == 1, predict(cfa_ethnic), predict(cfa_civic))) %>%
+  select(cfa_pa)
+
+d <- d %>%
+  add_column(tmp)
   

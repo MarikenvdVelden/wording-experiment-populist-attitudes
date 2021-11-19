@@ -102,9 +102,6 @@ fit_c <- grm(pop_c)
 #fit_c
 pattern_c<-factor.scores(fit_c, resp.pattern=pop_c)
 
-#d <- d %>% 
-#  dplyr::mutate(IRT_SCORE = dplyr::if_else(ethnic == 1, pattern_e$score.dat$z1, pattern_c$score.dat$z1))
-
 # Plot Figure 1
 #https://www.dropbox.com/s/xacryjt5kakm6fn/IRT%20measurement%20populism%20%5BPolitics%5D%20replication%20materials.zip?dl=0&file_subpath=%2FVanHauwaertEtAl.2019_R_Script_Replication.R
 vals_e <- plot(fit_e, type = "IIC", items = 0, plot = FALSE, zrange = c(-5,5)) %>%
@@ -184,3 +181,12 @@ irt2 <- df_e %>%
         legend.title = element_blank()) +
   guides(color=guide_legend(nrow=2,byrow=TRUE))
 
+irt_e <- pattern_e$score.dat$z1
+irt_c <- pattern_c$score.dat$z1
+
+tmp <- d %>%
+  dplyr::mutate(irt_pa = ifelse(ethnic == 1, irt_e,irt_c)) %>%
+  dplyr::select(irt_pa)
+
+d <- d %>%
+  add_column(tmp)

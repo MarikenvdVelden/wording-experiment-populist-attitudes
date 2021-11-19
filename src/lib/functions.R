@@ -118,7 +118,7 @@ regression3 <- function(df, a, ethnic){
 
 regression4 <- function(df, ethnic){
   
-  depVarList <- df %>% select(matches("POST_[24]"))
+  depVarList <- df %>% select(matches("POST_[23]"))
   indepVarList <- df %>% select(ethnic, D8, matches("POST_[156]")) 
   allModels <- apply(depVarList,2,function(xl)lm(xl ~ ethnic + 
                                                    POST_1 + POST_5 + 
@@ -220,6 +220,39 @@ regression6 <- function(df, a, ethnic){
                lower = AME - (1.56 * SE),
                upper = AME + (1.56 * SE)) %>%
         select(AME, upper, lower, y, a)
+      m <- m %>%
+        add_case(tmp)
+      
+    }
+  }
+  return(m)
+}
+
+regression7 <- function(df, scale){
+  
+  depVarList <- df %>% dplyr::select(pop_vote, Afd_vote, Linke_vote)
+  indepVarList <- df %>% dplyr::select(scale, D8)
+  allModels <- apply(depVarList,2,function(xl)lm(xl ~ scale + D8,
+                                                 data= indepVarList))
+  depVarList <- df %>% dplyr::select(pop_vote, Afd_vote, Linke_vote) %>%
+    colnames()
+  
+  for(i in 1:length(depVarList)){
+    if(i==1){
+      m <- tidy(allModels[[i]]) %>%
+        filter(term == "scale") %>%
+        mutate(y = depVarList[i],
+               lower = estimate - (1.96 * std.error),
+               upper = estimate + (1.96 * std.error)) %>%
+        dplyr::select(estimate, upper, lower, y)
+    }
+    else{
+      tmp <- tidy(allModels[[i]]) %>%
+        filter(term == "scale") %>%
+        mutate(y = depVarList[i],
+               lower = estimate - (1.96 * std.error),
+               upper = estimate + (1.96 * std.error)) %>%
+        dplyr::select(estimate, upper, lower, y)
       m <- m %>%
         add_case(tmp)
       
