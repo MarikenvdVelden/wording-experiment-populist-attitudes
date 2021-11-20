@@ -19,8 +19,7 @@ p2b <- h2b %>%
   geom_point(position = position_dodge(.5)) + 
   geom_errorbar(position = position_dodge(.5), width = 0) +
   theme_ipsum() +
-  labs(x = "", y = "Average Marginal Effects of Voting for a Far Right Party",
-       title = "Far Right Party ID Hypothesis") +
+  labs(x = "", y = "Average Marginal Effects of Voting for a Far Right Party") +
   facet_grid(.~ethnic) +
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
@@ -46,10 +45,9 @@ p2c <- h2b %>%
              ymax = upper)) +
   geom_point(position = position_dodge(.5)) + 
   geom_errorbar(position = position_dodge(.5), width = 0) +
-  theme_minimal() +
-  labs(x = "", y = "Average Marginal Effects of \n Voting for a Far Right Party",
-       title = "Far Right Party ID Hypothesis") +
-  facet_grid(.~ethnic) +
+  theme_ipsum() +
+  labs(x = "", y = "Average Marginal Effects of Voting for a Far Right Party \n for Ethnic Conception of the People") +
+  #facet_grid(.~ethnic) +
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),
         legend.position="none",

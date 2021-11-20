@@ -120,8 +120,8 @@ p2b
 ```
 
 ```{r "h2", fig.align="center", fig.height=6, fig.width=12, echo = FALSE, fig.show = "hide"}
-p2a + p2c + 
-  plot_layout(widths = c(2, 1))
+p2c + p2a + 
+  plot_layout(widths = c(1, 2))
 ```
 
 # Exploration

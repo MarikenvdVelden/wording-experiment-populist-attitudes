@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  16 NOV 2021 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  20 NOV 2021 09:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,7 +721,10 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 Package hyperref Info: Option `colorlinks' set `true' on input line 152.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+\cslhangindent=\skip93
+\csllabelwidth=\skip94
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -731,7 +734,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2018/12/01 v2.17b AMS math features
-\@mathmargin=\skip93
+\@mathmargin=\skip95
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -771,45 +774,36 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \totwidth@=\dimen282
 \lineht@=\dimen283
 \@envbody=\toks41
-\multlinegap=\skip94
-\multlinetaggap=\skip95
+\multlinegap=\skip96
+\multlinetaggap=\skip97
 \mathdisplay@stack=\toks42
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 ) (./draft.aux
-
-LaTeX Warning: Label `fig:balance' multiply defined.
-
 
 LaTeX Warning: Label `fig:results-h1' multiply defined.
 
 
 LaTeX Warning: Label `fig:results-h2' multiply defined.
 
-
-LaTeX Warning: Label `fig:results-explorative' multiply defined.
-
-
-LaTeX Warning: Label `tab:dv' multiply defined.
-
 )
 \openout1 = `draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 176.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 196.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -870,7 +864,7 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 \everyMPtoPDFconversion=\toks44
 )
 \AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring ON on input line 176.
+Package hyperref Info: Link coloring ON on input line 196.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -878,9 +872,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 176.
-LaTeX Info: Redefining \pageref on input line 176.
-LaTeX Info: Redefining \nameref on input line 176.
+LaTeX Info: Redefining \ref on input line 196.
+LaTeX Info: Redefining \pageref on input line 196.
+LaTeX Info: Redefining \nameref on input line 196.
 (./draft.out) (./draft.out)
 \@outlinefile=\write3
 \openout3 = `draft.out'.
@@ -967,183 +961,150 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 176.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 196.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 176.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 196.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 176
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 196
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 176
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 196
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 176.
+(Font)              <10.95> on input line 196.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 176.
+(Font)              <8> on input line 196.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 176.
-LaTeX Font Info:    Try loading font information for U+msa on input line 176.
+(Font)              <6> on input line 196.
+LaTeX Font Info:    Try loading font information for U+msa on input line 196.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 176.
+LaTeX Font Info:    Try loading font information for U+msb on input line 196.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 176
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 196
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 176
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 196
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Calculating math sizes for size <18> on input line 188.
+LaTeX Font Info:    Calculating math sizes for size <18> on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18> on input line 188.
+(Font)              <18> on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12.59995> on input line 188.
+(Font)              <12.59995> on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 188.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 188.
+(Font)              <9> on input line 208.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 208.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12.59995> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 188.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 188.
+(Font)              <5> on input line 208.
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 188.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 208.
 
-Underfull \hbox (badness 2744) in paragraph at lines 188--188
+Underfull \hbox (badness 3281) in paragraph at lines 208--208
 [][]\T1/lmr/m/n/9 Replication files are avail-able on the au-thor's Github ac-c
-ount ([][]$http : / / github . com / MariikenvdVelden /
+ount ([][]$http : / / github . com / MarikenvdVelden /
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 193.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 213.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <11> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 193.
-[1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 315.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 213.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 299.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [2]
-</Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures/ba
-lance-checks-1.png, id=76, 963.6pt x 963.6pt>
-File: /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figur
-es/balance-checks-1.png Graphic file (type png)
-<use /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figure
-s/balance-checks-1.png>
-Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/wording-expe
-riment/report/figures/balance-checks-1.png  used on input line 377.
-(pdftex.def)             Requested size: 328.82707pt x 328.82533pt.
-[3 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures
-/balance-checks-1.png>]
+) [1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures/h1
--1.png, id=87, 578.16pt x 481.8pt>
+-1.png, id=37, 578.16pt x 481.8pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figur
 es/h1-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figure
 s/h1-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/wording-expe
-riment/report/figures/h1-1.png  used on input line 420.
+riment/report/figures/h1-1.png  used on input line 371.
 (pdftex.def)             Requested size: 328.82707pt x 274.01866pt.
-[4 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures
-/h1-1.png>]
+[2] [3]
 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures/h2
--1.png, id=99, 1156.32pt x 578.16pt>
+-1.png, id=62, 1156.32pt x 578.16pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figur
 es/h2-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figure
 s/h2-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/wording-expe
-riment/report/figures/h2-1.png  used on input line 466.
+riment/report/figures/h2-1.png  used on input line 458.
 (pdftex.def)             Requested size: 469.75502pt x 234.87692pt.
-</Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures/ex
-plorative-1.png, id=100, 1445.4pt x 1445.4pt>
-File: /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figur
-es/explorative-1.png Graphic file (type png)
-<use /Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figure
-s/explorative-1.png>
-Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/wording-expe
-riment/report/figures/explorative-1.png  used on input line 477.
-(pdftex.def)             Requested size: 469.75502pt x 469.74944pt.
-[5 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures
-/h2-1.png>] [6 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/re
-port/figures/explorative-1.png>] [7] [8]
-Overfull \hbox (49.9418pt too wide) in paragraph at lines 504--513
- [][] 
- []
-
-[9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 521.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 521.
+[4 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/report/figures
+/h1-1.png>] [5 </Users/marikenvandervelden/Dropbox/Papers/wording-experiment/re
+port/figures/h2-1.png>] [6] [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 625.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 625.
 (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 521.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 521.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 625.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 625.
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: 28A84EF8F6BADA7A8FBE73E40E496309;454.
+(rerunfilecheck)             Checksum: DBF637857CA1A0FFA898FDA6C2457C12;194.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 521.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 625.
  ) 
 Here is how much of TeX's memory you used:
- 24343 strings out of 492616
- 437032 string characters out of 6129481
- 490983 words of memory out of 5000000
- 27932 multiletter control sequences out of 15000+600000
- 627173 words of font info for 92 fonts, out of 8000000 for 9000
+ 24337 strings out of 492616
+ 435980 string characters out of 6129481
+ 494085 words of memory out of 5000000
+ 27922 multiletter control sequences out of 15000+600000
+ 626213 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,63p,344b,729s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{ux5cux2520Appendixux5cux2520A.ux5cux2520Wordingux
-5cux2520ofux5cux2520theux5cux2520questionaire} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{method} has been referenced but does not exist, rep
-laced by a fixed one
-
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
-xlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019
-/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dis
-t/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dv
-ips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx1
-0.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2019
-/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist
-/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
-1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/
-lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on draft.pdf (9 pages, 501775 bytes).
+ 40i,11n,63p,290b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
+19/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/public/lm/lmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/
+lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm
+/lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on draft.pdf (7 pages, 346308 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

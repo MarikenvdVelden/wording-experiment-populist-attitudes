@@ -18,8 +18,7 @@ p2a <- h2a %>%
   #geom_errorbar(position = position_dodge(.5), width = 0) +
   theme_ipsum() +
   labs(x = "Exclusive National Identity \n (1 = Low, 5 = High)", 
-       y = "Average Marginal Effects of Levels of Ethnic Conception of the People",
-       title = "National Identity Hypothesis") +
+       y = "Average Marginal Effects of Levels of Ethnic Conception of the People") +
   facet_grid(.~y) +
   theme(plot.title = element_text(hjust = 0.5),
         plot.subtitle = element_text(hjust = 0.5),

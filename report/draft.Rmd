@@ -38,14 +38,14 @@ header-includes:
    - \newtheorem{hypo}{Hypothesis}
 biblio-style: apsr
 title: "The People as 'Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes"
-thanks: "Replication files are available on the author's Github account (http://github.com/MariikenvdVelden/wording-experiment-populist-attitudes). **Current version**: `r format(Sys.time(), '%B %d, %Y')`; **Corresponding author**: "
+thanks: "Replication files are available on the author's Github account (http://github.com/MarikenvdVelden/wording-experiment-populist-attitudes). **Current version**: `r format(Sys.time(), '%B %d, %Y')`; **Corresponding author**: Maurits Meijers"
 author:
 - name: Maurits Meijers
   affiliation: Radboud University Nijmegen
 - name: Mariken A.C.G. van der Velden
   affiliation: Vrije Universiteit Amsterdam
 anonymous: FALSE
-abstract: "Populists believe in the sovereignty of the people. Yet, the people can be construed in ethnic terms or in civic terms. Using a novel wording experiment in Germany (N=8000), we examine ethnic or civic conceptions of `the people' affect respondents' adherence agreement to key populist attitude items. We find that there are statistically significant differences between items framed in an ethnic and a civic manner -- and that this differs per item. This relationship is significantly moderated by respondents' degree of exclusive national identity and voting behaviour for the radical right. Our findings suggest that the way in which 'the people' is conceptualized has important implications for the measurement of populist attitudes."
+abstract: "Populists believe in the sovereignty of the people. Yet, the people can be construed in ethnic terms or in civic terms. Using a novel wording experiment in Germany (N=6,713), we examine ethnic or civic conceptions of `the people' affect respondents' adherence agreement to key populist attitude items.  We find that there are small, but statistically significant differences between items framed in an ethnic and a civic manner -- and that this differs per item. This relationship is significantly moderated by respondents' degree of exclusive national identity and voting behaviour for the radical right. Our findings suggest that the way in which the people is conceptualized has important implications for the measurement of populist attitudes."
 keywords: "Experiment, Populist Attitudes"
 geometry: margin=1in
 mainfont: cochineal
@@ -56,7 +56,7 @@ params:
   doublespacing: ""
 twocol: FALSE
 appendix: TRUE
-# doublespacing: TRUE
+doublespacing: TRUE
 endnote: no
 # pandocparas: TRUE
 sansitup: FALSE
@@ -78,161 +78,154 @@ options(kableExtra.latex.load_packages = FALSE)
 ```
 
 # Introduction
+Populism puts 'the people' central in political decision-making. 
+It's central claim is that political power should reside with the people, as opposed to the elites [@canovan1999trust, @mudde2004].
+To study populist beliefs at the individual level, scholars recently developed the populist attitude scale [@akkerman2014, @hawkins2012, @castanho2020]. 
+Research on both the individual and the party level has found that populism is a diverse phenomenon, applicable to inclusive left-wing ideologies and exclusionary right-wing ideologies [@meijers2021, @vanhauwaert2018]. 
+Indeed, populism is thought to be a thin-centred ideology that is usually attached to 'full' ideologies, such as socialism or nationalism [@mudde2004]. 
+As a result, the concept of populism remains agnostic about who constitutes the people. 
 
-# Ethnic or Civic Conception of _the People_
+In civic terms, we can think of the people as 'citizens' [e.g., @almond1963]. In ethnic terms, 'the people'can refer to a more cultural understanding of _folk_. 
+While in some  cultural contexts, there is no strong semantic difference between 'the people' and 'citizens' (e.g. in the English-speaking world), in other contexts, such as the Germanic one, 'the people' (i.e., _das Volk_) has a strong ethnic connotation. 
+In the 1800s, the term _Volk_ and _völkisch_ became strongly associated with an ethnic and racial conception of 'Germanness'. 
+After World War I, the terms _Volk_ and _Volksdeutsche_ were used to describe a ethnically and culturally homogeneous German diaspora, who were citizens of different states after the Versailles Treaty of 1919 [@gosewinkel2003]. 
 
-Verschil tussen civic and ethnic
-- kloof elite-burgers hogere score kloof elite-volk: waarom, volk primes homogeneity of both elite and people
-- daar waar ethnisch hoger scoren: volk meet populism beter dan burger
+Scales of populist attitudes have mostly relied on ethnic conceptions of the people [@akkerman2014,@hawkins2012, @castanho2020, @vanhauwaert2020, @schulz2018]. 
+At the same time, populist attitude scales have often been inconsistent in juxtaposing the elites with 'the people' or with 'citizens'. 
+For instance, the scale proposed by @akkerman2014 primarily refers to 'the people'. 
+Yet one item in the @akkerman2014 scale contrasts 'the citizen' with 'politicians' (`POP4`) - an item that nonetheless contributes significantly to the latent construct of populism [@vanhauwaert2020]. 
+What is more, 'the people' has been translated differently in different translations of the populist attitude scale. 
+For instance, in the French context 'the people' has been translated as _le peuple_ in some items, but as _les citoyens_ in other items [@ivaldi2018]. 
+Yet another study of French citizens refrains from using either _le peuple_ or _les citoyens_, choosing the more neutral _les gens_ instead [@castanho2020]. 
+In Italian, 'the people' is sometimes referred to as _il popolo_, and sometimes as _le persone_ [@castanho2020]. 
 
+This begs the question whether a civic or ethnic conception of the people matters for the measurement of populist attitudes. 
+On the (far) right, 'the people' is often construed in ethnic, cultural, or even racial terms. On the left, 'the people' is often conceived of in more civic or economic terms. 
+Ideally, however, populist attitude scale capture populist ideation across different ideological predispositions (see the critique of @castanho2020 of populist item scales including nativist items). 
+Using a wording experiment in Germany (`N=6,713`), we examine whether an ethnic or a civic conception of the people affects respondents' agreement with the two items of the populist attitude scale that directly juxtapose 'the people' with the elites. 
+We further examine whether far right voters and respondents with a exclusive national identity respond differently to ethnic conceptions of the people. In addition, we examine whether the differences found affect the overall latent construct of populist attitudes (EXPAND/SPECIFY LATER). 
+Given the more pronounced ethnic connotation with the concept of 'people' or _Volk_ in the German language, the German case is particularly suitable to tease out differences between ethnic and civic conceptions of the people in key populist attitude items. 
 
+# Empirical Analysis
+To test whether an ethnic or civic framing of the people affects respondents' agreement with key populist items we conduct a wording experiment. 
+Wording experiments have been used in political science to assess how different question phrasing affects respondents' perceptions of concepts such as issue ownership [@walgrave2016], climate change [@schuldt2011], and party identity [@sanders2002].
+We rely on a nationally representative sample of German citizens over 18 years old (`N=6,713`). 
+The sample is from an online panel provided by the survey company Respondi. 
+Quotas for age, gender, and education were included to ensure the representativeness of the sample. 
+We have 3,348 respondents in the group that received the ethnic phrasing and 3,365 respondents in the group with the civic phrasing. 
+This large sample size allows us to detect also small effects of question wording differences.
 
-<!-- hypothesis 1 -->
-> **H1** (**Ethnic Conception**):  _All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to the people is lower for an ethnic conception of the the people (i.e., das Volk) than for a civic conception of the people (i.e., Bürger)_.
+```{r dv, topcaption=TRUE}
+library(tidyverse)
+library(kableExtra)
+df <- tibble(Variable = c("POP1","POP2","POP3",
+                         "POP4","POP5","POP6"), 
+            `Wording ENG` = c("The politicians in the German Bundestag need to follow the will of the [people/citizens].",
+               "The [people/citizens], not politicians, should make the most important political decisions",
+               "I would rather be represented by an ordinary citizen than by a professional politician.", 
+               "The political differences between elites and the people are greater than the differences among citizens",
+               "Elected officials talk too much and take too little action",
+               "What people call ‘compromise’ in politics is really just selling out on one’s principles"),
+            `Wording DE` = c("Die Abgeordneten des Deutschen Bundestags müssen dem Willen [der Bürger/des Volkes] Folge leisten", 
+                             "[Die Bürger/Das Volk], und nicht die Politiker, sollte(n) die wichtigsten politischen Entscheidungen treffen",
+                             "Ein Bürger würde besser meine Interessen vertreten als ein Berufspolitiker",
+                             "Die politischen Unterschiede zwischen den Eliten und [den Bürgern/dem Volk] sind größer als die Unterschiede (zwischen Bürgern)",
+                             "Die Politiker reden zu viel und machen zu wenig",
+                             "Was in der Politik Kompromiss genannt wird, ist in Wirklichkeit nur ein Verrat von Prinzipien"))
 
-<!-- hypothesis 2a -->
-> **H2a** (**Exclusive National Identity**):  _All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to the people is lower for an ethnic conception of the the people (i.e., das Volk) than for a civic conception of the people (i.e., Bürger) when the respondent adheres to an exclusive national identity_.
-
-<!-- hypothesis 2b -->
-> **H2b** (**Far Right Party ID**):  _All things equal, agreement with the constitutive items of the populist attitude construct containing a reference to the people is lower for an ethnic conception of the the people (i.e., das Volk) than for a civic conception of the people (i.e., Bürger) when the respondent votes for a far right party_.
-
-
-# Data, Measurement & Method
-
-To investigate whether a civic or ethnic conception of the people influences the populist attitude constructs, we conducted a survey experiment in Germany between the 13th of October 2021 and the 11th of November 2021.
-The sample, recruited through [Respondi](https://www.respondi.com/EN/), consists of 8,000 participants of 18 years and older.
-Respondi works with opt-in respondents, so we have implemented quota on age, gender, and education.
-Moreover, we measured some more demographic background variables.
-Balance checks are conducted to demonstrate whether certain categories are over represented in a certain experimental group (see [the Methods Section](#method), Figure \ref{fig:balance}).
-The study has been approved by the [Research Ethics Review Committee](https://fsw.vu.nl/nl/onderzoek/research-ethics-review/index.aspx) of the \textit{Vrije Universiteit Amsterdam} (see the approval [here](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes/blob/master/docs/pap/pap.pdf)).
-To ensure good quality of our data, two attention checks are included.
-All variables and their operationalization have been described in our [pre-analysis plan](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes/blob/master/docs/pap/pap.pdf).
-
-The dependent variables under study are the three of the six items measuring populist attitudes that mention _the people_: 1) _The people, not politicians, should make the most important political decisions_; 2) _The politicians in the German Bundestag need to follow the will of the people_; and 3) _The political differences between elites and the people are greater than the differences among citizens_.
-We rely on those three items in the populism scale, see Table \ref{tab:dv} in the [Appendix](# Appendix A. Wording of the questionaire) for the exact phrasing of the question.
-Each item is measured on a 5-point likert scale: from `very much disagree` (value of `0`) till `very much agree` (value of `5`).
-The average for each of the items lies between 3 and 4 (with a standard deviation around 1, as shown in Table \ref{tab:descr-dv}), meaning that people are neutral till positive about these statements. 
-
-```{r descriptive-table, echo = FALSE}
-rm(list=ls())
-here::i_am("report/draft.Rmd")
-source(here::here("src/lib/functions_draft.R"))
-load(here("data/intermediate/cleaned_experiment.RData"))
-source(here("src/analysis/data-for-analyses.R"))
-
-descr <- d %>%
-  select(matches("POST_[234]")) %>%
-  pivot_longer(cols = everything()) %>%
-  mutate(Variable = recode(name,
-                       `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
-                       `POST_3` = "DV: MPs should follow \n the will of the people",
-                       `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people")) %>%
-  group_by(Variable) %>%
-  summarise(`Mean Value` = round(mean(value, na.rm = T),2),
-            `St.dev` = round(sd(value, na.rm = T), 2),
-            `Min. Value` = min(value),
-            `Max. Value` = max(value))
-
-kbl(descr, booktabs =T, caption = "\\label{tab:descr-dv}Descriptive Information of Dependent Variables",
-    digits = 2) %>%
+kbl(df, booktabs =T, caption = "\\label{tab:popatt}Akkerman et al Populist Attitudes Scale") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center")  %>%
-   column_spec(1, width = "5.5cm") %>%
-   column_spec(2, width = "2cm") %>%
-   column_spec(3, width = "1.5cm") %>%
-   column_spec(4, width = "2cm") %>%
-   column_spec(5, width = "2cm")
-rm(descr)  
+                full_width = F, fixed_thead = T, position = "center") %>%
+   column_spec(1, width = "1.5cm") %>%
+   column_spec(2, width = "6cm") %>%
+   column_spec(3, width = "6cm")
+   
 ```
-
-Given the historical context of Germany, we randomize whether _the people_ is translated into German using either the civic conception (i.e. _Bürger_) or the ethnic conception (i.e. _Volk_).
-`50.2\%` of the respondents (3347 in total) got the civic conception treatment, and `49.8\%` of the respondents (3317 in total) was randomized into the ethnics conception treatment.
-
-To measure the heterogenous treatment effects, we measure _Exclusive national identity_ with four statements (_being born in Germany_, _having German ancestors_, _being able to speak German_, _adhering to German traditions and customs_) on a 5-point Likert-scale from `very much disagree` (score of `1`) to `very much agree` (score of `5`). 
-Becasue $Cronbach's \alpha \geq 0.8$, we have constructed an additive scale for this measure.
-The constructed scale has a mean of 3.61 (with a standard deviation of .89), meaning that people are neutral till agreeing with a exclusive view on national identity. 
-We measured voting for a far right party by asking whether people had voted for the _Alternative für Deutschland_ (AfD) in the recent elections.
-About `10\%` of the respondents recalled to have voted for the AfD.
-
-We have also measured background information on age, gender, educational level, geographical region, vote recall, emplyment, and income.
-In our [online compendium](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes), we demonstrate all the descriptive information.
-As detailed in our pre-analysis plan, we only include variables as covariates that are unbalanced. 
-As Figure \ref{fig:balance} shows, only the income covariate is unbalanced accross the experimental groups.
-We therefore add this covariate to the regression analyses (H2a and H2b).
-Income is measured based on respondents' monthly income in bins of 500 Euro, ranging from $\leq$ `500` to $\geq$ `7501`.
-
-```{r balance, fig.align = 'center', out.width = "70%", fig.cap = "\\label{fig:balance}Balance Checks"}
-knitr::include_graphics(here::here("report/figures", "balance-checks-1.png"))
-```
-
-
-# Wording Effects of Ethnic or Civic Conception of _the People_
-
-To test whether the historical context of Germany affects citizens' populists attitudes when use the civic conception or the ethnic conception (H1), we first conducted a difference in means for the group who received the ethnic and the civic question wording, for all populist items containing a reference to _the people_.
-Figure \ref{fig:results-h1} demonstrates the differences between the scores on the three items of the populist attitudes scale that use the word _the people_.
-Negative values indicate that respondents who saw the ethnic conception of the people on average scored higher on the item compared to respondents in the civic conception condition.
-Positive values indicate the reverse. 
-Our pre-registered hypothesis stated that respondents in the ethnic conception condition would agree less (i.e. lower scores) than those in the civic condition.
-Figure \ref{fig:results-h1} demonstrates that only four the item ``The political differences between elites and the people are greater than the differences among citizens'' we find support for this hypothesis. 
-For the other two items -- a) The people, not politicians, should make the most important political decisions, and b) The politicians in the German Bundestag need to follow the will of the people -- we find statstically significant results in the opposite direction.
-For these two items, we find that people who saw the ethnic conception of the people scored higher than the other group.
-This could mean either that the historical notion of the ethnic conception is fading in the German context, or that nativism is a strong element of German populism.
-[WE THEREFORE HAVE RUN TWO ANALYSIS TO EXPLORE THIS. FIRST, WE CHECK WHETHER THE DIFFERENCES BETWEEN THE CIVIC AND ETHNIC CONCEPTION ARE AGE DEPENDENT. SECONDLY, WE EXAMINE IF THE EFFECT IS CONDITIONAL ON GEOGRAPHICAL REGIONS].
-
 ```{r results-h1, out.width = "70%", fig.align = 'center', fig.cap = "\\label{fig:results-h1}Results: H1"}
 knitr::include_graphics(here::here("report/figures", "h1-1.png"))
 ```
+To examine whether civic conceptions of the people elicit different responses than ethnic concepts, we experimentally vary the wording of two of the six items in the scale proposed by @akkerman2014, see Table \ref{tab:popatt}. 
+In the original Akkerman et al. scale deployed in the Netherlands, the items `POP1` and `POP2` were phrased in ethnic terms (i,e., with reference to _het volk_). 
+We randomize whether respondents received a ethnic framing (i.e., with reference to 'the people; or _das Volk_) or a civic framing (i.e., with reference to 'citizens', or _Bürger_). 
+The upper two items in Table \ref{tab:popatt} shows the differences in wording for the two items `POP1` and `POP2` in English and German. 
+All the other items were kept constant.[^1].
 
-Our second set of pre-registered hypotheses (H2a and H2b), are directed at the heterogeneous treatment effects: Are the diifferences between the civic and ethnic conception of the people conditional upon having an exclusive national identity (_H2a_) and/or voting for a far right party (_H2b_).
-To test this, we use linear multivariate regressions, with an interaction between the treatment conditions and the variable of interest in the heterogenous treatment (i.e. respectively having a exclusive national identity and voting for a far right party).
-First, we hypothesized that the more one adheres to an exclusive national identity, they likely score higher on the items when they are in the ethnic conception condition.
-The left-panel of Figure \ref{fig:results-h2} demonstrates that this only holds for the item ``The people, not politicians, should make the most important political decisions''.
-For this item, Figure \ref{fig:results-h2} shows a positive and statistically significant effect as the adherence to an exclusive national identity increases.
-Compared to not adhering to an exclusive national identity, the average score of fully adhering to an exclusive national identity is 0.2 higher on a 5-point scale.
-Compared the standard deviation of this item (1.17, see Table \ref{tab:descr-dv}), this is a small effect.
-For the other two items, the lines are almost flat over the various levels of adherence to an exclusive national identity and not statistically significant.
-Testing whether voting for a far right party conditions the scores on the populist attitude items, the right-panel of \ref{fig:results-h2} shows that the average score on all the items is higher for an ethnic conception of the people than for the civic conception.
-Hence, this indicates support for H2b. 
-As the right panel of \ref{fig:results-h2} demonstrates, the effect for the item The people, not politicians, should make the most important political decisions is the largest: Compared to voting for all other parties, when voting for the AfD and being in the ethnic conception of the people condition, one scores on average a full point higher on a 5-point scale (i.e. about a full standard deviation).
-For the items a) MPs should follow the will of the people and b) Differences between elites and the people are bigger than differences between the people the average effect is half a point on a 5-point scale (i.e. about half a standard deviation).
+[^1]:Our intention was to also vary the wording of the item `POP4`. Yet, due to an unfortunate translation error in Qualtrics, we cannot use the item `POP4` in our analysis. However, robustness checks in the Appendix XXX shows that removal of the item does not strongly affect the overall latent construct.
+
+Figure \ref{fig:results-h1} shows the results of a difference of means test for the two treatment groups (ethnic vs. civic wording) for both items. 
+There is a statistically significant difference in respondent agreement with the ethnic and civic conception of the people. 
+When 'the people' is conceived as _das Volk_ respondents are more likely to agree with the item's statement compared to the civic wording of _Bürger_. 
+Yet, as the results show, the difference is small in substantive terms.
+
+How does the effect of an ethnic conception of the people vis-à-vis a civic conception vary across respondents? 
+The left-hand panel of Figure \ref{fig:results-h2} shows the results of an OLS regression analysis with the an interaction between the treatment and a variable measuring whether or not the respondent voted for the far right party _Alternative für Deutschland_.
+We see that far right voters show much more agreement to items `POP1` and `POP2` when it is phrased in an ethnic way. 
+These effects are substantial and statistically significant. 
+[ADD ONE SENTENCE ABOUT THIS].
+
+In a next step, we examine whether respondents with lower and higher levels of exclusive national identity are affected differently by the treatment. 
+Inspired by @mader2021, we measure exclusive national identity using a four-item additive scale on a 5-point Likert scale, which asks respondents to rate how important the following aspects are to be considered German: being born in Germany (a), having German ancestors (b), being able to speak German (c), and sharing share German manners and norms (d). 
+The right-hand panel of Figure \ref{fig:results-h2} shows the interaction between the treatment and the exclusive national identity variable on the two items. 
+Overall, we see that the difference between an ethnic and civic wording is only statistically significant for respondents with higher levels of exclusive national identity (ca. `>2.5` on the exclusive national identity scale). 
+Both the analyses from the left and right-hand panel of \ref{fig:results-h2} suggest that far right voters and respondents with an exclusive national identity interpret `the people' (_das Volk_) in an ethno-cultural way. 
+
+So how does an ethnic and civic framing of the items `POP1` and `POP2` affect the latent construct of populism? 
+A graded Item Response Theory (IRT) analysis [see also @vanhauwaert2020] moreover shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see Figure XX and XX in the Appendix). 
+Overall, however, the overall level of information yielded by the two latent constructs of populism are similar. 
+This is not surprising, given that we varied the wording of `the people' only in two items of the full \@akkerman2014 item battery. 
+
+Therefore, also overall difference between a latent construct of populism with two ethnically framed items and a latent construct with two civically framed items is small.
+We find no statistically significant difference between the two constructs estimated using Confirmatory Factor Analysis (see Figure XX and Table XX in the Appendix). 
+In terms of model fit, both constructs show very similar goodness-of-fit statistics (i.e., CFI, BIC, RMSEA, and SRMR). Interestingly, however, both the 'ethnic' and the 'civic' scale show a satisfactory model fit (`CFI > 0.9`; `RMSEA < 0.08`; and `SRMR < 0.02`). 
 
 ```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Results: H2"}
 knitr::include_graphics(here::here("report/figures", "h2-1.png"))
 ```
 
-[EXPLORATIVE: regressions]
+```{r "scale", fig.align="center", fig.height=8, fig.width=8, eval = FALSE}
+source(here::here("src/lib/functions.R"))
+load(here("data/intermediate/cleaned_experiment.RData"))
+source(here("src/analysis/data-for-analyses.R"))
+source(here("src/analysis/explorative_cfa.R"))
 
-```{r results-explorative, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-explorative}Results: Explorative"}
-knitr::include_graphics(here::here("report/figures", "explorative-1.png"))
+kbl(m_cfa, booktabs =T, caption = "\\label{tab:CFA}Confirmatory Factor Analysis - Fit Statistics") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "4cm")  %>%
+  column_spec(2, width = "4cm") %>%
+  column_spec(2, width = "4cm") 
 ```
 
-[EXPLORATIVE: PCA]
+# Conclusion
+Existing populist attitudes scales have been inconsistent in using 'ethnic' or 'civic' conceptions of the people. 
+Using a wording experiment we examined whether German respondents presented with an ethnic framing of 'the people' (_das Volk_) answered key populist attitude items differently than respondents who recevied an ethnic framing of `the people' as citizens (_Bürger_). 
 
-# Discussion
+We find that there are statistically significant differences between the two wordings. 
+An ethnic conception of the people, overall, yielded more agreement with the items in question. 
+This is effect is particularly pronounced for voters of the far right. 
+The difference between an ethnic and a civic conception of the people was also only significant for respondents who adhered a moderate to high level of exclusive national identity. 
+This finding is highly suggestive of the 'ethnic' interpretation of `the people' -- at least in the German language.
 
+Nevertheless, we found that a civic or an ethnic wording of items referring to 'the people' makes little difference in a latent construct that also comprises other items that were kept constant. 
+Yet, while this might make little difference in a latent construct that also comprises items that do not solely rely on items that juxtapose 'the people' with the elite, it is likely to be more consequential in survey batteries that predominantly include items contrast 'the people' with elites to measure populist attitudes [for an overview of different batteries, see @castanho2020]. 
+The populist attitude scales proposed by @schulz2018 and @stanley2011, for instance, contain references to 'the people' in 7/9 and 7/8 of the items, respectively. 
+
+Importantly, the degree to which 'the people' is understood in denoting a specific ethno-cultural group likely differs across countries.
+This type of differential item interpretation might therefore lead to measurement invariance when used in cross-national research [@castanho2020]. 
+In other words, if the ethno-cultural connotation of the the people varies across countries, this may hamper cross-national application of populist attitude scales that include multiple items referring to 'the people'. 
+In fact, in a comparison of different populist attitudes scales @castanho2020 find that the scales by  @schulz2018 and @stanley2011 perform worse than the scale proposed by @akkerman2014. 
+To empirically establish whether differential interpretations of `the people' matters for measurement invariance, it would be worthwhile replicating this study for different countries. In addition, it would be worthwhile in replicating this analysis for different scales than the @akkerman2014 scale. 
+
+One can argue theoretically that 'the people' captures the meaning of the concept of populism better than 'citizens'. 
+After all, it populism assumes the people to be a homogeneous entity. 
+Yet, our findings suggest that also a civic framing of the concept yields a satisfactory model fit when estimating a Confirmatory Factor Analysis. 
+In addition, our results suggest that an ethnic framing of the citizens runs the, albeit small, risk overestimating the degree of populist attitudes among more nativist citizens. 
+To avoid priming respondents with an ethnic conception of the people, future studies should consider using a civic conception of ''citizens vs. the elite" when measuring populist attitudes.
 
 \newpage
 # References
 
-\newpage
-
-# Appendix A. Wording of the questionaire
 
 
-```{r dv, topcaption=TRUE}
-library(tidyverse)
-library(kableExtra)
-d <- tibble(Variable = c("Item 2 (DV1)",
-                         "Item 3 (DV2)",
-                         "Item 4 (DV3)"), 
-            `Wording ENG` = c("The people, not politicians, should make the most important political decisions","he politicians in the German Bundestag need to follow the will of the people", "The political differences between elites and the people are greater than the differences among citizens"),
-            `Wording DE` = c("[Die Bürger/Das Volk], und nicht die Politiker, sollte(n) die wichtigsten politischen Entscheidungen treffen", "Die Abgeordneten des Deutschen Bundestags müssen dem Willen [der Bürger/des Volkes] Folge leisten", "Die politischen Unterschiede zwischen den Eliten und [den Bürgern/dem Volk] sind größer als die Unterschiede (zwischen Bürgern)"))
 
-kbl(d, booktabs =T, caption = "\\label{tab:dv}Survey Questions - DV") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "3cm") %>%
-  column_spec(2, width = "7cm") %>%
-  column_spec(3, width = "7cm")
-
-```

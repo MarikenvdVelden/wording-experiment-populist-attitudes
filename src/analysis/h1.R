@@ -25,8 +25,7 @@ p1 <- d %>%
   geom_point() + 
   geom_errorbar(width = 0) +
   theme_ipsum() +
-  labs(y="", x= "Means Differences Test \n t statistic",
-       title = "Ethnic Conception hypothesis") +
+  labs(y="", x= "Means Differences Test \n t statistic") +
   theme(plot.title = element_text(hjust = 0.5),
         legend.position="none") +
   scale_color_manual(values = fig_cols) +
