@@ -49,16 +49,13 @@ abstract: "Populists believe in the sovereignty of the people. Yet, the people c
 keywords: "Experiment, Populist Attitudes"
 geometry: margin=1in
 mainfont: cochineal
-#sansfont: Linux Biolinum O
 fontsize: 11pt
 params:
   anonymous: ""
   doublespacing: ""
-twocol: FALSE
-appendix: TRUE
 doublespacing: TRUE
 endnote: no
-# pandocparas: TRUE
+pandocparas: TRUE
 sansitup: FALSE
 ---
 
@@ -110,13 +107,13 @@ Given the more pronounced ethnic connotation with the concept of 'people' or _Vo
 To test whether an ethnic or civic framing of the people affects respondents' agreement with key populist items we conduct a wording experiment. 
 Wording experiments have been used in political science to assess how different question phrasing affects respondents' perceptions of concepts such as issue ownership [@walgrave2016], climate change [@schuldt2011], and party identity [@sanders2002].
 We rely on a nationally representative sample of German citizens over 18 years old (`N=6,713`). 
-The sample is from an online panel provided by the survey company Respondi. 
+The sample is from an online panel provided by the survey company Respondi -- for an overview of all variables in the study, as well as the descriptive information, see Online Appendix (OA pp. A2-A6). 
 Quotas for age, gender, and education were included to ensure the representativeness of the sample. 
 We have 3,348 respondents in the group that received the ethnic phrasing and 3,365 respondents in the group with the civic phrasing. 
 This large sample size allows us to detect also small effects of question wording differences.
 
 ```{r dv, topcaption=TRUE}
-library(tidyverse)
+library(tidyverse) 
 library(kableExtra)
 df <- tibble(Variable = c("POP1","POP2","POP3",
                          "POP4","POP5","POP6"), 
@@ -150,24 +147,31 @@ We randomize whether respondents received a ethnic framing (i.e., with reference
 The upper two items in Table \ref{tab:popatt} shows the differences in wording for the two items `POP1` and `POP2` in English and German. 
 All the other items were kept constant.[^1].
 
-[^1]:Our intention was to also vary the wording of the item `POP4`. Yet, due to an unfortunate translation error in Qualtrics, we cannot use the item `POP4` in our analysis. However, robustness checks in the Appendix XXX shows that removal of the item does not strongly affect the overall latent construct.
+[^1]:Our intention was to also vary the wording of the item `POP4`. Yet, due to an unfortunate translation error in Qualtrics, we cannot use the item `POP4` in our analysis. However, robustness checks in the Online Appendix (OA) Table A.8 shows that removal of the item does not strongly affect the overall latent construct.
 
-Figure \ref{fig:results-h1} shows the results of a difference of means test for the two treatment groups (ethnic vs. civic wording) for both items. 
+Figure \ref{fig:results-h1} shows the results of a difference of means test for the two treatment groups (ethnic vs. civic wording) for both items -- Table A.5 in the OA shows the coefficients. 
 There is a statistically significant difference in respondent agreement with the ethnic and civic conception of the people. 
 When 'the people' is conceived as _das Volk_ respondents are more likely to agree with the item's statement compared to the civic wording of _Bürger_. 
 Yet, as the results show, the difference is small in substantive terms.
 
 How does the effect of an ethnic conception of the people vis-à-vis a civic conception vary across respondents? 
-The left-hand panel of Figure \ref{fig:results-h2} shows the results of an OLS regression analysis with the an interaction between the treatment and a variable measuring whether or not the respondent voted for the far right party _Alternative für Deutschland_.
+The left-hand panel of Figure \ref{fig:results-h2} shows the results of an OLS regression analysis[^2] with the an interaction between the treatment and a variable measuring whether or not the respondent voted for the far right party _Alternative für Deutschland_ -- for more details see Table A.6 in the OA).
 We see that far right voters show much more agreement to items `POP1` and `POP2` when it is phrased in an ethnic way. 
 These effects are substantial and statistically significant. 
-[ADD ONE SENTENCE ABOUT THIS].
+For the item `POP2` (''the people, not politicians, should make the most important political decisions''), when voting for the AfD and being in the ethnic conception of the people condition, one scores on average a full point higher on a 5-point scale, which is about a full standard deviation.
+For the item `POP1` (''The politicians need to follow the will of the people''), the effect size is about half a point (i.e. half a standard deviation).
+
+[^2]: As specified in the Pre-Analysis Plan, we only include unbalanced covariates. OA p. A-7 demonstrates the balance checks, demonstrating that only income is unbalanced, and therefore included as a covariate.
 
 In a next step, we examine whether respondents with lower and higher levels of exclusive national identity are affected differently by the treatment. 
 Inspired by @mader2021, we measure exclusive national identity using a four-item additive scale on a 5-point Likert scale, which asks respondents to rate how important the following aspects are to be considered German: being born in Germany (a), having German ancestors (b), being able to speak German (c), and sharing share German manners and norms (d). 
-The right-hand panel of Figure \ref{fig:results-h2} shows the interaction between the treatment and the exclusive national identity variable on the two items. 
+The right-hand panel of Figure \ref{fig:results-h2} shows the interaction between the treatment and the exclusive national identity variable on the two items -- for more details see Table A.7 in the OA). 
+Compared to not adhering to an exclusive national identity, the average score of fully adhering to an exclusive national identity is 0.2 higher on a 5-point scale for the item `POP2` (''the people, not politicians, should make the most important political decisions'').
+Compared the standard deviation of this item (1.17, see Table A.4 in the OA), this is a small effect.
+For the other item, the line is much less steep over the various levels of adherence to an exclusive national identity.
 Overall, we see that the difference between an ethnic and civic wording is only statistically significant for respondents with higher levels of exclusive national identity (ca. `>2.5` on the exclusive national identity scale). 
 Both the analyses from the left and right-hand panel of \ref{fig:results-h2} suggest that far right voters and respondents with an exclusive national identity interpret `the people' (_das Volk_) in an ethno-cultural way. 
+
 
 So how does an ethnic and civic framing of the items `POP1` and `POP2` affect the latent construct of populism? 
 A graded Item Response Theory (IRT) analysis [see also @vanhauwaert2020] moreover shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see Figure XX and XX in the Appendix). 
@@ -175,8 +179,8 @@ Overall, however, the overall level of information yielded by the two latent con
 This is not surprising, given that we varied the wording of `the people' only in two items of the full \@akkerman2014 item battery. 
 
 Therefore, also overall difference between a latent construct of populism with two ethnically framed items and a latent construct with two civically framed items is small.
-We find no statistically significant difference between the two constructs estimated using Confirmatory Factor Analysis (see Figure XX and Table XX in the Appendix). 
-In terms of model fit, both constructs show very similar goodness-of-fit statistics (i.e., CFI, BIC, RMSEA, and SRMR). Interestingly, however, both the 'ethnic' and the 'civic' scale show a satisfactory model fit (`CFI > 0.9`; `RMSEA < 0.08`; and `SRMR < 0.02`). 
+We find no statistically significant difference between the two constructs estimated using Confirmatory Factor Analysis (see Table A.9 in the OA). 
+In terms of model fit, both constructs show very similar goodness-of-fit statistics (i.e., CFI, BIC, RMSEA, and SRMR). Interestingly, however, both the 'ethnic' and the 'civic' scale show a satisfactory model fit (`CFI > 0.9`; `RMSEA < 0.08`; and `SRMR < 0.02`) -- for more information see OA Table A.8. 
 
 ```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Results: H2"}
 knitr::include_graphics(here::here("report/figures", "h2-1.png"))
@@ -225,7 +229,5 @@ To avoid priming respondents with an ethnic conception of the people, future stu
 
 \newpage
 # References
-
-
 
 

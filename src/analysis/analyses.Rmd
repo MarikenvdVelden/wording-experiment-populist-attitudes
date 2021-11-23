@@ -146,8 +146,8 @@ kbl(m_cfa, booktabs =T, caption = "Confirmatory Factor Analysis - Fit Statistics
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "4cm") %>%
   column_spec(2, width = "4cm")  %>%
-  column_spec(2, width = "4cm") %>%
-  column_spec(2, width = "4cm") 
+  column_spec(3, width = "4cm") %>%
+  column_spec(4, width = "4cm") 
 
 kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
@@ -159,10 +159,10 @@ cfa2
 ```
 
 ### Additive scale
-```{r "addative", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+```{r "addative", fig.align="center", fig.height=8, fig.width=12}
 source(here("src/analysis/additive-scale.R"))
 
-kbl(add1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+kbl(add1, booktabs =T, caption = "Addative Scaling Analysis") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "10cm") %>%
@@ -172,10 +172,10 @@ add2
 ```
 
 ### Wüttke et al. Approach
-```{r "wuttke", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+```{r "wuttke", fig.align="center", fig.height=8, fig.width=12}
 source(here("src/analysis/wuttke-approach.R"))
 
-kbl(wa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+kbl(wa1, booktabs =T, caption = "Wüttke et al. Approach") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "10cm") %>%
@@ -184,24 +184,35 @@ kbl(wa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
 wa2
 ```
 
-
 ### IRT Analyse
 ```{r "irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
 source(here("src/analysis/IRT.R"))
-
 ```
 ```{r "irt", fig.align="center", fig.height=8, fig.width=12}
 irt1 + irt2 + 
   plot_layout(widths = c(1, 2))
+
+kbl(irt3, booktabs =T, caption = "IRT Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+
+irt4
 ```
 
 ## Explanatory Power: Predicting Populist Vote
 ```{r "predict-vote-1", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/predict-pop-vote-scales.R"))
-exp
+exp1
 ```
 
 ```{r "predict-vote-2", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/predict-pop-vote-items.R"))
-exp
+exp1
+```
+
+## Save Data with Scales
+```{r "save data"}
+save(d, file = here("data/intermediate/cleaned_experiment_scales.RData"))
 ```

@@ -190,3 +190,44 @@ tmp <- d %>%
 
 d <- d %>%
   add_column(tmp)
+
+irt3 <- d %>%
+  dplyr::select(irt_pa, ethnic) %>%
+  dplyr::mutate(ethnic = dplyr::recode(ethnic, 
+                                `1` = "Ethnic Conception", 
+                                `0` = "Civic Conception")) %>%
+  dplyr::group_by(ethnic) %>%
+  dplyr::summarise(irt_pa = list(irt_pa)) %>%
+  spread(ethnic, irt_pa) %>%
+  dplyr::mutate(p_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$p.value,
+         t_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$statistic,
+         means_civic = t.test(unlist(`Civic Conception`))$estimate,
+         means_ethnic = t.test(unlist(`Ethnic Conception`))$estimate,
+         means_difference = means_civic - means_ethnic,
+         lower = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[1],
+         higher = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[2],
+         name = "Differences in Means") %>%
+  dplyr::select(means_civic, means_ethnic, means_difference, p_value) %>%
+  pivot_longer(cols = means_civic:p_value,
+               values_to = "Values",
+               names_to = "Variables") %>%
+  dplyr::mutate(Variables = dplyr::recode(Variables,
+                            `means_civic` = "Average of IRT Constructed Scale for Civic Conception of the People",
+                            `means_ethnic` = "Average of IRT Constructed Scale for Ethnic Conception of the People",
+                            `means_difference` = "Average of Civic Conception - Average of Ethnic Conception",
+                            `p_value` = "p-Value for Differences in Means"))
+
+
+irt4 <- d %>%
+  dplyr::mutate(ethnic = dplyr::recode(ethnic,
+                         `0` = "Civic Conception",
+                         `1` = "Ethnic Conception")) %>%
+  ggplot(aes(x = irt_pa, color = ethnic, fill = ethnic)) +
+  labs(y= "Density", x = "Distribution IRT Construct") +
+  geom_histogram(binwidth=1) +
+  facet_grid(.~ethnic) +
+  theme_ipsum()  +
+  scale_color_manual(values = fig_cols) +
+  scale_fill_manual(values = fig_cols) +
+  theme(legend.position="none",
+        legend.title = element_blank())

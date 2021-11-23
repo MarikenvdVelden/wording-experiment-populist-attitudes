@@ -117,8 +117,8 @@ kbl(m_cfa, booktabs =T, caption = "Confirmatory Factor Analysis - Fit Statistics
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "4cm") %>%
   column_spec(2, width = "4cm")  %>%
-  column_spec(2, width = "4cm") %>%
-  column_spec(2, width = "4cm") 
+  column_spec(3, width = "4cm") %>%
+  column_spec(4, width = "4cm") 
 ```
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -146,13 +146,13 @@ Civic Conception (6 Items)
 <td style="text-align:left;width: 4cm; ">
 CFI
 </td>
-<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+<td style="text-align:right;width: 4cm; ">
 0.99
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.99
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.98
 </td>
 </tr>
@@ -160,13 +160,13 @@ CFI
 <td style="text-align:left;width: 4cm; ">
 AIC
 </td>
-<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+<td style="text-align:right;width: 4cm; ">
 44106.68
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 43468.92
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 52011.91
 </td>
 </tr>
@@ -174,13 +174,13 @@ AIC
 <td style="text-align:left;width: 4cm; ">
 BIC
 </td>
-<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+<td style="text-align:right;width: 4cm; ">
 44180.07
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 43542.37
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 52097.61
 </td>
 </tr>
@@ -188,13 +188,13 @@ BIC
 <td style="text-align:left;width: 4cm; ">
 RMSEA
 </td>
-<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+<td style="text-align:right;width: 4cm; ">
 0.06
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.08
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.08
 </td>
 </tr>
@@ -202,13 +202,13 @@ RMSEA
 <td style="text-align:left;width: 4cm; ">
 p-value RMSEA
 </td>
-<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+<td style="text-align:right;width: 4cm; ">
 0.16
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.00
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.00
 </td>
 </tr>
@@ -216,13 +216,13 @@ p-value RMSEA
 <td style="text-align:left;width: 4cm; ">
 SRMR
 </td>
-<td style="text-align:right;width: 4cm; width: 4cm; width: 4cm; ">
+<td style="text-align:right;width: 4cm; ">
 0.01
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.02
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;width: 4cm; ">
 0.03
 </td>
 </tr>
@@ -298,28 +298,136 @@ cfa2
 ``` r
 source(here("src/analysis/additive-scale.R"))
 
-kbl(add1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+kbl(add1, booktabs =T, caption = "Addative Scaling Analysis") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "10cm") %>%
   column_spec(2, width = "3cm")  
+```
 
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Addative Scaling Analysis
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variables
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of PCA Constructed Scale for Civic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+3.46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of PCA Constructed Scale for Ethnic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+3.51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of Civic Conception - Average of Ethnic Conception
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+p-Value for Differences in Means
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.01
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 add2
 ```
+
+<img src="../../report/figures/addative-1.png" style="display: block; margin: auto;" />
 
 ### Wüttke et al. Approach
 
 ``` r
 source(here("src/analysis/wuttke-approach.R"))
 
-kbl(wa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+kbl(wa1, booktabs =T, caption = "Wüttke et al. Approach") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "10cm") %>%
   column_spec(2, width = "3cm")  
+```
 
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Wüttke et al. Approach
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variables
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of PCA Constructed Scale for Civic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+2.57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of PCA Constructed Scale for Ethnic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+2.60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of Civic Conception - Average of Ethnic Conception
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+p-Value for Differences in Means
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.16
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 wa2
 ```
+
+<img src="../../report/figures/wuttke-1.png" style="display: block; margin: auto;" />
 
 ### IRT Analyse
 
@@ -334,18 +442,88 @@ irt1 + irt2 +
 
 <img src="../../report/figures/irt-1.png" style="display: block; margin: auto;" />
 
+``` r
+kbl(irt3, booktabs =T, caption = "IRT Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+IRT Analysis
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variables
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of IRT Constructed Scale for Civic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of IRT Constructed Scale for Ethnic Conception of the People
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+Average of Civic Conception - Average of Ethnic Conception
+</td>
+<td style="text-align:right;width: 3cm; ">
+-0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10cm; ">
+p-Value for Differences in Means
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.22
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
+irt4
+```
+
+<img src="../../report/figures/irt-2.png" style="display: block; margin: auto;" />
+
 ## Explanatory Power: Predicting Populist Vote
 
 ``` r
 source(here("src/analysis/predict-pop-vote-scales.R"))
-exp
+exp1
 ```
 
 <img src="../../report/figures/predict-vote-1-1.png" style="display: block; margin: auto;" />
 
 ``` r
 source(here("src/analysis/predict-pop-vote-items.R"))
-exp
+exp1
 ```
 
 <img src="../../report/figures/predict-vote-2-1.png" style="display: block; margin: auto;" />
+
+## Save Data with Scales
+
+``` r
+save(d, file = here("data/intermediate/cleaned_experiment_scales.RData"))
+```

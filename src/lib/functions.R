@@ -231,8 +231,8 @@ regression6 <- function(df, a, ethnic){
 regression7 <- function(df, scale){
   
   depVarList <- df %>% dplyr::select(pop_vote, Afd_vote, Linke_vote)
-  indepVarList <- df %>% dplyr::select(scale, D8)
-  allModels <- apply(depVarList,2,function(xl)lm(xl ~ scale + D8,
+  indepVarList <- df %>% dplyr::select(scale, D8, PT8)
+  allModels <- apply(depVarList,2,function(xl)lm(xl ~ scale + D8 + PT8,
                                                  data= indepVarList))
   depVarList <- df %>% dplyr::select(pop_vote, Afd_vote, Linke_vote) %>%
     colnames()

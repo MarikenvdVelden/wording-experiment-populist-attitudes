@@ -1,13 +1,13 @@
 as_e <- d %>%
   filter(ethnic == 1) %>%
   mutate(scale = round((POST_1 + POST_2 + POST_3 + 
-                          POST_5 + POST_6)/5,0)) 
+                          POST_5 + POST_6)/5,2)) 
 as_e <- as_e$scale
   
 as_c <- d %>%
   filter(ethnic == 0) %>%
   mutate(scale = round((POST_1 + POST_2 + POST_3 + 
-                          POST_5 + POST_6)/5,0)) 
+                          POST_5 + POST_6)/5,2)) 
 as_c <- as_c$scale
 
 add1 <- d %>%

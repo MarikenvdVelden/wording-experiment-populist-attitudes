@@ -67,11 +67,10 @@ cfa2 <- d %>%
   ggplot(aes(x = cfa_pa, color = ethnic, fill = ethnic)) +
   labs(y= "Density", x = "Distribution CFA Construct") +
   geom_histogram(binwidth=.5) +
-  stat_density(alpha=.2) +
   facet_grid(.~ethnic) +
-  theme_ipsum()  +
   scale_color_manual(values = fig_cols) +
   scale_fill_manual(values = fig_cols) +
+  theme_ipsum()  +
   theme(legend.position="none",
         legend.title = element_blank())
 

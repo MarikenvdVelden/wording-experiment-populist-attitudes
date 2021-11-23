@@ -8,9 +8,9 @@ p2b <- h2b %>%
                     `POST_3` = "DV: MPs should follow \n the will of the people",
                     `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people"),
          ethnic = recode(ethnic,
-                         `1` = "Ethnic Conception",
+                         `1` = "Ethnic Conception of the People",
                          `0` = "Civic Conception")) %>%
-  filter(ethnic == "Ethnic Conception") %>%
+  filter(ethnic == "Ethnic Conception of the People") %>%
   ggplot(aes(x = y, 
              y = AME,
              color = y,
@@ -35,9 +35,9 @@ p2c <- h2b %>%
                     `POST_3` = "DV: MPs should follow \n the will of the people",
                     `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people"),
          ethnic = recode(ethnic,
-                         `1` = "Ethnic Conception",
+                         `1` = "Ethnic Conception of the People",
                          `0` = "Civic Conception")) %>%
-  filter(ethnic == "Ethnic Conception") %>%
+  filter(ethnic == "Ethnic Conception of the People") %>%
   ggplot(aes(x = y, 
              y = AME,
              color = y,

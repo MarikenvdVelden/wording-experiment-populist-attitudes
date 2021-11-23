@@ -4,7 +4,7 @@ for(i in 1:length(Ethnic)){
 df <- d %>%
     dplyr::filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
-                             ifelse(D6 == "Left", 1, 0)),
+                      ifelse(D6 == "Left", 1, 0)),
            Linke_vote = ifelse(D6 == "Left", 1,0),
            scale = cfa_pa)
 if(i==1){
@@ -23,7 +23,7 @@ for(i in 1:length(Ethnic)){
   df <- d %>%
     dplyr::filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
-                             ifelse(D6 == "Left", 1, 0)),
+                      ifelse(D6 == "Left", 1, 0)),
            Linke_vote = ifelse(D6 == "Left", 1,0),
            scale = add_pa)
   if(i==1){
@@ -80,7 +80,7 @@ for(i in 1:length(Ethnic)){
       add_case(tmpp)}
 }
 
-exp <- exp %>%
+exp1 <- exp %>%
   add_case(tmp) %>%
   dplyr::mutate(y = dplyr::recode(y,
                     `Afd_vote` = "Voted: AfD",
@@ -112,3 +112,18 @@ exp <- exp %>%
   scale_color_manual(values = fig_cols) +
   geom_hline(yintercept = 0, size = .2, linetype = "dashed") +
   coord_flip()
+
+exp2 <- exp %>%
+  add_case(tmp) %>%
+  dplyr::mutate(y = dplyr::recode(y,
+                                  `Afd_vote` = "Voted: AfD",
+                                  `Linke_vote` = "Voted: Left",
+                                  `pop_vote` = "Voted: Populist Party"),
+                id = dplyr::recode(id,
+                                   `add_pa` = "Addative Scale",
+                                   `cfa_pa` = "CFA Scaling",
+                                   `irt_pa` = "IRT Scaling",
+                                   `wuttke_pa` = "Wüttke et al. Approach"),
+                ethnic = dplyr::recode(ethnic,
+                                       `1` = "Ethnic Conception",
+                                       `0` = "Civic Conception"))

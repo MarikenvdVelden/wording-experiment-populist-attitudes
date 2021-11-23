@@ -1,0 +1,530 @@
+---
+output: 
+  stevetemplates::article:
+    number_sections: TRUE
+    toc: yes
+title: "ONLINE APPENDIX:The People as 'Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes"
+bibliography: references.bib
+biblio-style: apsr
+geometry: margin=1in
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+fontsize: 11pt
+endnotes: FALSE
+mainfont: cochineal
+sansitup: FALSE
+params:
+  anonymous: ""
+  doublespacing: ""
+  removetitleabstract: ""
+appendix: TRUE
+appendixletter: "A"
+pandocparas: FALSE
+anonymous: "`r params$anonymous`"
+doublespacing: "`r params$doublespacing`"
+removetitleabstract: "`r params$removetitleabstract`"
+linkcolor: black
+#nocite: |
+#  @cartersmith2020fml, @andersetal2020bbgb
+header-includes: 
+   - \usepackage{array}
+   - \usepackage{floatrow}
+   - \floatsetup[figure]{capposition=top}
+   - \floatsetup[table]{capposition=top}
+   - \usepackage{booktabs}
+   - \usepackage{longtable}
+   - \usepackage{array}
+   - \usepackage{multirow}
+   - \usepackage{wrapfig}
+   - \usepackage{float}
+   - \usepackage{colortbl}
+   - \usepackage{pdflscape}
+   - \usepackage{tabu}
+   - \usepackage[para,online,flushleft]{threeparttable}
+   - \usepackage{threeparttablex}
+   - \usepackage[normalem]{ulem}
+   - \usepackage{makecell}
+   - \usepackage{xcolor}
+   - \usepackage{caption}
+   - \usepackage{graphicx}
+   - \usepackage{epstopdf}
+   - \usepackage{siunitx}
+   - \usepackage{multirow}
+   - \usepackage{hhline}
+   - \usepackage{calc}
+   - \usepackage{tabularx}
+   - \usepackage{fontawesome}
+   - \usepackage{amsthm}
+   - \usepackage{csquotes}
+   - \LTcapwidth=.95\textwidth
+   - \linespread{1.05}
+   - \usepackage{hyperref}
+   - \usepackage{setspace}
+   - \renewcommand{\thepage}{A-\arabic{page}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message=FALSE, warning=FALSE)
+options(kableExtra.latex.load_packages = FALSE)
+options(tinytex.verbose = TRUE)
+options(scipen = 1, digits = 2)
+# Uncomment below if you want code captions
+# oldSource <- knitr::knit_hooks$get("source")
+# knitr::knit_hooks$set(source = function(x, options) {
+#   x <- oldSource(x, options)
+#   x <- ifelse(!is.null(options$code.cap), paste0(x, "\\captionof{chunk}{", options$code.cap,"}"), x)
+#   ifelse(!is.null(options$ref), paste0(x, "\\label{", options$ref,"}"), x)
+# })
+# Add `chunkcaption: TRUE` to YAML as well.
+```
+
+```{r "env", message=FALSE, warning=F}
+rm(list=ls())
+here::i_am("report/appendix.Rmd")
+source(here::here("src/lib/functions.R"))
+load(here("data/intermediate/cleaned_experiment.RData"))
+source(here("src/analysis/data-for-analyses.R"))
+```
+\newpage
+# Questionnaire and Descriptive Information
+## Dependent Variables
+We rely on the two items in the populism scale that mention the people: a) ''The people, not politicians, should make the most important political decisions''; and b) ''The politicians in the German Bundestag need to follow the will of the people''. All items are measured on a 5-point Likert-scale: `very much disagree`, `disagree`, `neutral`, `agree`, `very much agree`. See Table \ref{tab:dv} for the exact phrasing of the question.
+
+```{r dv, topcaption=TRUE}
+df <- tibble(Variable = c("Item 2 (DV1)",
+                         "Item 3 (DV2)"), 
+            `Wording ENG` = c("The people, not politicians, should make the most important political decisions","he politicians in the German Bundestag need to follow the will of the people"),
+            `Wording DE` = c("[Die Bürger/Das Volk], und nicht die Politiker, sollte(n) die wichtigsten politischen Entscheidungen treffen", "Die Abgeordneten des Deutschen Bundestags müssen dem Willen [der Bürger/des Volkes] Folge leisten"))
+
+kbl(df, booktabs =T, caption = "\\label{tab:dv}Survey Questions - DV") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "7cm")
+
+```
+
+## Treatment
+Respondents are randomly assigned to the populism items translated into German using either the civic conception (i.e. _Bürger_) or the ethnic conception (i.e. _Volk_).
+
+&nbsp;
+
+## Control Variables
+
+As control variables, the following _demographics_ are measured (see Table \ref{tab:demographics} for the exact phrasing of the question):
+
+- _Gender_ is measured as `sex`. The answer categories are `Male` (value of `1`), `Female` (value of `0`), and `No answer` (value of `999`).
+
+- _Age_ is measured using 6 categories: `17 or younger`, `18--29`, `30--39`, `40--49`, `50--59`, `60--74`. 
+
+- _Education_ is measured as the highest successfully completed level of education, recoded into four categories: `low`, `middle`, `high`, and `none`.
+I create dummy variables for each level of education with the lowest category as base category.
+
+- _Urbanness_ Respondents are asked for what the type of location they live: `big city`, `suburb of a large city`, `middle-szed or small city`, `rural village`, `detached house in the countryside` -- as well as giving them the options of `will not  say` and `do not know`.
+
+- _Vote Recall_ Respondents were asked which party they voted for in the last election with their second vote. Answering categories were: `CDU/CSU`, `SPD`, `AfD`, `FDP`, `DIE LINKE`, `BÜNDNIS 90/DIE GRÜNEN`, `Other party:`, `I did not vote/was not eligble to vote`-- as well as giving them the options of `will not  say` and `do not know`.
+
+- _Employment_ Respondents were asked which category of employment -- `Full-time employed`, `Part-time employed`, `Entrepreneur`, `Unemployed and searching for a job`, `Unemployed and not searching for a job or incapacitated`, `Housewife/Househusband or else`, `Retired`, `Student or full-time education` -- applied most to them. 
+
+- _Income_ Respondents were questioned on their monthly income in bins of 500 Euro -- `500 or less`, `501-1000`, `1001-1500`, `1501-2000`, `2001-2500`, `2501-3000`, `3001-3500`, `3501-4000`, `4501-7500`, `7501 or more` -- as well as giving them the options of `will not  say` and `do not know`.
+
+- _Geographical region_ is measured using the same questions as the [German Longitudinal Election Study](https://www.gesis.org/wahlen/gles), asking respondents where they are born and currently live, differentiating between the different German provinces (_Bundesl{\"a}nder_): Baden-W{\"u}rtemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hessen, Lower Saxony, Mecklenburg-Western Pomerania, North Rhine-
+Westphalia, Rhineland-Palatinate, Saarland, Saxony, Saxony-Anholt, Schleswig-Holstein, and Thuringia.
+
+```{r demographics, topcaption=TRUE}
+df <- tibble(Variable = c("gender (D1)", "age (D2)", "education (D3)",
+                         "geographical-region (D4)", "vote-recall2 (D6)", "employment (D7)",
+                         "income (D8)", "living-place (D9)", "birth-place (D10)"), 
+            `Wording ENG` = c("Which gender do you feel you belong to?", "To which of the following age groups do you belong?",
+                              "What is your highest educational qualification?", 
+                             "Which of the following categories best describes where you live?",
+                             "Which party did you vote for with your second vote in the last federal election in September 2021?",
+                             "Now we would like to ask you something about your employment. Which of this list applies to you?",
+                              "What is the total monthly net income of your household? This refers to the sum that remains after deducting taxes and social security contributions.",
+                             "In which federal state or on the territory of which present federal state do you currently live?",
+                              "And in which federal state or on the territory of which present federal state were you born?"),
+            `Wording DE` = c("Welchem Geschlecht fühlen Sie sich zugehörig?", 
+                             "Zu welcher der nachfolgenden Altersgruppen gehören Sie?",
+                             "Was ist Ihr höchster Bildungsabschluss?",
+                             "Welche der folgenden Kategorien beschreibt am besten, wo Sie wohnen?",
+                             "Welche Partei haben Sie bei der letzten Bundestagswahl im September 2021 mit Ihrer Zweitstimme gewählt?",
+                             "Nun möchten wir Sie gerne etwas zu Ihrer Erwerbstätigkeit fragen. Was von dieser Liste trifft auf Sie zu?",
+                             "Wie hoch ist das monatliche Netto-Einkommen Ihres Haushaltes insgesamt? Gemeint ist die Summe, die nach Abzug von Steuern und Sozialversicherungsbeiträgen übrig bleibt.",
+                             "Im welchen Bundesland bzw. auf dem Gebiet welches heutigen Bundeslandes wohnen Sie derzeit?",
+                             "Und in welchem Bundesland bzw. auf dem Gebiet welches heutigen Bundeslandes wurden Sie geboren?"))
+
+kbl(df, booktabs =T, caption = "\\label{tab:demographics}Survey Questions - Demographics") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "7cm")
+
+```
+
+In addition, pre-treatment, we ask respondents the following questions (see Table \ref{tab:pret}for the exact phrasing of the question):
+
+- _Ideological position_ is measured using an 11-point scale ranging from left (`0`) to right (`10`).
+
+- _Exclusive national identity_ is measured with four statements ("being born in Germany", "having German ancestors", "being able to speak German", "adhering to German traditions and customs") on a 5-point Likert-scale: `very much disagree`, `disagree`, `neutral`, `agree`, `very much agree`. 
+
+
+```{r pret, topcaption=TRUE}
+df <- tibble(Variable = c("political-knowledge1 (PT4)", "political-knowledge2 (PT5)", "political-knowledge3 (PT6)", "political-interest (PT7)","RILE (PT8)", "Exclusive national identity (HT4)", "Exclusive national identity (HT4-1)", "Exclusive national identity (HT4-2)", "Exclusive national identity (HT4-3)", "Exclusive national identity (HT4-4)" ), 
+            `Wording ENG` = c("In the federal election, you have two votes, a first vote and a second vote. How is that actually, which of the two votes is decisive for the distribution of seats in the Bundestag?",
+                             "Now we would like to know from you, from what percentage of the second votes a party can send deputies in any case in the Bundestag?",
+                             "And can you say approximately what the current unemployment rate is in Germany? Is it lower or higher than 10 percent?", 
+                             "Once speaking in general terms: How interested are you in politics - very strongly, strongly, moderately, less strongly, or not at all?",
+                            "In politics, people often talk about 'left' and 'right.' Where would you classify yourself?",
+                            "Some people think that the following points are important to be truly German. Others do not think they are important. How important do you think the following points are to being German?", "being born in Germany", "having German ancestors", "being able to speak German", "adhering to German traditions and customs"),
+            `Wording DE` = c("Bei der Bundestagswahl haben Sie ja zwei Stimmen, eine Erststimme und eine Zweitstimme. Wie ist das eigentlich, welche der beiden Stimmen ist ausschlaggebend für die Sitzverteilung im Bundestag?",
+                             "Jetzt möchten wir gerne von Ihnen wissen, ab wie viel Prozent der Zweitstimmen eine Partei auf jeden Fall Abgeordnete in den Bundestag entsenden kann? ",
+                             "Und können Sie ungefähr sagen, wie hoch die derzeitige Arbeitslosenquote in Deutschland ist? Ist sie niedriger oder höher als 10 Prozent?", 
+                             "Einmal ganz allgemein gesprochen: Wie stark interessieren Sie sich für Politik – sehr stark, stark, mittelmäßig, weniger stark oder überhaupt nicht?",
+                            "In der Politik reden die Leute häufig von 'links' und 'rechts'. Wo würden Sie sich selbst einordnen?",
+                            "Manche Leute meinen, dass die folgenden Punkte wichtig sind, um wirklich deutsch zu sein. Andere halten diese nicht für wichtig. Für wie wichtig halten Sie die folgenden Punkte, um deutsch zu sein?", "in Deutschland geboren sein", "deutsche Vorfahren haben", "deutsch sprechen können", "sich an deutsche Traditionen und Gepflogenheiten halten"))
+
+kbl(df, booktabs =T, caption = "\\label{tab:pret}Survey Questions - PreTreatment Questions") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "7cm")
+```
+
+- _Political knowledge_ is measured with three items. First, respondents are asked which of the two votes is determinative for the seat distribution in parliament: `first vote`, `second vote`, `both`, `do not know`. Secondly, respondents are asked about the electoral threshold. Last, respondents are asked whether or not the unemployment rate is over ten procent.
+
+- _Political interest_ is measured by asking people how strongly they are interested in politics using a 5-point Likert-scale (`very strong`, `strong`, `medium`, `less strong`, `not at all`) -- as well as giving them the options of `will not  say` and `do not know`.
+
+## Attention Checks
+We include two attention checks in the survey.
+The first one is after the demographic covariates, the second one is asked just before respondents enter the round of the experimental treatments.
+The attention checks are taken from @berinsky2014separating and adapted to the German context by the authors.
+If a respondents fails the first attention check, a warning appears and the respondent can only continue with the survey once the respondent has correctly answered the question correctly.
+The second attention check also has a warning -- meaning that respondents have to select two options -- but if they fail to correctly pass the check, they are excluded.
+Each excluded respondent due to failing an attention check is replaced with another ``good respondent".
+  
+**Attention Check 1**  When a big news story breaks people often go online to get up-to-the-minute details on what is going on.
+We want to know which websites people trust to get this information.
+We also want to know if people are paying attention to the question.
+To show that you have read this much, please ignore the question and select BILD-Zeitung and Süddeutsche Zeitung as your two answers.
+When there is a big news story, which is the one news website you would visit first? (Please only choose one).
+Eight (German) news outlets are provided to choose from.
+Respondents pass the attention check if they select _BILD-Zeitung_ and _Süddeutsche Zeitung_.
+  
+**Attention Check 2**:
+We would like to get a sense of your general preferences.
+Most  modern  theories  of  decision  making  recognize  that  decisions  do  not take  place  in  a  vacuum.
+Individual  preferences  and  knowledge,  along  with  situational variables can greatly impact the decision process.
+To demonstrate that you've read this much,  just  go  ahead  and  select  both  red  and  green  among  the  alternatives  below,  no matter what your favourite color is.  Yes, ignore the question below and select both of those options.
+What is your favourite color?
+Six colors are provided to choose from, respondents pass the attention check if they select red and green.
+
+## Descritive Information
+Table \ref{tab:descr} gives an overview of the descriptive information of the variables under study.
+
+```{r "Table with Descriptives"}
+source(here("src/analysis/descriptive-information-overview.R"))
+kbl(descr, booktabs =T, caption = "\\label{tab:descr}Descriptive Information") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") 
+```
+
+\newpage
+# Balance Checks
+As detailed in our pre-analysis plan, we only include variables as covariates that are unbalanced. 
+As Figure \ref{fig:balance} shows, only the income covariate is unbalanced accross the experimental groups.
+We therefore add this covariate to the regression analyses.
+
+```{r oa-balance, fig.align = 'center', out.width = "70%", fig.cap = "\\label{fig:balance}Balance Checks"}
+  knitr::include_graphics(here::here("report/figures", "balance-checks-1.png"))
+```
+  
+
+\newpage
+# Pre-Registered and Explorative Analysis
+Table \ref{tab:h1} demonstrates the results as visualized in Figure 1 in the paper.
+```{r "h1", fig.align="center", fig.height=5, fig.width=6}
+p1 <- d %>% 
+  mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
+  select(POST_2, POST_3, ethnic) %>%
+  pivot_longer(cols = POST_2:POST_3) %>%
+  group_by(ethnic, name) %>%
+  summarise(value = list(value)) %>%
+  spread(ethnic, value) %>%
+  group_by(name) %>%
+  mutate(p_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$p.value,
+         t_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$statistic,
+         means_civic = t.test(unlist(`Civic Conception`))$estimate,
+         means_ethnic = t.test(unlist(`Ethnic Conception`))$estimate,
+         means_difference = means_civic - means_ethnic,
+         lower = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[1],
+         higher = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[2],
+         name = recode(name,
+                       `POST_2` = "DV: People, not politicians, should make the most  important political decisions",
+                       `POST_3` = "DV: MPs should follow the will of the people")) %>%
+  select(var = name, p_value, t_value, means_difference, lower, higher) %>%
+  pivot_longer(cols = p_value:higher) %>%
+  mutate(name = recode(name,
+                       `p_value` = "p-value",
+                       `t_value` = "t-value",
+                       `means_difference` = "Differences in Means",
+                       `lower` = "CI: Lower Bound",
+                       `higher` = "CI: Upper Bound")) %>%
+  ungroup()
+
+tmp <- p1 %>%
+  filter(var == "DV: People, not politicians, should make the most  important political decisions") %>%
+  select(`Statistical Values` = name, `DV: People, not politicians, should make the most  important political decisions` = value)
+
+tmpp <- p1 %>%
+  filter(var == "DV: MPs should follow the will of the people") %>%
+  select(`DV: MPs should follow the will of the people` = value)
+
+p1 <- tmp %>%
+  add_column(tmpp) 
+
+kbl(p1, booktabs =T, caption = "\\label{tab:h1}Table Results H1") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "4cm")  %>%
+  column_spec(3, width = "4cm")
+
+```
+\newpage
+
+Table \ref{tab:h2a} and \ref{tab:h2b} demonstrate the results as visualized in Figure 2 in the paper.
+```{r "h2a", fig.align="center", fig.height=5, fig.width=6}
+df <- d %>%
+  mutate(a = HT4)
+h2a <- regression2(df, a, ethnic) %>%
+  pivot_longer(cols = AME) %>%
+  mutate(a = recode(a, 
+                    `1` = "1 (Low)", `2` = "2", `3` = "3", `4` = "4",
+                    `5` = "5 (High"),
+         y = recode(y,
+                    `POST_2` = "DV: People, not politicians, should make the most  important political decisions",
+                    `POST_3` = "DV: MPs should follow the will of the people")) %>%
+  select(`Dependent Variable` = y, `Levels of National Exclusivity` = a,
+         AME = value, `CI: Lower Bound` = lower, `CI: Upper Bound` = upper) 
+
+kbl(h2a, booktabs =T, caption = "\\label{tab:h2a}Table Results H2a") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+```
+
+```{r "h2b", fig.align="center", fig.height=5, fig.width=6}
+df <- d %>%
+  mutate(a = Afd_vote)
+h2b <- regression(df, a, ethnic) %>%
+  mutate(ethnic = recode(ethnic, 
+                    `0` = "Civic Conception", 
+                    `1` = "Ethnic Conception"),
+         y = recode(y,
+                    `POST_2` = "DV: People, not politicians, should make the most  important political decisions",
+                    `POST_3` = "DV: MPs should follow the will of the people")) %>%
+  select(`Dependent Variable` = y, Treatment = ethnic,
+         AME, `CI: Lower Bound` = lower, `CI: Upper Bound` = upper) 
+
+kbl(h2b, booktabs =T, caption = "\\label{tab:h2b}Table Results H2b") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+```
+
+\newpage
+# Scaling
+
+## CFA
+```{r "oa-cfa", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/explorative_cfa.R"))
+
+kbl(m_cfa, booktabs =T, caption = "Confirmatory Factor Analysis - Fit Statistics") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "4cm")  %>%
+  column_spec(3, width = "4cm") %>%
+  column_spec(4, width = "5cm") 
+```
+```{r "oa-cfa1", fig.align="center", fig.height=8, fig.width=8}
+kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "3cm") 
+```
+
+```{r oa-cfa2, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:cfa}CFA Distribution"}
+knitr::include_graphics(here::here("report/figures", "scale-1.png"))
+```
+## Additive scale
+```{r "oa-addative", fig.align="center", fig.height=8, fig.width=12}
+source(here("src/analysis/additive-scale.R"))
+
+kbl(add1, booktabs =T, caption = "Addative Scaling Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+
+```
+
+```{r oa-add, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:add}Addative Scale Distribution"}
+knitr::include_graphics(here::here("report/figures", "addative-1.png"))
+```
+
+## Wüttke et al. Approach
+```{r "oa-wuttke", fig.align="center", fig.height=8, fig.width=12}
+source(here("src/analysis/wuttke-approach.R"))
+
+kbl(wa1, booktabs =T, caption = "Wüttke et al. Approach") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+```
+
+```{r oa-wuttke-2, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:wuttke}Wuttke et al. Approach Distribution"}
+knitr::include_graphics(here::here("report/figures", "wuttke-1.png"))
+```
+
+## IRT Analyse
+```{r "oa-irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+source(here("src/analysis/IRT.R"))
+```
+```{r oa-irt1, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:irt1}IRT Distribution (1)"}
+knitr::include_graphics(here::here("report/figures", "irt-1.png"))
+```
+
+```{r "oa-irt2", fig.align="center", fig.height=8, fig.width=12}
+kbl(irt3, booktabs =T, caption = "IRT Analysis") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "10cm") %>%
+  column_spec(2, width = "3cm")  
+```
+
+```{r oa-irt3, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:irt1}IRT Distribution (1)"}
+knitr::include_graphics(here::here("report/figures", "irt-2.png"))
+```
+
+\newpage
+# Explanatory Power: Predicting Populist Vote
+```{r "oa-predict-vote-1", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/predict-pop-vote-scales.R"))
+dv1 <- exp2 %>%
+  filter(y == "Voted: Populist Party") %>%
+  dplyr::select(`Regression Coefficient` = estimate,
+         `CI: Lower Bound` = lower, 
+         `CI: Upper Bound` = upper, 
+         `Scaling Technique` = id,
+         `Treatment` = ethnic)
+kbl(dv1, booktabs =T, caption = "Table Results DV: Populist Vote") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+
+dv2<- exp2 %>%
+  filter(y == "Voted: AfD") %>%
+  dplyr::select(`Regression Coefficient` = estimate,
+         `CI: Lower Bound` = lower, 
+         `CI: Upper Bound` = upper, 
+         `Scaling Technique` = id,
+         `Treatment` = ethnic)
+kbl(dv2, booktabs =T, caption = "Table Results DV: AfD Vote") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+
+dv3 <- exp2 %>%
+  filter(y == "Voted: Left") %>%
+  dplyr::select(`Regression Coefficient` = estimate,
+         `CI: Lower Bound` = lower, 
+         `CI: Upper Bound` = upper, 
+         `Scaling Technique` = id,
+         `Treatment` = ethnic)
+kbl(dv3, booktabs =T, caption = "Table Results DV: Left Vote") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+```
+
+```{r "oa-predict-vote-2", fig.align="center", fig.height=8, fig.width=8}
+source(here("src/analysis/predict-pop-vote-items.R"))
+dv1 <- exp2 %>%
+  filter(y == "Voted: Populist Party") %>%
+  dplyr::select(`Regression Coefficient` = estimate,
+         `CI: Lower Bound` = lower, 
+         `CI: Upper Bound` = upper, 
+         `Items` = id,
+         `Treatment` = ethnic)
+kbl(dv1, booktabs =T, caption = "Table Results DV: Populist Vote") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+
+dv2<- exp2 %>%
+  filter(y == "Voted: AfD") %>%
+  dplyr::select(`Regression Coefficient` = estimate,
+         `CI: Lower Bound` = lower, 
+         `CI: Upper Bound` = upper, 
+         `Scaling Technique` = id,
+         `Treatment` = ethnic)
+kbl(dv2, booktabs =T, caption = "Table Results DV: AfD Vote") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+
+dv3 <- exp2 %>%
+  filter(y == "Voted: Left") %>%
+  dplyr::select(`Regression Coefficient` = estimate,
+         `CI: Lower Bound` = lower, 
+         `CI: Upper Bound` = upper, 
+         `Scaling Technique` = id,
+         `Treatment` = ethnic)
+kbl(dv3, booktabs =T, caption = "Table Results DV: Left Vote") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")
+```

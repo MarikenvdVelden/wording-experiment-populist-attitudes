@@ -101,7 +101,7 @@ for(i in 1:length(Ethnic)){
     tmp <- tmp %>%
       add_case(tmpp)}
 }
-exp <- exp %>%
+exp1 <- exp %>%
   add_case(tmp) %>%
   dplyr::mutate(y = dplyr::recode(y,
                                   `Afd_vote` = "Voted: AfD",
@@ -135,3 +135,19 @@ exp <- exp %>%
   geom_hline(yintercept = 0, size = .2, linetype = "dashed") +
   coord_flip() +
   guides(color=guide_legend(nrow=2,byrow=TRUE))
+
+exp2 <- exp %>%
+  add_case(tmp) %>%
+  dplyr::mutate(y = dplyr::recode(y,
+                                  `Afd_vote` = "Voted: AfD",
+                                  `Linke_vote` = "Voted: Left",
+                                  `pop_vote` = "Voted: Populist Party"),
+                id = dplyr::recode(id,
+                                   `POST_1` = "Item 1 - Compromise is selling out",
+                                   `POST_2` = "Item 2 - The people must decide",
+                                   `POST_3` = "Item 3 - Follow will of the peopl",
+                                   `POST_5` = "Item 5 - Too much talk, no action",
+                                   `POST_6` = "Item 6 - Rep. by ordinary citizen"),
+                ethnic = dplyr::recode(ethnic,
+                                       `1` = "Ethnic Conception",
+                                       `0` = "Civic Conception"))
