@@ -1,17 +1,24 @@
 covs <- d %>%
-  select(ethnic, D4, D7:PT8) %>%
-  filter(D4 != "NA",
+  select(ethnic, D1:D4, D7:PT8) %>%
+  filter(D1 != "NA",
+         D2 != "NA",
+         D3 != "NA",
+         D4 != "NA",
          D7 != "NA",
          D8 != "NA",
          D9 != "NA",
          D10 != "NA")
 
-balanced <-bal.tab(ethnic ~ factor(D4) + D7 + D8 + factor(D9) +
+balanced <-bal.tab(ethnic ~ factor(D1) +  factor(D2) + factor(D3) + 
+                     factor(D4) + D7 + D8 + factor(D9) +
                      factor(D10) + pol_know + PT7 + PT8,
                    data = covs,
                    thresholds = c(m = 0.05))[[1]] 
 df <- balanced %>%
-  mutate(variable = c("Urbanness: Big City", "Urbanness: Countryside", "Urbanness: Middlesized City", 
+  mutate(variable = c("Male", "Age: 18 - 29", "Age: 30 - 39", "Age: 40 - 49",
+                      "Age: 50 - 59", "Age: 60 - 74", "High Levels of Education",
+                      "Low Levels of Education", "Medium Levels of Education",
+                      "Urbanness: Big City", "Urbanness: Countryside", "Urbanness: Middlesized City", 
                           "Urbanness: Rural Village", "Urbanness: Suburb",
                           "Employment", "Income", "Living Place: Badem-Würtemberg",
                           "Living Place: Bavaria", "Living Place: Berlin",
@@ -33,7 +40,10 @@ df <- balanced %>%
                           "Political Knowledge", "Political Interest",
                           "Ideology"),
          variable = factor(variable,
-                           levels = c("Urbanness: Big City", "Urbanness: Countryside", "Urbanness: Middlesized City", 
+                           levels = c("Male", "Age: 18 - 29", "Age: 30 - 39", "Age: 40 - 49",
+                                      "Age: 50 - 59", "Age: 60 - 74", "High Levels of Education",
+                                      "Low Levels of Education", "Medium Levels of Education",
+                                      "Urbanness: Big City", "Urbanness: Countryside", "Urbanness: Middlesized City", 
                                       "Urbanness: Rural Village", "Urbanness: Suburb",
                                       "Employment", "Income", "Living Place: Badem-Würtemberg",
                                       "Living Place: Bavaria", "Living Place: Berlin",

@@ -26,7 +26,40 @@ pe1 <- exp1 %>%
   coord_flip()
 
 # Interaction with Age (pe2)
+df <- d %>%
+  mutate(a = D2)
+exp2 <- regression5(df, a, ethnic) 
 
+pe2 <- exp2 %>%
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow \n the will of the people",
+                    `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people"),
+         factor = recode(factor,
+                         `a30-39` = "Age: 30 - 39",
+                         `a40-49` = "Age: 40 - 49",
+                         `a50-59` = "Age: 50 - 59", 
+                         `a60-74` = "Age: 60 - 74")) %>%
+  ggplot(aes(x = factor, 
+             y = AME,
+             color = y,
+             fill = y,
+             ymin = lower,
+             ymax = upper)) +
+  geom_point(position = position_dodge(.5)) + 
+  geom_errorbar(position = position_dodge(.5), width = 0) +
+  theme_ipsum() +
+  labs(x = "", 
+       y = "Average Marginal Effects for Ethnic Conception of the People",
+       title = "Exploration: Age") +
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5),
+        legend.position="none",
+        legend.title = element_blank()) +
+  scale_color_manual(values = fig_cols) +
+  scale_fill_manual(values = fig_cols) +
+  geom_hline(yintercept = 0, size = .2, linetype = "dashed") +
+  coord_flip()
 
 #Interaction with Region
 df <- d %>%

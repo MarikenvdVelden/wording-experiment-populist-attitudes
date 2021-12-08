@@ -1,5 +1,19 @@
 d <- d %>%
-  mutate(D4 = recode(D4, 
+  mutate(D1 = recode(D1, 
+                     `1` = "Female",
+                     `2` = "Male", .default = "NA"),
+         D2 = recode(D2, 
+                     `1` = "17 or younger",
+                     `2` = "18-29",
+                     `3` = "30-39",
+                     `4` = "40-49",
+                     `5` = "50-59",
+                     `6` = "60-74", .default = "NA"),
+         D3 = recode(D3, 
+                     `1` = "Low Levels of Education",
+                     `2` = "Medium Levels of Education",  
+                     `3` =  "High Levels of Education",.default = "NA"),
+         D4 = recode(D4, 
                      `1` = "Big City",
                      `2` = "Suburb",
                      `3` = "Middlesized City",
@@ -73,4 +87,4 @@ d <- d %>%
         POST_6 = POST_6 - 1,
         POST_8 = as_numeric(POST_8),
         POST_8 = POST_8 - 1,) %>%
-  select(id, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_8)
+  select(id, D1, D2, D3, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_8)

@@ -1,22 +1,24 @@
 as_e <- d %>%
   filter(ethnic == 1) %>%
-  mutate(scale = round((POST_1 + POST_2 + POST_3 + 
-                          POST_5 + POST_6)/5,2)) 
-as_e <- as_e$scale
-  
-as_c <- d %>%
+  mutate(add_pa = (POST_1 + POST_2 + POST_3 + 
+                          POST_5 + POST_6)/5) %>%
+  select(id, add_pa)
+
+as_df <- d %>%
   filter(ethnic == 0) %>%
-  mutate(scale = round((POST_1 + POST_2 + POST_3 + 
-                          POST_5 + POST_6)/5,2)) 
-as_c <- as_c$scale
+  mutate(add_pa = (POST_1 + POST_2 + POST_3 + 
+                          POST_5 + POST_6)/5) %>%
+  select(id, add_pa) %>% 
+  add_case(as_e)
+  
 
 add1 <- d %>%
-  mutate(scale = ifelse(ethnic == 1, as_e, as_c)) %>%
-  select(scale, ethnic) %>%
+  left_join(as_df) %>%
+  select(add_pa, ethnic) %>%
   mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
   group_by(ethnic) %>%
-  summarise(scale = list(scale)) %>%
-  spread(ethnic, scale) %>%
+  summarise(add_pa = list(add_pa)) %>%
+  spread(ethnic, add_pa) %>%
   mutate(p_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$p.value,
          t_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$statistic,
          means_civic = t.test(unlist(`Civic Conception`))$estimate,
@@ -37,11 +39,11 @@ add1 <- d %>%
 
 
 add2 <- d %>%
-  mutate(scale = ifelse(ethnic == 1, as_e, as_c),
-         ethnic = recode(ethnic,
+  left_join(as_df) %>%
+  mutate(ethnic = recode(ethnic,
                          `0` = "Civic Conception",
                          `1` = "Ethnic Conception")) %>%
-  ggplot(aes(x = scale, color = ethnic, fill = ethnic)) +
+  ggplot(aes(x = add_pa, color = ethnic, fill = ethnic)) +
   labs(y= "Density", x = "Distribution CFA Construct") +
   geom_histogram(binwidth=1) +
   facet_grid(.~ethnic) +
@@ -51,9 +53,6 @@ add2 <- d %>%
   theme(legend.position="none",
         legend.title = element_blank())
 
-tmp <- d %>%
-  mutate(add_pa = ifelse(ethnic == 1,as_e, as_c)) %>%
-  select(add_pa)
+d <- left_join(x = d, y = as_df, by = "id") %>%
+  distinct()
 
-d <- d %>%
-  add_column(tmp)

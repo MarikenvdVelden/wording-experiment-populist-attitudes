@@ -1,22 +1,61 @@
+detach_package <- function(pkg, character.only = FALSE){
+  if(!character.only)
+  {
+    pkg <- deparse(substitute(pkg))
+  }
+  search_item <- paste("package", pkg, sep = ":")
+  while(search_item %in% search())
+  {
+    detach(search_item, unload = TRUE, character.only = TRUE)
+  }
+}
+packages <- c( "ltm", "GPArotation", "Hmisc", "mirt",
+               "lattice","lordif", "semPlot",
+               "semTools", "nFactors", "corrr")
+for(i in length(packages)){
+  detach_package(packages[i], TRUE)
+}
+
 Ethnic <- c(0,1) 
 
 for(i in 1:length(Ethnic)){
-df <- d %>%
-    dplyr::filter(ethnic == Ethnic[i]) %>%
+    df <- d %>%
+    filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
                       ifelse(D6 == "Left", 1, 0)),
-           Linke_vote = ifelse(D6 == "Left", 1,0),
-           scale = cfa_pa)
+           Linke_vote = ifelse(D6 == "Left", 1,0)) %>%
+  rename(scale = cfa_pa) 
+
 if(i==1){
-  exp <- regression7(df, scale) %>%
+  exp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
     mutate(id = "cfa_pa",
-           ethnic = Ethnic[i])}
+           ethnic = Ethnic[i],
+           y = "pop_vote") 
+  tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+                 mutate(id = "cfa_pa",
+                        ethnic = Ethnic[i],
+                        y = "Afd_vote") 
+  exp <- exp %>% add_case(tmp)
+  tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+               mutate(id = "cfa_pa",
+                      ethnic = Ethnic[i],
+                      y = "Linke_vote")
+  exp <- exp %>% add_case(tmp)}
 else{
-  tmp <- regression7(df, scale) %>%
+  exp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
     mutate(id = "cfa_pa",
-           ethnic = Ethnic[i])
-  exp <- exp %>%
-    add_case(tmp)}
+           ethnic = Ethnic[i],
+           y = "pop_vote") 
+  tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "cfa_pa",
+           ethnic = Ethnic[i],
+           y = "Afd_vote") 
+  exp <- exp %>% add_case(tmp)
+  tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "cfa_pa",
+           ethnic = Ethnic[i],
+           y = "Linke_vote")
+  exp <- exp %>% add_case(tmp)}
 }
 
 for(i in 1:length(Ethnic)){
@@ -24,76 +63,143 @@ for(i in 1:length(Ethnic)){
     dplyr::filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
                       ifelse(D6 == "Left", 1, 0)),
-           Linke_vote = ifelse(D6 == "Left", 1,0),
-           scale = add_pa)
+           Linke_vote = ifelse(D6 == "Left", 1,0))  %>%
+    rename(scale = add_pa) 
+  
   if(i==1){
-    tmp <- regression7(df, scale) %>%
+    tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
       mutate(id = "add_pa",
-             ethnic = Ethnic[i])}
+             ethnic = Ethnic[i],
+             y = "pop_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "add_pa",
+             ethnic = Ethnic[i],
+             y = "Afd_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "add_pa",
+             ethnic = Ethnic[i],
+             y = "Linke_vote")
+    exp <- exp %>% add_case(tmp)}
   else{
-    tmpp <- regression7(df, scale) %>%
+    tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
       mutate(id = "add_pa",
-             ethnic = Ethnic[i])
-    tmp <- tmp %>%
-      add_case(tmpp)}
+             ethnic = Ethnic[i],
+             y = "pop_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "add_pa",
+             ethnic = Ethnic[i],
+             y = "Afd_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "add_pa",
+             ethnic = Ethnic[i],
+             y = "Linke_vote")
+    exp <- exp %>% add_case(tmp)}
 }
-exp <- exp %>%
-  add_case(tmp)
 
 for(i in 1:length(Ethnic)){
   df <- d %>%
     dplyr::filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
                              ifelse(D6 == "Left", 1, 0)),
-           Linke_vote = ifelse(D6 == "Left", 1,0),
-           scale = wuttke_pa)
+           Linke_vote = ifelse(D6 == "Left", 1,0))  %>%
+    rename(scale = wuttke_pa) 
+  
   if(i==1){
-    tmp <- regression7(df, scale) %>%
+    tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
       mutate(id = "wuttke_pa",
-             ethnic = Ethnic[i])}
+             ethnic = Ethnic[i],
+             y = "pop_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "wuttke_pa",
+             ethnic = Ethnic[i],
+             y = "Afd_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "wuttke_pa",
+             ethnic = Ethnic[i],
+             y = "Linke_vote")
+    exp <- exp %>% add_case(tmp)}
   else{
-    tmpp <- regression7(df, scale) %>%
+    tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
       mutate(id = "wuttke_pa",
-             ethnic = Ethnic[i])
-    tmp <- tmp %>%
-      add_case(tmpp)}
+             ethnic = Ethnic[i],
+             y = "pop_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "wuttke_pa",
+             ethnic = Ethnic[i],
+             y = "Afd_vote") 
+    exp <- exp %>% add_case(tmp)
+    tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+      mutate(id = "wuttke_pa",
+             ethnic = Ethnic[i],
+             y = "Linke_vote")
+    exp <- exp %>% add_case(tmp)}
 }
-exp <- exp %>%
-  add_case(tmp)
 
 for(i in 1:length(Ethnic)){
   df <- d %>%
     dplyr::filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
                              ifelse(D6 == "Left", 1, 0)),
-           Linke_vote = ifelse(D6 == "Left", 1,0),
-           scale = irt_pa)
-  if(i==1){
-    tmp <- regression7(df, scale) %>%
-      mutate(id = "irt_pa",
-             ethnic = Ethnic[i])}
-  else{
-    tmpp <- regression7(df, scale) %>%
-      mutate(id = "irt_pa",
-             ethnic = Ethnic[i])
-    tmp <- tmp %>%
-      add_case(tmpp)}
+           Linke_vote = ifelse(D6 == "Left", 1,0))  %>%
+  rename(scale = irt_pa) 
+
+if(i==1){
+  tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "irt_pa",
+           ethnic = Ethnic[i],
+           y = "pop_vote") 
+  exp <- exp %>% add_case(tmp)
+  tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "irt_pa",
+           ethnic = Ethnic[i],
+           y = "Afd_vote") 
+  exp <- exp %>% add_case(tmp)
+  tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "irt_pa",
+           ethnic = Ethnic[i],
+           y = "Linke_vote")
+  exp <- exp %>% add_case(tmp)}
+else{
+  tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "irt_pa",
+           ethnic = Ethnic[i],
+           y = "pop_vote") 
+  exp <- exp %>% add_case(tmp)
+  tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "irt_pa",
+           ethnic = Ethnic[i],
+           y = "Afd_vote") 
+  exp <- exp %>% add_case(tmp)
+  tmp <- tidy(lm(Linke_vote ~ scale + D8 + PT8, df)) %>%
+    mutate(id = "irt_pa",
+           ethnic = Ethnic[i],
+           y = "Linke_vote")
+  exp <- exp %>% add_case(tmp)}
 }
 
 exp1 <- exp %>%
-  add_case(tmp) %>%
-  dplyr::mutate(y = dplyr::recode(y,
-                    `Afd_vote` = "Voted: AfD",
-                    `Linke_vote` = "Voted: Left",
-                    `pop_vote` = "Voted: Populist Party"),
-                id = dplyr::recode(id,
-                     `add_pa` = "Addative Scale",
-                     `cfa_pa` = "CFA Scaling",
-                     `irt_pa` = "IRT Scaling",
-                     `wuttke_pa` = "Wüttke et al. Approach"),
-                ethnic = dplyr::recode(ethnic,
-                                       `1` = "Ethnic Conception",
-                                       `0` = "Civic Conception")) %>%
+  dplyr::mutate(lower = estimate - (1.96 * std.error),
+         upper = estimate + (1.96 * std.error),
+         y = dplyr::recode(y,
+                           `Afd_vote` = "Voted: AfD",
+                           `Linke_vote` = "Voted: Left",
+                           `pop_vote` = "Voted: Populist Party"),
+         id = dplyr::recode(id,
+                            `add_pa` = "Addative Scale",
+                            `cfa_pa` = "CFA Scaling",
+                            `irt_pa` = "IRT Scaling",
+                            `wuttke_pa` = "Wüttke et al. Approach"),
+         ethnic = dplyr::recode(ethnic,
+                                `1` = "Ethnic Conception",
+                                `0` = "Civic Conception")) %>%
+  filter(term == "scale") %>%
   ggplot(aes(x = y, 
              y = estimate,
              color = id,
@@ -112,18 +218,3 @@ exp1 <- exp %>%
   scale_color_manual(values = fig_cols) +
   geom_hline(yintercept = 0, size = .2, linetype = "dashed") +
   coord_flip()
-
-exp2 <- exp %>%
-  add_case(tmp) %>%
-  dplyr::mutate(y = dplyr::recode(y,
-                                  `Afd_vote` = "Voted: AfD",
-                                  `Linke_vote` = "Voted: Left",
-                                  `pop_vote` = "Voted: Populist Party"),
-                id = dplyr::recode(id,
-                                   `add_pa` = "Addative Scale",
-                                   `cfa_pa` = "CFA Scaling",
-                                   `irt_pa` = "IRT Scaling",
-                                   `wuttke_pa` = "Wüttke et al. Approach"),
-                ethnic = dplyr::recode(ethnic,
-                                       `1` = "Ethnic Conception",
-                                       `0` = "Civic Conception"))

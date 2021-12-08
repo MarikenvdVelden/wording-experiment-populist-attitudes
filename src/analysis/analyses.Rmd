@@ -132,7 +132,7 @@ p2c + p2a +
 source(here("src/analysis/explorative_analysis.R"))
 pe1 
 
-pe3/ (pe4 + pe5) #add pe2 (age)
+(pe2 + pe3)/ (pe4 + pe5)
 ```
 
 ## Scaling fit
@@ -212,7 +212,3 @@ source(here("src/analysis/predict-pop-vote-items.R"))
 exp1
 ```
 
-## Save Data with Scales
-```{r "save data"}
-save(d, file = here("data/intermediate/cleaned_experiment_scales.RData"))
-```

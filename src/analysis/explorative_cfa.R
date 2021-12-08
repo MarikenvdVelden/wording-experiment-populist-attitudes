@@ -32,9 +32,20 @@ m_cfa <- tibble(
   `Civic Conception (6 Items)` = c(fitMeasures(cfa_civic6)[9], AIC(cfa_civic6), BIC(cfa_civic6),
                          fitMeasures(cfa_civic6)[23], fitMeasures(cfa_civic6)[26],
                          fitMeasures(cfa_civic6)[29]))
+
+cfa_e <- d %>%
+  filter(ethnic == 1) %>%
+  mutate(cfa_pa = as.numeric(predict(cfa_ethnic))) %>%
+  select(id, cfa_pa)
+
+cfa_df <- d %>%
+  filter(ethnic == 0) %>%
+  mutate(cfa_pa = as.numeric(predict(cfa_civic))) %>%
+  select(id, cfa_pa) %>%
+  add_case(cfa_e)
              
 cfa1 <- d %>%
-  mutate(cfa_pa = ifelse(ethnic == 1, predict(cfa_ethnic), predict(cfa_civic))) %>%
+  left_join(cfa_df, by = "id") %>%
   select(cfa_pa, ethnic) %>%
   mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
   group_by(ethnic) %>%
@@ -60,8 +71,8 @@ cfa1 <- d %>%
 
 
 cfa2 <- d %>%
-  mutate(cfa_pa = ifelse(ethnic == 1, predict(cfa_ethnic), predict(cfa_civic)),
-         ethnic = recode(ethnic,
+  left_join(cfa_df, by = "id")  %>%
+  mutate(ethnic = recode(ethnic,
                          `0` = "Civic Conception",
                          `1` = "Ethnic Conception"))  %>%
   ggplot(aes(x = cfa_pa, color = ethnic, fill = ethnic)) +
@@ -74,10 +85,6 @@ cfa2 <- d %>%
   theme(legend.position="none",
         legend.title = element_blank())
 
-tmp <- d %>%
-  mutate(cfa_pa = ifelse(ethnic == 1, predict(cfa_ethnic), predict(cfa_civic))) %>%
-  select(cfa_pa)
-
-d <- d %>%
-  add_column(tmp)
+d <- full_join(x = d, y = cfa_df, by = "id") %>%
+  distinct()
   

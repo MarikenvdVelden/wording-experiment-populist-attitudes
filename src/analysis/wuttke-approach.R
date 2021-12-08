@@ -1,26 +1,28 @@
 w_e <- d %>%
   filter(ethnic == 1) %>%
-  select(matches("POST_[12356]")) %>%
+  select(id, matches("POST_[12356]")) %>%
   rowwise() %>% 
-  mutate(scale = min(POST_1, POST_2, POST_3,
-                     POST_5, POST_6))
-w_e <- w_e$scale
+  mutate(wuttke_pa = min(POST_1, POST_2, POST_3,
+                     POST_5, POST_6)) %>%
+  select(id, wuttke_pa)
 
-w_c <- d %>%
+
+w_df <- d %>%
   filter(ethnic == 0) %>%
-  select(matches("POST_[12356]")) %>%
+  select(id, matches("POST_[12356]")) %>%
   rowwise() %>% 
-  mutate(scale = min(POST_1, POST_2, POST_3,
-                     POST_5, POST_6))
-w_c <- w_c$scale
+  mutate(wuttke_pa = min(POST_1, POST_2, POST_3,
+                     POST_5, POST_6)) %>%
+  select(id, wuttke_pa) %>%
+  add_case(w_e)
 
 wa1 <- d %>%
-  mutate(scale = ifelse(ethnic == 1, w_e, w_c)) %>%
-  select(scale, ethnic) %>%
+  left_join(w_df) %>%
+  select(wuttke_pa, ethnic) %>%
   mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
   group_by(ethnic) %>%
-  summarise(scale = list(scale)) %>%
-  spread(ethnic, scale) %>%
+  summarise(wuttke_pa = list(wuttke_pa)) %>%
+  spread(ethnic, wuttke_pa) %>%
   mutate(p_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$p.value,
          t_value = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$statistic,
          means_civic = t.test(unlist(`Civic Conception`))$estimate,
@@ -41,11 +43,11 @@ wa1 <- d %>%
 
 
 wa2 <- d %>%
-  mutate(scale = ifelse(ethnic == 1, w_e, w_c),
-         ethnic = recode(ethnic,
+  left_join(w_df) %>%
+  mutate(ethnic = recode(ethnic,
                          `0` = "Civic Conception",
                          `1` = "Ethnic Conception")) %>%
-  ggplot(aes(x = scale, color = ethnic, fill = ethnic)) +
+  ggplot(aes(x = wuttke_pa, color = ethnic, fill = ethnic)) +
   labs(y= "Density", x = "Distribution CFA Construct") +
   geom_histogram(binwidth=1) +
   facet_grid(.~ethnic) +
@@ -55,10 +57,6 @@ wa2 <- d %>%
   theme(legend.position="none",
         legend.title = element_blank())
 
-tmp <- d %>%
-  mutate(wuttke_pa = ifelse(ethnic == 1,w_e, w_c)) %>%
-  select(wuttke_pa)
-
-d <- d %>%
-  add_column(tmp)
+d <- inner_join(x = d, y = w_df, by = "id") %>%
+  distinct()
 

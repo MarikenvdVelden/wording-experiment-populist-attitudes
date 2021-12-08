@@ -100,7 +100,7 @@ pe1
 <img src="../../report/figures/explorative-1.png" style="display: block; margin: auto;" />
 
 ``` r
-pe3/ (pe4 + pe5) #add pe2 (age)
+(pe2 + pe3)/ (pe4 + pe5)
 ```
 
 <img src="../../report/figures/explorative-2.png" style="display: block; margin: auto;" />
@@ -161,13 +161,13 @@ CFI
 AIC
 </td>
 <td style="text-align:right;width: 4cm; ">
-44106.68
+45310.27
 </td>
 <td style="text-align:right;width: 4cm; ">
-43468.92
+44402.58
 </td>
 <td style="text-align:right;width: 4cm; ">
-52011.91
+53170.89
 </td>
 </tr>
 <tr>
@@ -175,13 +175,13 @@ AIC
 BIC
 </td>
 <td style="text-align:right;width: 4cm; ">
-44180.07
+45383.93
 </td>
 <td style="text-align:right;width: 4cm; ">
-43542.37
+44476.31
 </td>
 <td style="text-align:right;width: 4cm; ">
-52097.61
+53256.90
 </td>
 </tr>
 <tr>
@@ -203,7 +203,7 @@ RMSEA
 p-value RMSEA
 </td>
 <td style="text-align:right;width: 4cm; ">
-0.16
+0.07
 </td>
 <td style="text-align:right;width: 4cm; ">
 0.00
@@ -257,7 +257,7 @@ Values
 Average of PCA Constructed Scale for Civic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.02
+0.09
 </td>
 </tr>
 <tr>
@@ -265,7 +265,7 @@ Average of PCA Constructed Scale for Civic Conception of the People
 Average of PCA Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.01
+-0.36
 </td>
 </tr>
 <tr>
@@ -273,7 +273,7 @@ Average of PCA Constructed Scale for Ethnic Conception of the People
 Average of Civic Conception - Average of Ethnic Conception
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.02
+0.45
 </td>
 </tr>
 <tr>
@@ -281,7 +281,7 @@ Average of Civic Conception - Average of Ethnic Conception
 p-Value for Differences in Means
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.11
+0.00
 </td>
 </tr>
 </tbody>
@@ -325,7 +325,7 @@ Values
 Average of PCA Constructed Scale for Civic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-3.46
+3.40
 </td>
 </tr>
 <tr>
@@ -333,7 +333,7 @@ Average of PCA Constructed Scale for Civic Conception of the People
 Average of PCA Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-3.51
+3.28
 </td>
 </tr>
 <tr>
@@ -341,7 +341,7 @@ Average of PCA Constructed Scale for Ethnic Conception of the People
 Average of Civic Conception - Average of Ethnic Conception
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.05
+0.12
 </td>
 </tr>
 <tr>
@@ -349,7 +349,7 @@ Average of Civic Conception - Average of Ethnic Conception
 p-Value for Differences in Means
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.01
+0.00
 </td>
 </tr>
 </tbody>
@@ -393,7 +393,7 @@ Values
 Average of PCA Constructed Scale for Civic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-2.57
+2.42
 </td>
 </tr>
 <tr>
@@ -401,7 +401,7 @@ Average of PCA Constructed Scale for Civic Conception of the People
 Average of PCA Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-2.60
+2.21
 </td>
 </tr>
 <tr>
@@ -409,7 +409,7 @@ Average of PCA Constructed Scale for Ethnic Conception of the People
 Average of Civic Conception - Average of Ethnic Conception
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.03
+0.21
 </td>
 </tr>
 <tr>
@@ -417,7 +417,7 @@ Average of Civic Conception - Average of Ethnic Conception
 p-Value for Differences in Means
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.16
+0.00
 </td>
 </tr>
 </tbody>
@@ -470,7 +470,7 @@ Values
 Average of IRT Constructed Scale for Civic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.04
+-0.01
 </td>
 </tr>
 <tr>
@@ -478,7 +478,7 @@ Average of IRT Constructed Scale for Civic Conception of the People
 Average of IRT Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.02
+0.01
 </td>
 </tr>
 <tr>
@@ -486,7 +486,7 @@ Average of IRT Constructed Scale for Ethnic Conception of the People
 Average of Civic Conception - Average of Ethnic Conception
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.03
+-0.01
 </td>
 </tr>
 <tr>
@@ -494,7 +494,7 @@ Average of Civic Conception - Average of Ethnic Conception
 p-Value for Differences in Means
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.22
+0.51
 </td>
 </tr>
 </tbody>
@@ -521,9 +521,3 @@ exp1
 ```
 
 <img src="../../report/figures/predict-vote-2-1.png" style="display: block; margin: auto;" />
-
-## Save Data with Scales
-
-``` r
-save(d, file = here("data/intermediate/cleaned_experiment_scales.RData"))
-```

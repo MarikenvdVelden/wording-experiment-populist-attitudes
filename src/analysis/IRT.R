@@ -185,11 +185,14 @@ irt_e <- pattern_e$score.dat$z1
 irt_c <- pattern_c$score.dat$z1
 
 tmp <- d %>%
-  dplyr::mutate(irt_pa = ifelse(ethnic == 1, irt_e,irt_c)) %>%
-  dplyr::select(irt_pa)
+  filter(ethnic == 1) %>%
+  mutate(irt_pa = irt_e)
 
 d <- d %>%
-  add_column(tmp)
+  dplyr::filter(ethnic == 0) %>%
+  dplyr::mutate(irt_pa = irt_c) %>%
+  add_case(tmp)
+
 
 irt3 <- d %>%
   dplyr::select(irt_pa, ethnic) %>%
