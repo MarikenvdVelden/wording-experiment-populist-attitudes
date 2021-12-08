@@ -1,4 +1,4 @@
-p1 <- d %>% 
+df <- d %>% 
   mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
   select(POST_2, POST_3, ethnic) %>%
   pivot_longer(cols = POST_2:POST_3) %>%
@@ -16,7 +16,9 @@ p1 <- d %>%
          name = recode(name,
                        `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
                        `POST_3` = "DV: MPs should follow \n the will of the people")) %>%
-  select(name, p_value, t_value, means_difference, lower, higher) %>%
+  select(name, p_value, t_value, means_difference, lower, higher) 
+
+p1 <- df %>%
   ggplot(aes(x = means_difference, 
              y = name,
              xmin = lower, 

@@ -1,25 +1,25 @@
 w_e <- d %>%
-  filter(ethnic == 1) %>%
-  select(id, matches("POST_[12356]")) %>%
+  dplyr::filter(ethnic == 1) %>%
+  dplyr::select(id, matches("POST_[12356]")) %>%
   rowwise() %>% 
-  mutate(wuttke_pa = min(POST_1, POST_2, POST_3,
+  dplyr::mutate(wuttke_pa = min(POST_1, POST_2, POST_3,
                      POST_5, POST_6)) %>%
-  select(id, wuttke_pa)
+  dplyr::select(id, wuttke_pa)
 
 
 w_df <- d %>%
-  filter(ethnic == 0) %>%
-  select(id, matches("POST_[12356]")) %>%
+  dplyr::filter(ethnic == 0) %>%
+  dplyr::select(id, matches("POST_[12356]")) %>%
   rowwise() %>% 
-  mutate(wuttke_pa = min(POST_1, POST_2, POST_3,
+  dplyr::mutate(wuttke_pa = min(POST_1, POST_2, POST_3,
                      POST_5, POST_6)) %>%
-  select(id, wuttke_pa) %>%
+  dplyr::select(id, wuttke_pa) %>%
   add_case(w_e)
 
 wa1 <- d %>%
   left_join(w_df) %>%
-  select(wuttke_pa, ethnic) %>%
-  mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
+  dplyr::select(wuttke_pa, ethnic) %>%
+  dplyr::mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
   group_by(ethnic) %>%
   summarise(wuttke_pa = list(wuttke_pa)) %>%
   spread(ethnic, wuttke_pa) %>%
@@ -44,7 +44,7 @@ wa1 <- d %>%
 
 wa2 <- d %>%
   left_join(w_df) %>%
-  mutate(ethnic = recode(ethnic,
+  dplyr::mutate(ethnic = recode(ethnic,
                          `0` = "Civic Conception",
                          `1` = "Ethnic Conception")) %>%
   ggplot(aes(x = wuttke_pa, color = ethnic, fill = ethnic)) +

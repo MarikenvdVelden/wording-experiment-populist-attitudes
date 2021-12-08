@@ -42,10 +42,11 @@ if(i==1){
                       y = "Linke_vote")
   exp <- exp %>% add_case(tmp)}
 else{
-  exp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
+  tmp <- tidy(lm(pop_vote ~ scale + D8 + PT8, df)) %>%
     mutate(id = "cfa_pa",
            ethnic = Ethnic[i],
            y = "pop_vote") 
+  exp <- exp %>% add_case(tmp)
   tmp <- tidy(lm(Afd_vote ~ scale + D8 + PT8, df)) %>%
     mutate(id = "cfa_pa",
            ethnic = Ethnic[i],
@@ -184,7 +185,7 @@ else{
   exp <- exp %>% add_case(tmp)}
 }
 
-exp1 <- exp %>%
+exp <- exp %>%
   dplyr::mutate(lower = estimate - (1.96 * std.error),
          upper = estimate + (1.96 * std.error),
          y = dplyr::recode(y,
@@ -199,7 +200,9 @@ exp1 <- exp %>%
          ethnic = dplyr::recode(ethnic,
                                 `1` = "Ethnic Conception",
                                 `0` = "Civic Conception")) %>%
-  filter(term == "scale") %>%
+  filter(term == "scale") 
+
+exp1 <- exp %>%
   ggplot(aes(x = y, 
              y = estimate,
              color = id,

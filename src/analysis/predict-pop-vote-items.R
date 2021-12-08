@@ -208,7 +208,7 @@ for(i in 1:length(Ethnic)){
     exp <- exp %>% add_case(tmp)}
 }
 
-exp1 <- exp %>%
+exp <- exp %>%
   dplyr::mutate(lower = estimate - (1.96 * std.error),
                 upper = estimate + (1.96 * std.error),
                 y = dplyr::recode(y,
@@ -224,7 +224,9 @@ exp1 <- exp %>%
                 ethnic = dplyr::recode(ethnic,
                                        `1` = "Ethnic Conception",
                                        `0` = "Civic Conception")) %>%
-  filter(term == "scale") %>%
+  filter(term == "scale") 
+
+exp1 <- exp %>%
   ggplot(aes(x = y, 
              y = estimate,
              color = id,

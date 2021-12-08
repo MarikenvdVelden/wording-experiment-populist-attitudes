@@ -151,7 +151,7 @@ All the other items were kept constant.[^1].
 
 Figure \ref{fig:results-h1} shows the results of a difference of means test for the two treatment groups (ethnic vs. civic wording) for both items -- Table A.5 in the OA shows the coefficients. 
 There is a statistically significant difference in respondent agreement with the ethnic and civic conception of the people. 
-When 'the people' is conceived as _das Volk_ respondents are more likely to agree with the item's statement compared to the civic wording of _Bürger_. 
+When 'the people' is conceived as _das Volk_ respondents are more likely to agree with the item's statement compared to the civic wording of _Bürger_.
 Yet, as the results show, the difference is small in substantive terms.
 
 How does the effect of an ethnic conception of the people vis-à-vis a civic conception vary across respondents? 
@@ -218,7 +218,7 @@ The populist attitude scales proposed by @schulz2018 and @stanley2011, for insta
 Importantly, the degree to which 'the people' is understood in denoting a specific ethno-cultural group likely differs across countries.
 This type of differential item interpretation might therefore lead to measurement invariance when used in cross-national research [@castanho2020]. 
 In other words, if the ethno-cultural connotation of the the people varies across countries, this may hamper cross-national application of populist attitude scales that include multiple items referring to 'the people'. 
-In fact, in a comparison of different populist attitudes scales @castanho2020 find that the scales by  @schulz2018 and @stanley2011 perform worse than the scale proposed by @akkerman2014. 
+In fact, in a comparison of different populist attitudes scales @castanho2020 find that the scales by @schulz2018 and @stanley2011 perform worse than the scale proposed by @akkerman2014. 
 To empirically establish whether differential interpretations of `the people' matters for measurement invariance, it would be worthwhile replicating this study for different countries. In addition, it would be worthwhile in replicating this analysis for different scales than the @akkerman2014 scale. 
 
 One can argue theoretically that 'the people' captures the meaning of the concept of populism better than 'citizens'. 

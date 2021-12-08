@@ -67,8 +67,89 @@ p1
 
 ``` r
 # negative values: Ethnic conception > Civic conception 
-# positive values: Ethnic conception < Civic conception 
+# positive values: Ethnic conception < Civic conception
+
+kbl(df, booktabs =T, caption = "Ethnic Conception Hypothesis - T-Test") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") %>%
+  column_spec(6, width = "2cm")
 ```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Ethnic Conception Hypothesis - T-Test
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+p_value
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+t_value
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+means_difference
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+lower
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+higher
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+-3.7
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.11
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.16
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.27
+</td>
+<td style="text-align:right;width: 2cm; ">
+-1.1
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+</tr>
+</tbody>
+</table>
 
 ## National Identity Hypothesis
 
@@ -79,6 +160,227 @@ p2a
 
 <img src="../../report/figures/h2a-1.png" style="display: block; margin: auto;" />
 
+``` r
+h2a <- h2a %>% 
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow the will of the \n people",
+                    `POST_4` = "DV: Differences between elites an the people are bigger than \n differences between the people")) %>%
+  select(y, AME:lower, a) %>%
+  rename(`Exclusive National Identity` = a)
+
+kbl(h2a, booktabs =T, caption = "National Identity Hypothesis - AME") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") 
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+National Identity Hypothesis - AME
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+y
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+AME
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+upper
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+lower
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Exclusive National Identity
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.21
+</td>
+<td style="text-align:right;width: 2cm; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.09
+</td>
+<td style="text-align:right;width: 2cm; ">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.12
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.14
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.19
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:right;width: 2cm; ">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.21
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.29
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.13
+</td>
+<td style="text-align:right;width: 2cm; ">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.18
+</td>
+<td style="text-align:right;width: 2cm; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.11
+</td>
+<td style="text-align:right;width: 2cm; ">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.14
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+5
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Far Right Party ID Hypothesis
 
 ``` r
@@ -88,9 +390,125 @@ p2b
 
 <img src="../../report/figures/h2b-1.png" style="display: block; margin: auto;" />
 
-# Exploration
+``` r
+h2b <- h2b %>% 
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow the will of the \n people",
+                    `POST_4` = "DV: Differences between elites an the people are bigger than \n differences between the people"),
+         ethnic = recode(ethnic,
+                         `1` = "Ethnic Conception of the People",
+                         `0` = "Civic Conception")) %>%
+  select(y, AME:lower, treatment = ethnic)
 
-## Alternative specifications + Interactions
+kbl(h2b, booktabs =T, caption = "Far Right Party ID - AME") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") 
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Far Right Party ID - AME
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+y
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+AME
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+upper
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+lower
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+treatment
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.81
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.91
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.71
+</td>
+<td style="text-align:left;width: 2cm; ">
+Civic Conception
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.97
+</td>
+<td style="text-align:right;width: 2cm; ">
+1.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.86
+</td>
+<td style="text-align:left;width: 2cm; ">
+Ethnic Conception of the People
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.51
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.60
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.42
+</td>
+<td style="text-align:left;width: 2cm; ">
+Civic Conception
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.54
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.63
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.45
+</td>
+<td style="text-align:left;width: 2cm; ">
+Ethnic Conception of the People
+</td>
+</tr>
+</tbody>
+</table>
+
+# Exploration
 
 ``` r
 source(here("src/analysis/explorative_analysis.R"))
@@ -100,10 +518,76 @@ pe1
 <img src="../../report/figures/explorative-1.png" style="display: block; margin: auto;" />
 
 ``` r
-(pe2 + pe3)/ (pe4 + pe5)
+exp1 <- exp1 %>%
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow \n the will of the people"))
+kbl(exp1, booktabs =T, caption = "Ethnic Conception Hypothesis - OLS Effect of Ethnic Conception of the People ") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "8cm")
 ```
 
-<img src="../../report/figures/explorative-2.png" style="display: block; margin: auto;" />
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Ethnic Conception Hypothesis - OLS Effect of Ethnic Conception of the
+People
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+estimate
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+upper
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+lower
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.16
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.20
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.11
+</td>
+<td style="text-align:left;width: 8cm; ">
+DV: People, not politicians, should make the most important political
+decisions
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 8cm; ">
+DV: MPs should follow the will of the people
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
+#(pe2 + pe3)/ (pe4 + pe5)
+```
 
 ## Scaling fit
 
@@ -516,8 +1000,1116 @@ exp1
 <img src="../../report/figures/predict-vote-1-1.png" style="display: block; margin: auto;" />
 
 ``` r
+exp <- exp %>%
+  dplyr::select(estimate, lower, upper, scale = id, treatment = ethnic, y)
+kbl(exp, booktabs =T, caption = "Explanatory Power: Scales Predicting Populist Vote - OLS Regression") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "4cm") %>%
+  column_spec(5, width = "4cm") %>%
+  column_spec(6, width = "4cm")
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Explanatory Power: Scales Predicting Populist Vote - OLS Regression
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+estimate
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+lower
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+upper
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+scale
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+treatment
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.12
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.10
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.14
+</td>
+<td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.10
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.12
+</td>
+<td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.10
+</td>
+<td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.10
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:left;width: 4cm; ">
+Wüttke et al. Approach
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:left;width: 4cm; ">
+Wüttke et al. Approach
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Wüttke et al. Approach
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:left;width: 4cm; ">
+Wüttke et al. Approach
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Wüttke et al. Approach
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 4cm; ">
+Wüttke et al. Approach
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:left;width: 4cm; ">
+IRT Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:left;width: 4cm; ">
+IRT Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+IRT Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:left;width: 4cm; ">
+IRT Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:left;width: 4cm; ">
+IRT Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 4cm; ">
+IRT Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 source(here("src/analysis/predict-pop-vote-items.R"))
 exp1
 ```
 
 <img src="../../report/figures/predict-vote-2-1.png" style="display: block; margin: auto;" />
+
+``` r
+exp <- exp %>%
+  dplyr::select(estimate, lower, upper, item = id, treatment = ethnic, y)
+kbl(exp, booktabs =T, caption = "Explanatory Power: Items Predicting Populist Vote - OLS Regression") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "4cm") %>%
+  column_spec(5, width = "4cm") %>%
+  column_spec(6, width = "4cm")
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Explanatory Power: Items Predicting Populist Vote - OLS Regression
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+estimate
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+lower
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+upper
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+item
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+treatment
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 1 - Compromise is selling out
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 1 - Compromise is selling out
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 1 - Compromise is selling out
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 2 - The people must decide
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 2 - The people must decide
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 2 - The people must decide
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 2 - The people must decide
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 2 - The people must decide
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 2 - The people must decide
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 3 - Follow will of the peopl
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 3 - Follow will of the peopl
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+-0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 3 - Follow will of the peopl
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 3 - Follow will of the peopl
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 3 - Follow will of the peopl
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 3 - Follow will of the peopl
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 5 - Too much talk, no action
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 5 - Too much talk, no action
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 5 - Too much talk, no action
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 5 - Too much talk, no action
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 5 - Too much talk, no action
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 5 - Too much talk, no action
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 6 - Rep. by ordinary citizen
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 6 - Rep. by ordinary citizen
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 6 - Rep. by ordinary citizen
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 6 - Rep. by ordinary citizen
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.04
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.03
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 6 - Rep. by ordinary citizen
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:left;width: 4cm; ">
+Item 6 - Rep. by ordinary citizen
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+</tbody>
+</table>

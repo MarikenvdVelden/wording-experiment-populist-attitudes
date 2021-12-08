@@ -104,19 +104,65 @@ df
 source(here("src/analysis/h1.R"))
 p1
 # negative values: Ethnic conception > Civic conception 
-# positive values: Ethnic conception < Civic conception 
+# positive values: Ethnic conception < Civic conception
+
+kbl(df, booktabs =T, caption = "Ethnic Conception Hypothesis - T-Test") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") %>%
+  column_spec(6, width = "2cm")
 ```
 
 ## National Identity Hypothesis
 ```{r "h2a", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/h2a.R"))
 p2a
+
+h2a <- h2a %>% 
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow the will of the \n people",
+                    `POST_4` = "DV: Differences between elites an the people are bigger than \n differences between the people")) %>%
+  select(y, AME:lower, a) %>%
+  rename(`Exclusive National Identity` = a)
+
+kbl(h2a, booktabs =T, caption = "National Identity Hypothesis - AME") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") 
 ```
 
 ## Far Right Party ID Hypothesis
 ```{r "h2b", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/h2b.R"))
 p2b
+
+h2b <- h2b %>% 
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow the will of the \n people",
+                    `POST_4` = "DV: Differences between elites an the people are bigger than \n differences between the people"),
+         ethnic = recode(ethnic,
+                         `1` = "Ethnic Conception of the People",
+                         `0` = "Civic Conception")) %>%
+  select(y, AME:lower, treatment = ethnic)
+
+kbl(h2b, booktabs =T, caption = "Far Right Party ID - AME") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "8cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm") 
 ```
 
 ```{r "h2", fig.align="center", fig.height=6, fig.width=12, echo = FALSE, fig.show = "hide"}
@@ -126,13 +172,23 @@ p2c + p2a +
 
 # Exploration
 
-## Alternative specifications + Interactions
-
 ```{r "explorative", fig.align="center", fig.height=15, fig.width=15}
 source(here("src/analysis/explorative_analysis.R"))
 pe1 
 
-(pe2 + pe3)/ (pe4 + pe5)
+exp1 <- exp1 %>%
+  mutate(y = recode(y,
+                    `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
+                    `POST_3` = "DV: MPs should follow \n the will of the people"))
+kbl(exp1, booktabs =T, caption = "Ethnic Conception Hypothesis - OLS Effect of Ethnic Conception of the People ") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "8cm")
+
+#(pe2 + pe3)/ (pe4 + pe5)
 ```
 
 ## Scaling fit
@@ -205,10 +261,34 @@ irt4
 ```{r "predict-vote-1", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/predict-pop-vote-scales.R"))
 exp1
+
+exp <- exp %>%
+  dplyr::select(estimate, lower, upper, scale = id, treatment = ethnic, y)
+kbl(exp, booktabs =T, caption = "Explanatory Power: Scales Predicting Populist Vote - OLS Regression") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "4cm") %>%
+  column_spec(5, width = "4cm") %>%
+  column_spec(6, width = "4cm")
 ```
 
 ```{r "predict-vote-2", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/predict-pop-vote-items.R"))
 exp1
+
+exp <- exp %>%
+  dplyr::select(estimate, lower, upper, item = id, treatment = ethnic, y)
+kbl(exp, booktabs =T, caption = "Explanatory Power: Items Predicting Populist Vote - OLS Regression") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(2, width = "2cm")  %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "4cm") %>%
+  column_spec(5, width = "4cm") %>%
+  column_spec(6, width = "4cm")
 ```
 
