@@ -116,7 +116,7 @@ decisions
 0.00
 </td>
 <td style="text-align:right;width: 2cm; ">
--3.7
+-3.8
 </td>
 <td style="text-align:right;width: 2cm; ">
 -0.11
@@ -133,7 +133,7 @@ decisions
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.27
+0.29
 </td>
 <td style="text-align:right;width: 2cm; ">
 -1.1
@@ -209,13 +209,13 @@ DV: People, not politicians, should make the most important political
 decisions
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.07
+-0.08
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.07
+0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.21
+-0.23
 </td>
 <td style="text-align:right;width: 2cm; ">
 1
@@ -227,13 +227,13 @@ DV: People, not politicians, should make the most important political
 decisions
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.00
+-0.01
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.09
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.09
+-0.10
 </td>
 <td style="text-align:right;width: 2cm; ">
 2
@@ -248,7 +248,7 @@ decisions
 0.07
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.12
+0.13
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.01
@@ -263,13 +263,13 @@ DV: People, not politicians, should make the most important political
 decisions
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.14
+0.15
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.19
+0.20
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.09
+0.10
 </td>
 <td style="text-align:right;width: 2cm; ">
 4
@@ -281,13 +281,13 @@ DV: People, not politicians, should make the most important political
 decisions
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.21
+0.22
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.29
+0.31
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.13
+0.14
 </td>
 <td style="text-align:right;width: 2cm; ">
 5
@@ -298,13 +298,13 @@ decisions
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.06
+-0.05
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.06
+0.08
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.18
+-0.17
 </td>
 <td style="text-align:right;width: 2cm; ">
 1
@@ -315,13 +315,13 @@ DV: MPs should follow the will of the people
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.03
+-0.02
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.05
+0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
--0.11
+-0.10
 </td>
 <td style="text-align:right;width: 2cm; ">
 2
@@ -332,10 +332,10 @@ DV: MPs should follow the will of the people
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.00
+0.01
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.05
+0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
 -0.04
@@ -349,13 +349,13 @@ DV: MPs should follow the will of the people
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.04
+0.03
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.08
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.00
+-0.01
 </td>
 <td style="text-align:right;width: 2cm; ">
 4
@@ -366,13 +366,13 @@ DV: MPs should follow the will of the people
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.07
+0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.14
+0.13
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.00
+-0.01
 </td>
 <td style="text-align:right;width: 2cm; ">
 5
@@ -441,13 +441,13 @@ DV: People, not politicians, should make the most important political
 decisions
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.81
+0.85
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.91
+0.95
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.71
+0.74
 </td>
 <td style="text-align:left;width: 2cm; ">
 Civic Conception
@@ -459,13 +459,13 @@ DV: People, not politicians, should make the most important political
 decisions
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.97
+0.96
 </td>
 <td style="text-align:right;width: 2cm; ">
 1.07
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.86
+0.85
 </td>
 <td style="text-align:left;width: 2cm; ">
 Ethnic Conception of the People
@@ -493,13 +493,13 @@ Civic Conception
 DV: MPs should follow the will of the people
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.54
+0.48
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.63
+0.58
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.45
+0.39
 </td>
 <td style="text-align:left;width: 2cm; ">
 Ethnic Conception of the People
@@ -555,13 +555,13 @@ y
 <tbody>
 <tr>
 <td style="text-align:right;width: 2cm; ">
+0.12
+</td>
+<td style="text-align:right;width: 2cm; ">
 0.16
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.20
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.11
+0.07
 </td>
 <td style="text-align:left;width: 8cm; ">
 DV: People, not politicians, should make the most important political
@@ -570,13 +570,13 @@ decisions
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
-0.05
+0.02
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.09
+0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.01
+-0.02
 </td>
 <td style="text-align:left;width: 8cm; ">
 DV: MPs should follow the will of the people
@@ -645,13 +645,13 @@ CFI
 AIC
 </td>
 <td style="text-align:right;width: 4cm; ">
-45310.27
+46486.08
 </td>
 <td style="text-align:right;width: 4cm; ">
-44402.58
+45622.01
 </td>
 <td style="text-align:right;width: 4cm; ">
-53170.89
+54614.40
 </td>
 </tr>
 <tr>
@@ -659,13 +659,13 @@ AIC
 BIC
 </td>
 <td style="text-align:right;width: 4cm; ">
-45383.93
+46560.03
 </td>
 <td style="text-align:right;width: 4cm; ">
-44476.31
+45696.02
 </td>
 <td style="text-align:right;width: 4cm; ">
-53256.90
+54700.76
 </td>
 </tr>
 <tr>
@@ -676,7 +676,7 @@ RMSEA
 0.06
 </td>
 <td style="text-align:right;width: 4cm; ">
-0.08
+0.09
 </td>
 <td style="text-align:right;width: 4cm; ">
 0.08
@@ -687,7 +687,7 @@ RMSEA
 p-value RMSEA
 </td>
 <td style="text-align:right;width: 4cm; ">
-0.07
+0.13
 </td>
 <td style="text-align:right;width: 4cm; ">
 0.00
@@ -741,7 +741,7 @@ Values
 Average of PCA Constructed Scale for Civic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.09
+0.06
 </td>
 </tr>
 <tr>
@@ -749,7 +749,7 @@ Average of PCA Constructed Scale for Civic Conception of the People
 Average of PCA Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
--0.36
+-0.38
 </td>
 </tr>
 <tr>
@@ -757,7 +757,7 @@ Average of PCA Constructed Scale for Ethnic Conception of the People
 Average of Civic Conception - Average of Ethnic Conception
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.45
+0.44
 </td>
 </tr>
 <tr>
@@ -825,7 +825,7 @@ Average of PCA Constructed Scale for Ethnic Conception of the People
 Average of Civic Conception - Average of Ethnic Conception
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.12
+0.11
 </td>
 </tr>
 <tr>
@@ -962,7 +962,7 @@ Average of IRT Constructed Scale for Civic Conception of the People
 Average of IRT Constructed Scale for Ethnic Conception of the People
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.01
+0.00
 </td>
 </tr>
 <tr>
@@ -978,7 +978,7 @@ Average of Civic Conception - Average of Ethnic Conception
 p-Value for Differences in Means
 </td>
 <td style="text-align:right;width: 3cm; ">
-0.51
+0.58
 </td>
 </tr>
 </tbody>
@@ -1065,7 +1065,7 @@ Voted: Populist Party
 0.10
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.08
+0.09
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.12
@@ -1088,130 +1088,10 @@ Voted: AfD
 0.00
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.04
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.10
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.09
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
--0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.09
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.10
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
 0.03
 </td>
 <td style="text-align:left;width: 4cm; ">
-Addative Scale
+CFA Scaling
 </td>
 <td style="text-align:left;width: 4cm; ">
 Civic Conception
@@ -1222,16 +1102,16 @@ Voted: Left
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:right;width: 2cm; ">
 0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.08
+0.09
 </td>
 <td style="text-align:left;width: 4cm; ">
-Addative Scale
+CFA Scaling
 </td>
 <td style="text-align:left;width: 4cm; ">
 Ethnic Conception
@@ -1242,16 +1122,16 @@ Voted: Populist Party
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
 0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
+0.08
 </td>
 <td style="text-align:left;width: 4cm; ">
-Addative Scale
+CFA Scaling
 </td>
 <td style="text-align:left;width: 4cm; ">
 Ethnic Conception
@@ -1271,6 +1151,126 @@ Voted: AfD
 0.02
 </td>
 <td style="text-align:left;width: 4cm; ">
+CFA Scaling
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.08
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.10
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.09
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Civic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Left
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: Populist Party
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.06
+</td>
+<td style="text-align:left;width: 4cm; ">
+Addative Scale
+</td>
+<td style="text-align:left;width: 4cm; ">
+Ethnic Conception
+</td>
+<td style="text-align:left;width: 4cm; ">
+Voted: AfD
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 2cm; ">
+0.01
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.00
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.02
+</td>
+<td style="text-align:left;width: 4cm; ">
 Addative Scale
 </td>
 <td style="text-align:left;width: 4cm; ">
@@ -1282,7 +1282,7 @@ Voted: Left
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
-0.07
+0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.05
@@ -1348,7 +1348,7 @@ Voted: Left
 0.04
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.07
+0.06
 </td>
 <td style="text-align:left;width: 4cm; ">
 Wüttke et al. Approach
@@ -1482,13 +1482,13 @@ Voted: Populist Party
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
 0.06
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.08
+0.05
+</td>
+<td style="text-align:right;width: 2cm; ">
+0.07
 </td>
 <td style="text-align:left;width: 4cm; ">
 IRT Scaling
@@ -1508,7 +1508,7 @@ Voted: AfD
 -0.01
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.01
+0.02
 </td>
 <td style="text-align:left;width: 4cm; ">
 IRT Scaling
@@ -1576,7 +1576,7 @@ y
 0.04
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.02
+0.03
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.05
@@ -1693,13 +1693,13 @@ Voted: Left
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
-0.05
+0.04
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.04
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.06
+0.05
 </td>
 <td style="text-align:left;width: 4cm; ">
 Item 2 - The people must decide
@@ -1716,7 +1716,7 @@ Voted: Populist Party
 0.04
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.04
+0.03
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.05
@@ -1833,10 +1833,10 @@ Voted: Populist Party
 </tr>
 <tr>
 <td style="text-align:right;width: 2cm; ">
-0.04
+0.03
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.03
+0.02
 </td>
 <td style="text-align:right;width: 2cm; ">
 0.04
@@ -1979,7 +1979,7 @@ Voted: AfD
 0.00
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.02
+0.01
 </td>
 <td style="text-align:left;width: 4cm; ">
 Item 5 - Too much talk, no action
@@ -1999,7 +1999,7 @@ Voted: Left
 0.03
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.06
+0.05
 </td>
 <td style="text-align:left;width: 4cm; ">
 Item 6 - Rep. by ordinary citizen
@@ -2019,7 +2019,7 @@ Voted: Populist Party
 0.03
 </td>
 <td style="text-align:right;width: 2cm; ">
-0.04
+0.05
 </td>
 <td style="text-align:left;width: 4cm; ">
 Item 6 - Rep. by ordinary citizen

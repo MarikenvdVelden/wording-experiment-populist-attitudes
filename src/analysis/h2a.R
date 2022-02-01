@@ -13,8 +13,8 @@ p2a <- h2a %>%
              fill = y,
              ymin = lower,
              ymax = upper)) +
-  geom_line() + 
-  geom_ribbon(alpha = .2) +
+  geom_line(color = fig_cols[1]) + 
+  geom_ribbon(alpha = .2, fill = fig_cols[1], color = fig_cols[1]) +
   #geom_errorbar(position = position_dodge(.5), width = 0) +
   theme_ipsum() +
   labs(x = "Exclusive National Identity \n (1 = Low, 5 = High)", 
@@ -24,6 +24,6 @@ p2a <- h2a %>%
         plot.subtitle = element_text(hjust = 0.5),
         legend.position="none",
         legend.title = element_blank()) +
-  scale_color_manual(values = fig_cols) +
-  scale_fill_manual(values = fig_cols) +
+  #scale_color_manual(values = fig_cols) +
+  #scale_fill_manual(values = fig_cols) +
   geom_hline(yintercept = 0, size = .2, linetype = "dashed")

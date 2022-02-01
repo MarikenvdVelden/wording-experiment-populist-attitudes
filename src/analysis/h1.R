@@ -24,13 +24,13 @@ p1 <- df %>%
              xmin = lower, 
              xmax = higher,
              color = name)) +
-  geom_point() + 
-  geom_errorbar(width = 0) +
+  geom_point(color = fig_cols[1]) + 
+  geom_errorbar(width = 0, color = fig_cols[1]) +
   theme_ipsum() +
   labs(y="", x= "Means Differences Test \n t statistic") +
   theme(plot.title = element_text(hjust = 0.5),
         legend.position="none") +
-  scale_color_manual(values = fig_cols) +
+  #scale_color_manual(values = fig_cols) +
   geom_vline(xintercept = 0.0, linetype = "dashed", size = .5, color = "gray80")
   
   

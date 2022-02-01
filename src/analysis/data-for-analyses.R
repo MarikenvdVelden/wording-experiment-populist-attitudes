@@ -87,4 +87,12 @@ d <- d %>%
         POST_6 = POST_6 - 1,
         POST_8 = as_numeric(POST_8),
         POST_8 = POST_8 - 1,) %>%
-  select(id, D1, D2, D3, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_8)
+  select(id, D1, D2, D3, D4:D10, pol_know, PT7:PT8, HT4, Afd_vote, ethnic, POST_1:POST_8) %>%
+  mutate(D1 = if_else(D1 == "NA", median(D1, na.rm = T), D1),
+         D3 = if_else(D3 == "NA", median(D3, na.rm = T), D3),
+         D4 = if_else(D4 == "NA", median(D4, na.rm = T), D4),
+         D7 = if_else(is.na(D7), round(mean(D7, na.rm = T),0), D7),
+         D8 = if_else(is.na(D8), round(mean(D8, na.rm = T),0), D8),
+         D9 = if_else(D9 == "NA", median(D9, na.rm = T), D9),
+         D10 = if_else(D10 == "NA", median(D10, na.rm = T), D10)) %>%
+  drop_na(ethnic)

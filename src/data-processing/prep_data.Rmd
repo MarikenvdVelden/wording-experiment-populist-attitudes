@@ -42,13 +42,6 @@ d <- fetch_survey(surveyID = "SV_7PoXOEVMUF1JZn8",
                     verbose = TRUE, force_request = T,
                     label = FALSE, convert = FALSE)
 source(here("src/data-processing/clean_data.R"))
-
-dem <- read_delim(here("data/raw-private/14651 data matched final.csv"), 
-                  delim = ";") %>%
-  select(id = tic, D2 = age, D1 = gender, D3 = education)
-
-d <- left_join(d, dem)
-rm(dem)
 ```
 
 ## Save Data for Analysis

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  23 NOV 2021 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  1 FEB 2022 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,9 +1024,9 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <6> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 205.
 
-Underfull \hbox (badness 3281) in paragraph at lines 205--205
+Underfull \hbox (badness 4726) in paragraph at lines 205--205
 [][]\T1/lmr/m/n/9 Replication files are avail-able on the au-thor's Github ac-c
-ount ([][]$http : / / github . com / MarikenvdVelden /
+ount ([][]$https : / / anonymous . 4open . science / r /
  []
 
 LaTeX Font Info:    Try loading font information for T1+phv on input line 210.
@@ -1035,7 +1035,7 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <11> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 210.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 296.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 299.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1046,54 +1046,54 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/h1-1.png, id=37, 578.16pt x 481.8pt>
+eport/figures/h1-extra-1.png, id=40, 1156.32pt x 578.16pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
-ent/report/figures/h1-1.png Graphic file (type png)
+ent/report/figures/h1-extra-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
-nt/report/figures/h1-1.png>
+nt/report/figures/h1-extra-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/h1-1.png  used on input line 370.
-(pdftex.def)             Requested size: 328.82707pt x 274.01866pt.
-[2] [3]
+_mm/wording-experiment/report/figures/h1-extra-1.png  used on input line 381.
+(pdftex.def)             Requested size: 465.06004pt x 232.53026pt.
+[2] [3] [4 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-e
+xperiment/report/figures/h1-extra-1.png>]
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/h2-1.png, id=64, 1156.32pt x 578.16pt>
+eport/figures/h2-1.png, id=83, 1156.32pt x 578.16pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/h2-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/h2-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/h2-1.png  used on input line 475.
+_mm/wording-experiment/report/figures/h2-1.png  used on input line 511.
 (pdftex.def)             Requested size: 469.75502pt x 234.87692pt.
-[4 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experimen
-t/report/figures/h1-1.png>] [5 </Users/marikenvandervelden/Dropbox/Papers/veni_
-project_mm/wording-experiment/report/figures/h2-1.png>] [6]
-Overfull \hbox (48.7465pt too wide) in paragraph at lines 579--584
+[5 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experimen
+t/report/figures/h2-1.png>] [6]
+Overfull \hbox (48.7465pt too wide) in paragraph at lines 615--620
 \T1/lmr/m/n/10.95 Vote Choice.'' \T1/lmr/m/it/10.95 Re-vue Fran-caise de Sci-en
 ce Poli-tique \T1/lmr/m/n/10.95 68 (5): 847--72. https://doi.org/[][]10.3917/rf
 sp.685.0847[][]. 
  []
 
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 654.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 654.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 690.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 690.
 (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 654.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 654.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 690.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 690.
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: DBF637857CA1A0FFA898FDA6C2457C12;194.
+(rerunfilecheck)             Checksum: 7C47323900CB92D8790AB7393090F4BA;224.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 654.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 690.
  ) 
 Here is how much of TeX's memory you used:
- 24338 strings out of 492616
- 436135 string characters out of 6129481
- 494070 words of memory out of 5000000
+ 24341 strings out of 492616
+ 436250 string characters out of 6129481
+ 495085 words of memory out of 5000000
  27922 multiletter control sequences out of 15000+600000
  626213 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,63p,290b,792s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,11n,63p,290b,723s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
 19/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/f
@@ -1108,10 +1108,10 @@ onts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on draft.pdf (7 pages, 354318 bytes).
+Output written on draft.pdf (7 pages, 388147 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

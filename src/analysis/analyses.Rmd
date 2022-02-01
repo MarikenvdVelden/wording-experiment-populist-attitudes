@@ -54,13 +54,12 @@ rm(descr, methodnames, table, fn, table2)
 ## Descriptive Results
 ```{r "descriptive-results", echo=FALSE, fig.height=15, fig.width=10}
 d %>%
-  select(POST_2, POST_3, POST_4, ethnic) %>%
-  pivot_longer(cols = POST_2:POST_4,
+  select(POST_2, POST_3, ethnic) %>%
+  pivot_longer(cols = POST_2:POST_3,
                names_to = "dvs") %>%
   mutate(dvs = recode(dvs,
                       `POST_2` = "DV: People, not politicians, \n should make the most \n important political decisions",
-                       `POST_3` = "DV: MPs should follow \n the will of the people",
-                       `POST_4` = "DV: Differences between elites and \n the people are bigger than \n differences between the people"),
+                       `POST_3` = "DV: MPs should follow \n the will of the people"),
          ethnic = if_else(ethnic==0, "Civic Conception", "Ethnic Conception")) %>%
   group_by(ethnic, dvs) %>%
   summarise(means = round(mean(value, na.rm=T),1),
@@ -189,6 +188,11 @@ kbl(exp1, booktabs =T, caption = "Ethnic Conception Hypothesis - OLS Effect of E
   column_spec(4, width = "8cm")
 
 #(pe2 + pe3)/ (pe4 + pe5)
+```
+
+```{r "h1-extra", fig.align="center", fig.height=6, fig.width=12, echo = FALSE, fig.show = "hide"}
+p1 + pe2 + 
+  plot_layout(widths = c(1, 1.25))
 ```
 
 ## Scaling fit

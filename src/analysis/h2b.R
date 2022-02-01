@@ -16,8 +16,8 @@ p2b <- h2b %>%
              color = y,
              ymin = lower,
              ymax = upper)) +
-  geom_point(position = position_dodge(.5)) + 
-  geom_errorbar(position = position_dodge(.5), width = 0) +
+  geom_point(position = position_dodge(.5), color = fig_cols[1]) + 
+  geom_errorbar(position = position_dodge(.5), width = 0, color = fig_cols[1]) +
   theme_ipsum() +
   labs(x = "", y = "Average Marginal Effects of Voting for a Far Right Party") +
   facet_grid(.~ethnic) +
@@ -25,7 +25,7 @@ p2b <- h2b %>%
         plot.subtitle = element_text(hjust = 0.5),
         legend.position="none",
         legend.title = element_blank()) +
-  scale_color_manual(values = fig_cols) +
+  #scale_color_manual(values = fig_cols) +
   geom_hline(yintercept = 0, size = .2, linetype = "dashed") +
   coord_flip()
 
@@ -43,8 +43,8 @@ p2c <- h2b %>%
              color = y,
              ymin = lower,
              ymax = upper)) +
-  geom_point(position = position_dodge(.5)) + 
-  geom_errorbar(position = position_dodge(.5), width = 0) +
+  geom_point(position = position_dodge(.5),color = fig_cols[1]) + 
+  geom_errorbar(position = position_dodge(.5), width = 0, color = fig_cols[1]) +
   theme_ipsum() +
   labs(x = "", y = "Average Marginal Effects of Voting for a Far Right Party \n for Ethnic Conception of the People") +
   #facet_grid(.~ethnic) +
@@ -52,6 +52,6 @@ p2c <- h2b %>%
         plot.subtitle = element_text(hjust = 0.5),
         legend.position="none",
         legend.title = element_blank()) +
-  scale_color_manual(values = fig_cols) +
+  #scale_color_manual(values = fig_cols) +
   geom_hline(yintercept = 0, size = .2, linetype = "dashed") +
   coord_flip()

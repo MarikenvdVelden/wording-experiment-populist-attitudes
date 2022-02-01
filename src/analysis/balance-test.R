@@ -1,13 +1,6 @@
 covs <- d %>%
   select(ethnic, D1:D4, D7:PT8) %>%
-  filter(D1 != "NA",
-         D2 != "NA",
-         D3 != "NA",
-         D4 != "NA",
-         D7 != "NA",
-         D8 != "NA",
-         D9 != "NA",
-         D10 != "NA")
+  filter(ethnic != "NA")
 
 balanced <-bal.tab(ethnic ~ factor(D1) +  factor(D2) + factor(D3) + 
                      factor(D4) + D7 + D8 + factor(D9) +
