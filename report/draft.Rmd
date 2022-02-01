@@ -172,7 +172,7 @@ These effects are substantial and statistically significant.
 For the item `POP2` (''the people, not politicians, should make the most important political decisions''), when voting for the AfD and being in the ethnic conception of the people condition, one scores on average a full point higher on a 5-point scale, which is about a full standard deviation.
 For the item `POP1` (''The politicians need to follow the will of the people''), the effect size is about half a point (i.e. half a standard deviation).
 
-[^5]: As specified in the Pre-Analysis Plan, we only include unbalanced covariates. OA p. A-7 demonstrates the balance checks, demonstrating that only income is unbalanced, and therefore included as a covariate.
+[^5]: As specified in the Pre-Analysis Plan, we only include unbalanced covariates. OA p. A-7 demonstrates the balance checks, demonstrating that only political interest and income are unbalanced, and therefore included as a covariate.
 
 In a next step, we examine whether respondents with lower and higher levels of exclusive national identity are affected differently by the treatment. 
 Inspired by @mader2021, we measure exclusive national identity using a four-item additive scale on a 5-point Likert scale, which asks respondents to rate how important the following aspects are to be considered German: being born in Germany (a), having German ancestors (b), being able to speak German (c), and sharing share German manners and norms (d). 
@@ -183,15 +183,16 @@ For the other item, the line is much less steep over the various levels of adher
 Overall, we see that the difference between an ethnic and civic wording is only statistically significant for respondents with higher levels of exclusive national identity (ca. `>2.5` on the exclusive national identity scale). 
 Both the analyses from the left and right-hand panel of \ref{fig:results-h2} suggest that far right voters and respondents with an exclusive national identity interpret `the people' (_das Volk_) in an ethno-cultural way. 
 
-
 So how does an ethnic and civic framing of the items `POP1` and `POP2` affect the latent construct of populism? 
 A graded Item Response Theory (IRT) analysis [see also @vanhauwaert2020] moreover shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see **Figure XX** and **XX** in the Appendix). 
 Overall, however, the overall level of information yielded by the two latent constructs of populism are similar. 
-This is not surprising, given that we varied the wording of `the people' only in two items of the full \@akkerman2014 item battery. 
-
+This is not surprising, given that we varied the wording of `the people' only in two items of the full @akkerman2014 item battery. 
 Therefore, also overall difference between a latent construct of populism with two ethnically framed items and a latent construct with two civically framed items is small.
-We find no statistically significant difference between the two constructs estimated using Confirmatory Factor Analysis (see Table A.9 in the OA). 
+
+We find no statistically significant difference between the two constructs estimated using Confirmatory Factor Analysis (see Table A.9 in the OA).
 In terms of model fit, both constructs show very similar goodness-of-fit statistics (i.e., CFI, BIC, RMSEA, and SRMR). Interestingly, however, both the 'ethnic' and the 'civic' scale show a satisfactory model fit (`CFI > 0.9`; `RMSEA < 0.08`; and `SRMR < 0.02`) -- for more information see OA Table A.8. 
+Yet, when looking at the additive scale (see Table **XX** in the OA), we see that the scale using the civic conception of the people has a statistically higher mean value compared to the ethnic conception.
+The same holds for constructing a scale using the approach of @wuttke2020whole -- i.e. using the lowest value on one of the items that construe the latent construct.
 
 ```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Results: H2"}
 knitr::include_graphics(here::here("report/figures", "h2-1.png"))
@@ -218,7 +219,7 @@ Using a wording experiment we examined whether German respondents presented with
 
 We find that there are statistically significant differences between the two wordings. 
 An ethnic conception of the people, overall, yielded more agreement with the items in question. 
-This is effect is particularly pronounced for voters of the far right. 
+This is effect is particularly pronounced for voters of the far right, as well as for older voters. 
 The difference between an ethnic and a civic conception of the people was also only significant for respondents who adhered a moderate to high level of exclusive national identity. 
 This finding is highly suggestive of the 'ethnic' interpretation of `the people' -- at least in the German language.
 
