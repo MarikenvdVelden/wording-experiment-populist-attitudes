@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  6 MAR 2022 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  6 MAR 2022 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1067,29 +1067,29 @@ _mm/wording-experiment/report/figures/h2-1.png  used on input line 474.
 [4 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experimen
 t/report/figures/h1-extra-1.png>] [5 </Users/marikenvandervelden/Dropbox/Papers
 /veni_project_mm/wording-experiment/report/figures/h2-1.png>]
-Overfull \hbox (10.92365pt too wide) in paragraph at lines 567--567
+Overfull \hbox (10.92365pt too wide) in paragraph at lines 566--566
  []|\T1/lmr/m/n/10.95 LogLikelihood|
  []
 
 [6] [7]
-Overfull \hbox (48.7465pt too wide) in paragraph at lines 697--702
+Overfull \hbox (48.7465pt too wide) in paragraph at lines 696--701
 \T1/lmr/m/n/10.95 Vote Choice.'' \T1/lmr/m/it/10.95 Re-vue Fran-caise de Sci-en
 ce Poli-tique \T1/lmr/m/n/10.95 68 (5): 847--72. https://doi.org/[][]10.3917/rf
 sp.685.0847[][]. 
  []
 
 [8] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 778.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 778.
 (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 778.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 778.
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: 8C9CC79A3CFE27213080CDCC98AFF83D;224.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 778.
  ) 
 Here is how much of TeX's memory you used:
  24352 strings out of 492616
@@ -1113,7 +1113,7 @@ onts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on draft.pdf (9 pages, 397581 bytes).
+Output written on draft.pdf (9 pages, 397469 bytes).
 PDF statistics:
  220 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams
