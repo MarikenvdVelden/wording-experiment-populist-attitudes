@@ -215,7 +215,16 @@ kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
   column_spec(1, width = "10cm") %>%
   column_spec(2, width = "3cm") 
 
-cfa2
+mi %>%
+  select(Models, AIC, BIC, `Chisq diff`, `Pr(>Chisq)`) %>%
+  kbl(booktabs =T, caption = "Measurement Invariance - CFA Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "3cm") %>%
+  column_spec(4, width = "3cm") %>%
+  column_spec(5, width = "3cm") 
 ```
 
 ### Additive scale
@@ -259,6 +268,16 @@ kbl(irt3, booktabs =T, caption = "IRT Analysis") %>%
   column_spec(2, width = "3cm")  
 
 irt4
+
+dat %>%
+  kbl(booktabs =T, caption = "Measurement Invariance - IRT Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "3cm") %>%
+  column_spec(4, width = "3cm") %>%
+  column_spec(5, width = "3cm") 
 ```
 
 ## Explanatory Power: Predicting Populist Vote
@@ -266,17 +285,6 @@ irt4
 source(here("src/analysis/predict-pop-vote-scales.R"))
 exp1
 
-exp <- exp %>%
-  dplyr::select(estimate, lower, upper, scale = id, treatment = ethnic, y)
-kbl(exp, booktabs =T, caption = "Explanatory Power: Scales Predicting Populist Vote - OLS Regression") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "2cm") %>%
-  column_spec(2, width = "2cm")  %>%
-  column_spec(3, width = "2cm") %>%
-  column_spec(4, width = "4cm") %>%
-  column_spec(5, width = "4cm") %>%
-  column_spec(6, width = "4cm")
 ```
 
 ```{r "predict-vote-2", fig.align="center", fig.height=8, fig.width=8}
@@ -294,5 +302,6 @@ kbl(exp, booktabs =T, caption = "Explanatory Power: Items Predicting Populist Vo
   column_spec(4, width = "4cm") %>%
   column_spec(5, width = "4cm") %>%
   column_spec(6, width = "4cm")
+
 ```
 

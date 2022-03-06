@@ -4,6 +4,7 @@ as_e <- d %>%
                           POST_5 + POST_6)/5) %>%
   select(id, add_pa)
 
+
 as_df <- d %>%
   filter(ethnic == 0) %>%
   mutate(add_pa = (POST_1 + POST_2 + POST_3 + 
@@ -55,4 +56,3 @@ add2 <- d %>%
 
 d <- left_join(x = d, y = as_df, by = "id") %>%
   distinct()
-

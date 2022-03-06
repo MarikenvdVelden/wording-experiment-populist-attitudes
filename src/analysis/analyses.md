@@ -772,10 +772,95 @@ p-Value for Differences in Means
 </table>
 
 ``` r
-cfa2
+mi %>%
+  select(Models, AIC, BIC, `Chisq diff`, `Pr(>Chisq)`) %>%
+  kbl(booktabs =T, caption = "Measurement Invariance - CFA Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "3cm") %>%
+  column_spec(4, width = "3cm") %>%
+  column_spec(5, width = "3cm") 
 ```
 
-<img src="../../report/figures/scale-1.png" style="display: block; margin: auto;" />
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Measurement Invariance - CFA Models
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Models
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+AIC
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+BIC
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Chisq diff
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Pr(>Chisq)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Configural Invariance
+</td>
+<td style="text-align:right;width: 3cm; ">
+109673
+</td>
+<td style="text-align:right;width: 3cm; ">
+109948
+</td>
+<td style="text-align:right;width: 3cm; ">
+NA
+</td>
+<td style="text-align:right;width: 3cm; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Metric Invariance
+</td>
+<td style="text-align:right;width: 3cm; ">
+109688
+</td>
+<td style="text-align:right;width: 3cm; ">
+109928
+</td>
+<td style="text-align:right;width: 3cm; ">
+25
+</td>
+<td style="text-align:right;width: 3cm; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Scalar Invariance
+</td>
+<td style="text-align:right;width: 3cm; ">
+109896
+</td>
+<td style="text-align:right;width: 3cm; ">
+110102
+</td>
+<td style="text-align:right;width: 3cm; ">
+218
+</td>
+<td style="text-align:right;width: 3cm; ">
+0
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Additive scale
 
@@ -990,6 +1075,96 @@ irt4
 
 <img src="../../report/figures/irt-2.png" style="display: block; margin: auto;" />
 
+``` r
+dat %>%
+  kbl(booktabs =T, caption = "Measurement Invariance - IRT Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "3cm") %>%
+  column_spec(3, width = "3cm") %>%
+  column_spec(4, width = "3cm") %>%
+  column_spec(5, width = "3cm") 
+```
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Measurement Invariance - IRT Models
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Models
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+AIC
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+BIC
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+LogLikelihood
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Significant Difference
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Equal Slopes
+</td>
+<td style="text-align:right;width: 3cm; ">
+93395
+</td>
+<td style="text-align:right;width: 3cm; ">
+93810
+</td>
+<td style="text-align:right;width: 3cm; ">
+-46637
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Equal Slopes, Intercepts, Free Variance and Mean
+</td>
+<td style="text-align:right;width: 3cm; ">
+93498
+</td>
+<td style="text-align:right;width: 3cm; ">
+93879
+</td>
+<td style="text-align:right;width: 3cm; ">
+-46694
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+Equal Slopes, Intercepts, Free Variance and Fixed Mean
+</td>
+<td style="text-align:right;width: 3cm; ">
+93575
+</td>
+<td style="text-align:right;width: 3cm; ">
+93796
+</td>
+<td style="text-align:right;width: 3cm; ">
+-46755
+</td>
+<td style="text-align:right;width: 3cm; ">
+0.15
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Explanatory Power: Predicting Populist Vote
 
 ``` r
@@ -998,530 +1173,6 @@ exp1
 ```
 
 <img src="../../report/figures/predict-vote-1-1.png" style="display: block; margin: auto;" />
-
-``` r
-exp <- exp %>%
-  dplyr::select(estimate, lower, upper, scale = id, treatment = ethnic, y)
-kbl(exp, booktabs =T, caption = "Explanatory Power: Scales Predicting Populist Vote - OLS Regression") %>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "2cm") %>%
-  column_spec(2, width = "2cm")  %>%
-  column_spec(3, width = "2cm") %>%
-  column_spec(4, width = "4cm") %>%
-  column_spec(5, width = "4cm") %>%
-  column_spec(6, width = "4cm")
-```
-
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>
-Explanatory Power: Scales Predicting Populist Vote - OLS Regression
-</caption>
-<thead>
-<tr>
-<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-estimate
-</th>
-<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-lower
-</th>
-<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-upper
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-scale
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-treatment
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-y
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.12
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.10
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.14
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.10
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.09
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.12
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.03
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.09
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
--0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-CFA Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.10
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.09
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-Addative Scale
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:left;width: 4cm; ">
-Wüttke et al. Approach
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:left;width: 4cm; ">
-Wüttke et al. Approach
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-Wüttke et al. Approach
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.04
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:left;width: 4cm; ">
-Wüttke et al. Approach
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.04
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:left;width: 4cm; ">
-Wüttke et al. Approach
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
--0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:left;width: 4cm; ">
-Wüttke et al. Approach
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.09
-</td>
-<td style="text-align:left;width: 4cm; ">
-IRT Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:left;width: 4cm; ">
-IRT Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-IRT Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Civic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.08
-</td>
-<td style="text-align:left;width: 4cm; ">
-IRT Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Populist Party
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.06
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.05
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.07
-</td>
-<td style="text-align:left;width: 4cm; ">
-IRT Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: AfD
-</td>
-</tr>
-<tr>
-<td style="text-align:right;width: 2cm; ">
-0.00
-</td>
-<td style="text-align:right;width: 2cm; ">
--0.01
-</td>
-<td style="text-align:right;width: 2cm; ">
-0.02
-</td>
-<td style="text-align:left;width: 4cm; ">
-IRT Scaling
-</td>
-<td style="text-align:left;width: 4cm; ">
-Ethnic Conception
-</td>
-<td style="text-align:left;width: 4cm; ">
-Voted: Left
-</td>
-</tr>
-</tbody>
-</table>
 
 ``` r
 source(here("src/analysis/predict-pop-vote-items.R"))

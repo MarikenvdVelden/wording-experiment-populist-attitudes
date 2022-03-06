@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  1 FEB 2022 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  6 MAR 2022 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -786,6 +786,9 @@ LaTeX Warning: Label `fig:results-h1' multiply defined.
 
 LaTeX Warning: Label `fig:results-h2' multiply defined.
 
+
+LaTeX Warning: Label `tab:mi-cfa' multiply defined.
+
 )
 \openout1 = `draft.aux'.
 
@@ -1041,59 +1044,61 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 299.
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/h1-extra-1.png, id=40, 1156.32pt x 578.16pt>
+eport/figures/h1-extra-1.png, id=52, 1156.32pt x 578.16pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/h1-extra-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/h1-extra-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/h1-extra-1.png  used on input line 381.
+_mm/wording-experiment/report/figures/h1-extra-1.png  used on input line 393.
 (pdftex.def)             Requested size: 465.06004pt x 232.53026pt.
-[2] [3] [4 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-e
-xperiment/report/figures/h1-extra-1.png>]
+[3]
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/h2-1.png, id=83, 1156.32pt x 578.16pt>
+eport/figures/h2-1.png, id=75, 1156.32pt x 578.16pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/h2-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/h2-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/h2-1.png  used on input line 517.
+_mm/wording-experiment/report/figures/h2-1.png  used on input line 474.
 (pdftex.def)             Requested size: 469.75502pt x 234.87692pt.
-[5 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experimen
-t/report/figures/h2-1.png>] [6]
-Overfull \hbox (48.7465pt too wide) in paragraph at lines 622--627
+[4 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experimen
+t/report/figures/h1-extra-1.png>] [5 </Users/marikenvandervelden/Dropbox/Papers
+/veni_project_mm/wording-experiment/report/figures/h2-1.png>]
+Overfull \hbox (10.92365pt too wide) in paragraph at lines 567--567
+ []|\T1/lmr/m/n/10.95 LogLikelihood|
+ []
+
+[6] [7]
+Overfull \hbox (48.7465pt too wide) in paragraph at lines 697--702
 \T1/lmr/m/n/10.95 Vote Choice.'' \T1/lmr/m/it/10.95 Re-vue Fran-caise de Sci-en
 ce Poli-tique \T1/lmr/m/n/10.95 68 (5): 847--72. https://doi.org/[][]10.3917/rf
 sp.685.0847[][]. 
  []
 
-[7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 704.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 704.
+[8] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
 (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 704.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 704.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: 7C47323900CB92D8790AB7393090F4BA;224.
+(rerunfilecheck)             Checksum: 8C9CC79A3CFE27213080CDCC98AFF83D;224.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 704.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
  ) 
 Here is how much of TeX's memory you used:
- 24343 strings out of 492616
- 436275 string characters out of 6129481
- 495085 words of memory out of 5000000
- 27922 multiletter control sequences out of 15000+600000
+ 24352 strings out of 492616
+ 436414 string characters out of 6129481
+ 494082 words of memory out of 5000000
+ 27925 multiletter control sequences out of 15000+600000
  626213 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,63p,290b,747s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,11n,63p,290b,790s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
 19/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/f
@@ -1108,10 +1113,10 @@ onts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on draft.pdf (8 pages, 389040 bytes).
+Output written on draft.pdf (9 pages, 397581 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -85,6 +85,27 @@ cfa2 <- d %>%
   theme(legend.position="none",
         legend.title = element_blank())
 
+
+## Multi group testing - measurement invariance
+# configural invariance
+fit1 <- cfa(pa_model, data = d, group = "ethnic")
+
+# weak invariance
+fit2 <- cfa(pa_model, data = d, group = "ethnic",
+            group.equal = "loadings")
+
+# strong invariance
+fit3 <- cfa(pa_model, data = d, group = "ethnic",
+            group.equal = c("intercepts", "loadings"))
+
+# model comparison tests
+mi <- lavTestLRT(fit1, fit2, fit3)
+
+mi <- tibble(mi) %>%
+  mutate(`Pr(>Chisq)` = as.numeric(`Pr(>Chisq)`),
+         Models = c("Configural Invariance",
+                    "Metric Invariance", "Scalar Invariance"))
+
 d <- full_join(x = d, y = cfa_df, by = "id") %>%
   distinct()
   

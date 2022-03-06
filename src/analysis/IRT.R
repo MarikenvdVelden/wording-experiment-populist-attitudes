@@ -1,6 +1,6 @@
 packages <- c( "ltm", "GPArotation", "Hmisc", "mirt",
               "lattice","lordif", "semPlot",
-              "semTools", "nFactors", "corrr")
+              "nFactors", "corrr")
 for (p in packages) {
   if (p %in% installed.packages()[,1]) require(p, character.only=T)
   else {
@@ -234,3 +234,35 @@ irt4 <- d %>%
   scale_fill_manual(values = fig_cols) +
   theme(legend.position="none",
         legend.title = element_blank())
+
+
+# Measurement Invariance
+dat <- matrix(data = NA, nrow = dim(d)[1], ncol = 5)
+dat[,1] <- d$POST_1
+dat[,2] <- d$POST_2
+dat[,3] <- d$POST_3
+dat[,4] <- d$POST_5
+dat[,5] <- d$POST_6
+colnames(dat) <- c("item1", "item2", "item3", "item4", "item5")
+group <- d$ethnic
+group <- if_else(group==0, "C1", "E1")
+
+mod_configural <- multipleGroup(dat, 1, group = group)
+mod_metric <- multipleGroup(dat, 1, group = group, invariance=c('slopes')) #equal slopes
+mod_scalar2 <- multipleGroup(dat, 1, group = group, #equal intercepts, free variance and means
+                             invariance=c('slopes', 'intercepts', 'free_var','free_means'))
+mod_scalar1 <- multipleGroup(dat, 1, group = group, #fixed means
+                             invariance=c('slopes', 'intercepts', 'free_var'))
+
+
+a1 <- anova(mod_metric, mod_configural) #equal slopes only
+a2 <- anova(mod_scalar2, mod_metric) #equal intercepts, free variance and mean
+a3 <- anova(mod_scalar1, mod_scalar2) #fix mean
+
+dat <- a1[2,] %>% 
+  add_case(a2[2,]) %>% 
+  add_case(a3[2,]) %>% 
+  mutate(Models = c("Equal Slopes",
+             "Equal Slopes, Intercepts, Free Variance and Mean", 
+             "Equal Slopes, Intercepts, Free Variance and Fixed Mean")) %>% 
+  dplyr::select(Models, AIC, BIC, `LogLikelihood` = logLik, `Significant Difference` = p)

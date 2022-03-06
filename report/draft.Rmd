@@ -63,6 +63,7 @@ sansitup: FALSE
 knitr::opts_chunk$set(echo = FALSE,
                       message=FALSE, warning=FALSE)
 options(kableExtra.latex.load_packages = FALSE)
+options(scipen = 1, digits = 2)
 
 # Uncomment below if you want code captions
 # oldSource <- knitr::knit_hooks$get("source")
@@ -97,15 +98,18 @@ For instance, in the French context 'the people' has been translated as _le peup
 Yet another study of French citizens refrains from using either _le peuple_ or _les citoyens_, choosing the more neutral _les gens_ instead [@castanho2020]. 
 In Italian, 'the people' is sometimes referred to as _il popolo_, and sometimes as _le persone_ [@castanho2020]. 
 
-This begs the question whether a civic or ethnic conception of the people elicits differences in measurement of populist attitudes. 
-On the (far) right, 'the people' is often construed in ethnic, cultural, or even racial terms. 
-On the left, 'the people' is often conceived of in more civic or economic terms. 
-Ideally, however, populist attitude scale captures populist ideation across different ideological predispositions (see the critique of @castanho2020 of populist item scales including nativist items). 
-Using a wording experiment in Germany (`N=7,034`), we examine whether an ethnic or a civic conception of the people affects respondents' agreement with the two items of the populist attitude scale that directly juxtapose 'the people' with the elites.[^1] 
-We further examine whether far right voters and respondents with a exclusive national identity respond differently to ethnic conceptions of the people. In addition, we examine whether the differences found affect the overall latent construct of populist attitudes (**EXPAND/SPECIFY LATER**). 
+The assumption is that the different conceptions of the people (i.e. civic or ethnic) functions similar -- also known as measurement invariance or measurement equivalence.[^1]
+In this paper, we test the degree to which the populist attitude scale is invariant across civic and ethnic concpetions of the people: 
+That is, do people exposed to a civic conception of the people have a similar populist attitude score as people exposed to an ethnic one.
+While ideally opulist attitude scale captures populist ideation across different ideological predispositions (see the critique of @castanho2020 of populist item scales including nativist items), 'the people' is often construed in ethnic, cultural, or even racial terms on the (far) right and conceived of in more civic or economic terms on the (far) left. 
+Using a wording experiment in Germany (`N=7,034`), we examine measurement invariance in multiple ways.
+First, we study whether an ethnic or a civic conception of the people affects respondents' agreement with the two items of the populist attitude scale that directly juxtapose 'the people' with the elites -- i.e. assessing structural, metric, or weak invariance [@hirschfeld2014improving].[^2] 
+We further examine this structural invariance, by testing whether far right voters and respondents with a exclusive national identity respond differently to ethnic conceptions of the people. 
+In addition, we examine whether the differences found affect the overall latent construct of populist attitudes, looking whether the intercept and the error terms are invariant (i.e. scalar and strict invariance) [@hirschfeld2014improving]. 
 Given the more pronounced ethnic connotation with the concept of 'people' or _Volk_ in the German language, the German case is particularly suitable to tease out differences between ethnic and civic conceptions of the people in key populist attitude items. 
 
-[^1]: All analytical material for replication can be found in our online Research Compendium: https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md (anonymized for the review process).
+[^1]: A scale is measurement invariant across groups if subjects with identical levels of the latent construct have the same expected raw-score on the measure [@drasgow1985equivalence].
+[^2]: All analytical material for replication can be found in our online Research Compendium: https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md (anonymized for the review process).
 
 # Civic versus Ethnic Conception of "the People"
 To test whether an ethnic or civic framing of the people affects respondents' agreement with key populist items we conduct a wording experiment. 
@@ -114,13 +118,12 @@ We rely on a nationally representative sample of German citizens over 18 years o
 The sample is from an online panel provided by the survey company Respondi -- for an overview of all variables in the study, as well as the descriptive information, see Online Appendix (OA pp. A2-A6). 
 Quotas for age, gender, and education were included to ensure the representativeness of the sample. 
 We have `3,507` respondents in the group that received the ethnic phrasing and `3,527` respondents in the group with the civic phrasing. 
-This large sample size allows us to detect also small effects of question wording differences.[^2]
+This large sample size allows us to detect also small effects of question wording differences.[^3]
 
-[^2]: A power analysis is conducted and reported on our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md). 
+[^3]: A power analysis is conducted and reported on our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md). 
 
 ```{r dv, topcaption=TRUE}
-library(tidyverse) 
-library(kableExtra)
+source(here::here("src/lib/functions.R"))
 df <- tibble(Variable = c("POP1","POP2","POP3",
                          "POP4","POP5","POP6"), 
             `Wording ENG` = c("The politicians in the German Bundestag need to follow the will of the [people/citizens].",
@@ -144,35 +147,39 @@ kbl(df, booktabs =T, caption = "\\label{tab:popatt}Akkerman et al Populist Attit
    column_spec(3, width = "6cm")
    
 ```
-```{r results-h1,out.width = "99%", fig.align = 'center', fig.cap = "\\label{fig:results-h1}Results: H1"}
-knitr::include_graphics(here::here("report/figures", "h1-extra-1.png"))
+```{r results-h1,out.width = "99%", fig.align = 'center', fig.cap = "\\label{fig:results-h1}Differences in Ethnic and Civic Conceptions of the People"}
+knitr::include_graphics(here("report/figures", "h1-extra-1.png"))
 ```
 To examine whether civic conceptions of the people elicit different responses than ethnic concepts, we experimentally vary the wording of two of the six items in the scale proposed by @akkerman2014, see Table \ref{tab:popatt}. 
 In the original Akkerman et al. scale deployed in the Netherlands, the items `POP1` and `POP2` were phrased in ethnic terms (i,e., with reference to _het volk_). 
 We randomize whether respondents received a ethnic framing (i.e., with reference to 'the people; or _das Volk_) or a civic framing (i.e., with reference to 'citizens', or _Bürger_). 
 A balance test, reported in our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md), demonstrates that the allocation of the treatment was fully random.
 The upper two items in Table \ref{tab:popatt} shows the differences in wording for the two items `POP1` and `POP2` in English and German. 
-All the other items were kept constant.[^3].
+All the other items were kept constant.[^4].
 
-[^3]:Our intention was to also vary the wording of the item `POP4`. Yet, due to an unfortunate translation error in Qualtrics, we cannot use the item `POP4` in our analysis. However, robustness checks in the Online Appendix (OA) Table A.8 shows that removal of the item does not strongly affect the overall latent construct.
+[^4]:Our intention was to also vary the wording of the item `POP4`. Yet, due to an unfortunate translation error in Qualtrics, we cannot use the item `POP4` in our analysis. However, robustness checks in the Online Appendix (OA) Table A.8 shows that removal of the item does not strongly affect the overall latent construct.
 
 The left-hand panel of Figure \ref{fig:results-h1} shows the results of a difference of means test for the two treatment groups (ethnic vs. civic wording) for both items -- Table A.5 in the OA shows the coefficients. There is a statistically significant difference in respondent agreement with the ethnic and civic conception of the people for the item `POP2` (''the people, not politicians, should make the most important political decisions''), but not for `POP1` (''The politicians need to follow the will of the people'').
 The negative coefficient for `POP2` indicates that when 'the people' is conceived as _das Volk_ respondents are more likely to agree with the item's statement compared to the civic wording of _Bürger_.
 Yet, as the results show, the difference is small in substantive terms. 
-The right-hand panel of Figure \ref{fig:results-h1} indicates that the non-effect for `POP1` is driven by the fact that for younger age groups (younger than 50 years old) there is no difference for the civic and ethnic conception of the people, as indicated by the blue dots and whiskers in Figure \ref{fig:results-h1}.[^4]
+The right-hand panel of Figure \ref{fig:results-h1} indicates that the non-effect for `POP1` is driven by the fact that for younger age groups (younger than 50 years old) there is no difference for the civic and ethnic conception of the people, as indicated by the blue dots and whiskers in Figure \ref{fig:results-h1}.[^5]
 For the older population (50 years old and more), the right-hand panel of Figure \ref{fig:results-h1} demonstrates using an OLS regression, including an interaction between treatment and age groups, that for both `POP1` and `POP2`, people receiving the ethnic treatment report higher levels of agreement with the items compared to people receiving the civic treatment.
 The effect size is still small in substantive terms: between a 0.1 and 0.3 increase on a 5-point scale.
 
-[^4]: Our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md) demonstrates that there are no other socio-demographic variables that mediate the effect. 
+[^5]: Our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md) demonstrates that there are no other socio-demographic variables that mediate the effect. 
 
 How does the effect of an ethnic conception of the people vis-à-vis a civic conception vary across respondents? 
-The left-hand panel of Figure \ref{fig:results-h2} shows the results of an OLS regression analysis[^5] with the an interaction between the treatment and a variable measuring whether or not the respondent voted for the far right party _Alternative für Deutschland_ -- for more details see Table A.6 in the OA).
+The left-hand panel of Figure \ref{fig:results-h2} shows the results of an OLS regression analysis[^6] with the an interaction between the treatment and a variable measuring whether or not the respondent voted for the far right party _Alternative für Deutschland_ -- for more details see Table A.6 in the OA).
 We see that far right voters show much more agreement to items `POP1` and `POP2` when it is phrased in an ethnic way. 
 These effects are substantial and statistically significant. 
 For the item `POP2` (''the people, not politicians, should make the most important political decisions''), when voting for the AfD and being in the ethnic conception of the people condition, one scores on average a full point higher on a 5-point scale, which is about a full standard deviation.
 For the item `POP1` (''The politicians need to follow the will of the people''), the effect size is about half a point (i.e. half a standard deviation).
 
-[^5]: As specified in the Pre-Analysis Plan, we only include unbalanced covariates. OA p. A-7 demonstrates the balance checks, demonstrating that only political interest and income are unbalanced, and therefore included as a covariate.
+[^6]: As specified in the Pre-Analysis Plan, we only include unbalanced covariates. OA p. A-7 demonstrates the balance checks, demonstrating that only political interest and income are unbalanced, and therefore included as a covariate.
+
+```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Average Marginal Effects for Ethnic Conception of the People"}
+knitr::include_graphics(here("report/figures", "h2-1.png"))
+```
 
 In a next step, we examine whether respondents with lower and higher levels of exclusive national identity are affected differently by the treatment. 
 Inspired by @mader2021, we measure exclusive national identity using a four-item additive scale on a 5-point Likert scale, which asks respondents to rate how important the following aspects are to be considered German: being born in Germany (a), having German ancestors (b), being able to speak German (c), and sharing share German manners and norms (d). 
@@ -181,54 +188,108 @@ Compared to not adhering to an exclusive national identity, the average score of
 Compared the standard deviation of this item (1.17, see Table A.4 in the OA), this is a small effect.
 For the other item, the line is much less steep over the various levels of adherence to an exclusive national identity.
 Overall, we see that the difference between an ethnic and civic wording is only statistically significant for respondents with higher levels of exclusive national identity (ca. `>2.5` on the exclusive national identity scale). 
-Both the analyses from the left and right-hand panel of \ref{fig:results-h2} suggest that far right voters and respondents with an exclusive national identity interpret `the people' (_das Volk_) in an ethno-cultural way. 
+Both the analyses from the left and right-hand panel of \ref{fig:results-h2} suggest that far right voters and respondents with an exclusive national identity interpret 'the people' (_das Volk_) in an ethno-cultural way. 
+The results of Figures \ref{fig:results-h1} and \ref{fig:results-h2} seem to suggest that the assumption of measurement invariance is not met, as we find statistically significant difference for the `POP2` (''the people, not politicians, should make the most important political decisions'') item.
 
-So how does an ethnic and civic framing of the items `POP1` and `POP2` affect the latent construct of populism? 
-A graded Item Response Theory (IRT) analysis [see also @vanhauwaert2020] moreover shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see **Figure XX** and **XX** in the Appendix). 
-Overall, however, the overall level of information yielded by the two latent constructs of populism are similar. 
-This is not surprising, given that we varied the wording of `the people' only in two items of the full @akkerman2014 item battery. 
-Therefore, also overall difference between a latent construct of populism with two ethnically framed items and a latent construct with two civically framed items is small.
-
-We find no statistically significant difference between the two constructs estimated using Confirmatory Factor Analysis (see Table A.9 in the OA).
+Does an ethnic and civic framing of the items `POP1` and `POP2` affect the measurement invariance assumption of the latent construct of populist attitudes? 
+We first test the measurement variance in a Confirmatory Factor Analysis (see Table A.9 in the OA). 
+The averages of the civic and ethnic conception scales of populist attitudes differ significantly:
+Respondents exposed to the civic conception score higher (`0.44` on a 5-point scale) on the populist attitudes scales than respondents in the ethnic conception condition. 
 In terms of model fit, both constructs show very similar goodness-of-fit statistics (i.e., CFI, BIC, RMSEA, and SRMR). Interestingly, however, both the 'ethnic' and the 'civic' scale show a satisfactory model fit (`CFI > 0.9`; `RMSEA < 0.08`; and `SRMR < 0.02`) -- for more information see OA Table A.8. 
-Yet, when looking at the additive scale (see Table **XX** in the OA), we see that the scale using the civic conception of the people has a statistically higher mean value compared to the ethnic conception.
-The same holds for constructing a scale using the approach of @wuttke2020whole -- i.e. using the lowest value on one of the items that construe the latent construct.
+Moreover, when testing metric and scalar invariance -- i.e. is the magnitude of loadings similar accross groups or are the magnitude of loadings and the intercept difference accross groups -- we find statistical significant Chi-square differences for the metric invariance and scalar invariance models, shown in Table \ref{tab:mi-cfa}.
+This indicates that the assumption that the different conceptions of the people function similar is not met. 
 
-```{r results-h2, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Results: H2"}
-knitr::include_graphics(here::here("report/figures", "h2-1.png"))
-```
-
-```{r "scale", fig.align="center", fig.height=8, fig.width=8, eval = FALSE}
-source(here::here("src/lib/functions.R"))
+```{r mi-cfa, topcaption=TRUE}
 load(here("data/intermediate/cleaned_experiment.RData"))
 source(here("src/analysis/data-for-analyses.R"))
 source(here("src/analysis/explorative_cfa.R"))
 
-kbl(m_cfa, booktabs =T, caption = "\\label{tab:CFA}Confirmatory Factor Analysis - Fit Statistics") %>%
+mi %>%
+  select(Models, AIC, BIC, `Chisq diff`, `Pr(>Chisq)`) %>%
+  kbl(booktabs =T, caption = "\\label{tab:mi-cfa}Measurement Invariance - CFA Models") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "4cm") %>%
-  column_spec(2, width = "4cm")  %>%
-  column_spec(2, width = "4cm") %>%
-  column_spec(2, width = "4cm") 
+  column_spec(2, width = "2cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")   
 ```
+
+Additionally, we have estimated a graded Item Response Theory (IRT) analysis [see also @vanhauwaert2020].
+This scaling model shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see **Figure XX** and **XX** in the Appendix). 
+While the means of the scales with the different conceptions of the people are not different, testing configural, metric and scalar invariance -- see Table \ref{tab:mi-irt} -- we see that the equal slope assumption (metric invariance) as well as one form of scalar invariance (i.e. the one with free means) are not met.
+This indicates that even varying the wording of ‘the people’ in two items of the full @akkerman2014 item battery is enough to demonstrate that the scales are not equivalent anymore.
+
+
+```{r "irt-code", fig.align="center", fig.height=8, fig.width=12, echo=FALSE, message=FALSE, warning=FALSE,results = 'hide'}
+# Measurement Invariance
+library(mirt)
+dat <- matrix(data = NA, nrow = dim(d)[1], ncol = 5)
+dat[,1] <- d$POST_1
+dat[,2] <- d$POST_2
+dat[,3] <- d$POST_3
+dat[,4] <- d$POST_5
+dat[,5] <- d$POST_6
+colnames(dat) <- c("item1", "item2", "item3", "item4", "item5")
+group <- d$ethnic
+group <- if_else(group==0, "C1", "E1")
+
+mod_configural <- multipleGroup(dat, 1, group = group)
+mod_metric <- multipleGroup(dat, 1, group = group, invariance=c('slopes')) #equal slopes
+mod_scalar2 <- multipleGroup(dat, 1, group = group, #equal intercepts, free variance and means
+                             invariance=c('slopes', 'intercepts', 'free_var','free_means'))
+mod_scalar1 <- multipleGroup(dat, 1, group = group, #fixed means
+                             invariance=c('slopes', 'intercepts', 'free_var'))
+
+
+a1 <- anova(mod_metric, mod_configural) #equal slopes only
+a2 <- anova(mod_scalar2, mod_metric) #equal intercepts, free variance and mean
+a3 <- anova(mod_scalar1, mod_scalar2) #fix mean
+
+dat <- a1[2,] %>% 
+  add_case(a2[2,]) %>% 
+  add_case(a3[2,]) %>% 
+  mutate(`Equivalence Tests` = c("Equal Slopes",
+             "Equal Slopes, Intercepts, Free Variance and Mean", 
+             "Equal Slopes, Intercepts, Free Variance and Fixed Mean")) %>% 
+  dplyr::select(`Equivalence Tests`, AIC, BIC, `LogLikelihood` = logLik, `Significant Difference` = p)
+```
+```{r "irr-code2"}
+dat %>%
+  kbl(booktabs =T, caption = "\\label{tab:mi-irt}Measurement Invariance - IRT Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "5cm") %>%
+  column_spec(2, width = "2cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "3cm") 
+```
+
+Moreover, we have created an additive scale (see Table **XX** in the OA), as well as constructed a scale using the approach of @wuttke2020whole -- i.e. using the lowest value on one of the items that construe the latent construct.
+For both scales, we find statistical significant average values for the scales based on ethnic and civic conception of the people.
+For both scaling methods, people in the civic conception have on average a higher mean value compared to the ethnic conception.
+While we are not able to formally test all forms of measurement invariance, a statistically significant mean indicates that the measurements are not equivalent.
 
 # Conclusion
 Existing populist attitudes scales have been inconsistent in using 'ethnic' or 'civic' conceptions of the people. 
 Using a wording experiment we examined whether German respondents presented with an ethnic framing of 'the people' (_das Volk_) answered key populist attitude items differently than respondents who recevied an ethnic framing of `the people' as citizens (_Bürger_). 
 
-We find that there are statistically significant differences between the two wordings. 
-An ethnic conception of the people, overall, yielded more agreement with the items in question. 
+We find that the measurement invariance assumption does not hold: 
+Using different wordings does not lead to equivalent measaures.
+Moreover, there are statistically significant differences between the two wordings. 
+We only varied the ethnic and civic conception for two items.
+It is likely to be more consequential in survey batteries that predominantly include items contrast 'the people' with elites to measure populist attitudes [for an overview of different batteries, see @castanho2020]. 
+The populist attitude scales proposed by @schulz2018 and @stanley2011, for instance, contain references to 'the people' in 7/9 and 7/8 of the items, respectively. 
+
+An ethnic conception of the people, overall, yielded more agreement with the items in question -- but not with the latent construct. 
 This is effect is particularly pronounced for voters of the far right, as well as for older voters. 
 The difference between an ethnic and a civic conception of the people was also only significant for respondents who adhered a moderate to high level of exclusive national identity. 
 This finding is highly suggestive of the 'ethnic' interpretation of `the people' -- at least in the German language.
 
-Nevertheless, we found that a civic or an ethnic wording of items referring to 'the people' makes little difference in a latent construct that also comprises other items that were kept constant. 
-Yet, while this might make little difference in a latent construct that also comprises items that do not solely rely on items that juxtapose 'the people' with the elite, it is likely to be more consequential in survey batteries that predominantly include items contrast 'the people' with elites to measure populist attitudes [for an overview of different batteries, see @castanho2020]. 
-The populist attitude scales proposed by @schulz2018 and @stanley2011, for instance, contain references to 'the people' in 7/9 and 7/8 of the items, respectively. 
-
 Importantly, the degree to which 'the people' is understood in denoting a specific ethno-cultural group likely differs across countries.
-This type of differential item interpretation might therefore lead to measurement invariance when used in cross-national research [@castanho2020]. 
+This type of differential item interpretation might therefore lead to even more measurement invariance when used in cross-national research [@castanho2020]. 
 In other words, if the ethno-cultural connotation of the the people varies across countries, this may hamper cross-national application of populist attitude scales that include multiple items referring to 'the people'. 
 In fact, in a comparison of different populist attitudes scales @castanho2020 find that the scales by @schulz2018 and @stanley2011 perform worse than the scale proposed by @akkerman2014. 
 To empirically establish whether differential interpretations of `the people' matters for measurement invariance, it would be worthwhile replicating this study for different countries. In addition, it would be worthwhile in replicating this analysis for different scales than the @akkerman2014 scale. 
@@ -237,7 +298,7 @@ One can argue theoretically that 'the people' captures the meaning of the concep
 After all, it populism assumes the people to be a homogeneous entity. 
 Yet, our findings suggest that also a civic framing of the concept yields a satisfactory model fit when estimating a Confirmatory Factor Analysis. 
 In addition, our results suggest that an ethnic framing of the citizens runs the, albeit small, risk overestimating the degree of populist attitudes among more nativist citizens. 
-To avoid priming respondents with an ethnic conception of the people, future studies should consider using a civic conception of ''citizens vs. the elite" when measuring populist attitudes.
+To avoid priming respondents with an ethnic conception of the people, future studies should use a consistent ethnic or civic conception of the people when measuring populist attitudes, bearing in mind that the civic conception does lead to higher values on the scale.
 
 \newpage
 # References
