@@ -369,6 +369,18 @@ kbl(cfa1, booktabs =T, caption = "Confirmatory Factor Analysis") %>%
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "8cm") %>%
   column_spec(2, width = "3cm") 
+
+mi %>%
+  select(`Equivalence Tests` = Models, AIC, BIC, `Chisq diff`, `Pr(>Chisq)`) %>%
+   filter(`Equivalence Tests` != "Configural Invariance") %>% 
+  kbl(booktabs =T, caption = "\\label{tab:mi-cfa}Measurement Invariance - CFA Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "2cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "2cm")   
 ```
 
 ```{r oa-cfa2, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:cfa}CFA Distribution"}
@@ -406,19 +418,29 @@ knitr::include_graphics(here::here("report/figures", "wuttke-1.png"))
 ```
 
 ## IRT Analyse
-```{r "oa-irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide'}
+```{r "oa-irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide',message=FALSE,warning=FALSE}
 source(here("src/analysis/IRT.R"))
 ```
 ```{r oa-irt1, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:irt1}IRT Distribution (1)"}
 knitr::include_graphics(here::here("report/figures", "irt-1.png"))
 ```
 
-```{r "oa-irt2", fig.align="center", fig.height=8, fig.width=12}
+```{r "oa-irt2", fig.align="center", fig.height=8, fig.width=12,message=FALSE,warning=FALSE}
 kbl(irt3, booktabs =T, caption = "IRT Analysis") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "10cm") %>%
   column_spec(2, width = "3cm")  
+
+dat %>%
+  kbl(booktabs =T, caption = "\\label{tab:mi-irt}Measurement Invariance - IRT Models") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F, fixed_thead = T, position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "2cm") %>%
+  column_spec(3, width = "2cm") %>%
+  column_spec(4, width = "2cm") %>%
+  column_spec(5, width = "4cm") 
 ```
 
 ```{r oa-irt3, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:irt1}IRT Distribution (1)"}
@@ -429,8 +451,8 @@ knitr::include_graphics(here::here("report/figures", "irt-2.png"))
 # Explanatory Power: Predicting Populist Vote
 ```{r "oa-predict-vote-1", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/predict-pop-vote-scales.R"))
-dv1 <- exp2 %>%
-  filter(y == "Voted: Populist Party") %>%
+dv1 <- exp %>%
+  dplyr::filter(y == "Voted: Populist Party") %>%
   dplyr::select(`Regression Coefficient` = estimate,
          `CI: Lower Bound` = lower, 
          `CI: Upper Bound` = upper, 
@@ -445,8 +467,8 @@ kbl(dv1, booktabs =T, caption = "Table Results DV: Populist Vote") %>%
   column_spec(4, width = "2cm") %>%
   column_spec(5, width = "2cm")
 
-dv2<- exp2 %>%
-  filter(y == "Voted: AfD") %>%
+dv2<- exp %>%
+  dplyr::filter(y == "Voted: AfD") %>%
   dplyr::select(`Regression Coefficient` = estimate,
          `CI: Lower Bound` = lower, 
          `CI: Upper Bound` = upper, 
@@ -461,8 +483,8 @@ kbl(dv2, booktabs =T, caption = "Table Results DV: AfD Vote") %>%
   column_spec(4, width = "2cm") %>%
   column_spec(5, width = "2cm")
 
-dv3 <- exp2 %>%
-  filter(y == "Voted: Left") %>%
+dv3 <- exp %>%
+  dplyr::filter(y == "Voted: Left") %>%
   dplyr::select(`Regression Coefficient` = estimate,
          `CI: Lower Bound` = lower, 
          `CI: Upper Bound` = upper, 
@@ -480,8 +502,8 @@ kbl(dv3, booktabs =T, caption = "Table Results DV: Left Vote") %>%
 
 ```{r "oa-predict-vote-2", fig.align="center", fig.height=8, fig.width=8}
 source(here("src/analysis/predict-pop-vote-items.R"))
-dv1 <- exp2 %>%
-  filter(y == "Voted: Populist Party") %>%
+dv1 <- exp %>%
+  dplyr::filter(y == "Voted: Populist Party") %>%
   dplyr::select(`Regression Coefficient` = estimate,
          `CI: Lower Bound` = lower, 
          `CI: Upper Bound` = upper, 
@@ -496,8 +518,8 @@ kbl(dv1, booktabs =T, caption = "Table Results DV: Populist Vote") %>%
   column_spec(4, width = "2cm") %>%
   column_spec(5, width = "2cm")
 
-dv2<- exp2 %>%
-  filter(y == "Voted: AfD") %>%
+dv2<- exp %>%
+  dplyr::filter(y == "Voted: AfD") %>%
   dplyr::select(`Regression Coefficient` = estimate,
          `CI: Lower Bound` = lower, 
          `CI: Upper Bound` = upper, 
@@ -512,8 +534,8 @@ kbl(dv2, booktabs =T, caption = "Table Results DV: AfD Vote") %>%
   column_spec(4, width = "2cm") %>%
   column_spec(5, width = "2cm")
 
-dv3 <- exp2 %>%
-  filter(y == "Voted: Left") %>%
+dv3 <- exp %>%
+  dplyr::filter(y == "Voted: Left") %>%
   dplyr::select(`Regression Coefficient` = estimate,
          `CI: Lower Bound` = lower, 
          `CI: Upper Bound` = upper, 

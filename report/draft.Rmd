@@ -218,7 +218,7 @@ mi %>%
 ```
 
 Additionally, we have estimated a graded Item Response Theory (IRT) analysis [see also @vanhauwaert2020].
-This scaling model shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see **Figure XX** and **XX** in the Appendix). 
+This scaling model shows that `POP1` and `POP2` contribute slightly more information to the latent construct when the items are ethnically phrased, as opposed to a civic framing (see Figure A.5 and Table A.13 for more information in the OA). 
 While the means of the scales with the different conceptions of the people are not different, testing metric and scalar invariance -- see Table \ref{tab:mi-irt} -- we see that the equal slope assumption (metric invariance) as well as one form of scalar invariance (i.e. the one with free means) are not met.
 This indicates that even varying the wording of ‘the people’ in two items of the full @akkerman2014 item battery is enough to demonstrate that the scales are not equivalent anymore.
 
@@ -240,20 +240,15 @@ mod_configural <- multipleGroup(dat, 1, group = group)
 mod_metric <- multipleGroup(dat, 1, group = group, invariance=c('slopes')) #equal slopes
 mod_scalar2 <- multipleGroup(dat, 1, group = group, #equal intercepts, free variance and means
                              invariance=c('slopes', 'intercepts', 'free_var','free_means'))
-mod_scalar1 <- multipleGroup(dat, 1, group = group, #fixed means
-                             invariance=c('slopes', 'intercepts', 'free_var'))
 
 
 a1 <- anova(mod_metric, mod_configural) #equal slopes only
 a2 <- anova(mod_scalar2, mod_metric) #equal intercepts, free variance and mean
-a3 <- anova(mod_scalar1, mod_scalar2) #fix mean
 
 dat <- a1[2,] %>% 
   add_case(a2[2,]) %>% 
-  add_case(a3[2,]) %>% 
   mutate(`Equivalence Tests` = c("Metric Invariance",
-             "Scalar Invariance", 
-             "Scalar Invariance (Fixed Mean)")) %>% 
+             "Scalar Invariance")) %>% 
   dplyr::select(`Equivalence Tests`, AIC, BIC, `LogLikelihood` = logLik, `Significant Difference` = p)
 ```
 ```{r "irr-code2"}
@@ -261,14 +256,14 @@ dat %>%
   kbl(booktabs =T, caption = "\\label{tab:mi-irt}Measurement Invariance - IRT Models") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
-  column_spec(1, width = "5cm") %>%
+  column_spec(1, width = "4cm") %>%
   column_spec(2, width = "2cm") %>%
   column_spec(3, width = "2cm") %>%
   column_spec(4, width = "2cm") %>%
-  column_spec(5, width = "3cm") 
+  column_spec(5, width = "4cm") 
 ```
 
-Moreover, we have created an additive scale (see Table **XX** in the OA), as well as constructed a scale using the approach of @wuttke2020whole -- i.e. using the lowest value on one of the items that construe the latent construct.
+Moreover, we have created an additive scale (see Table A.11 in the OA), as well as constructed a scale using the approach of @wuttke2020whole  (see Table A.12 in the OA) -- i.e. using the lowest value on one of the items that construe the latent construct.
 For both scales, we find statistical significant average values for the scales based on ethnic and civic conception of the people.
 For both scaling methods, people in the civic conception have on average a higher mean value compared to the ethnic conception.
 While we are not able to formally test all forms of measurement invariance, a statistically significant mean indicates that the measurements are not equivalent.

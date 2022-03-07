@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  23 NOV 2021 12:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  7 MAR 2022 08:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,6 +824,21 @@ LaTeX Warning: Label `tab:demographics' multiply defined.
 LaTeX Warning: Label `tab:pret' multiply defined.
 
 
+LaTeX Warning: Label `tab:h1' multiply defined.
+
+
+LaTeX Warning: Label `tab:h2a' multiply defined.
+
+
+LaTeX Warning: Label `tab:h2b' multiply defined.
+
+
+LaTeX Warning: Label `tab:oa-cfa1' multiply defined.
+
+
+LaTeX Warning: Label `tab:oa-irt2' multiply defined.
+
+
 LaTeX Warning: Label `fig:irt1' multiply defined.
 
 
@@ -1089,17 +1104,17 @@ Overfull \hbox (5.83995pt too wide) detected at line 10
 
 
 Overfull \hbox (5.83995pt too wide) detected at line 11
- []\T1/lmr/m/n/10.95 A-10
+ []\T1/lmr/m/n/10.95 A-12
  []
 
 
 Overfull \hbox (5.83995pt too wide) detected at line 12
- []\T1/lmr/m/n/10.95 A-10
+ []\T1/lmr/m/n/10.95 A-12
  []
 
 
 Overfull \hbox (5.83995pt too wide) detected at line 13
- []\T1/lmr/m/n/10.95 A-10
+ []\T1/lmr/m/n/10.95 A-12
  []
 
 )
@@ -1189,78 +1204,82 @@ _mm/wording-experiment/report/figures/balance-checks-1.png  used on input line
 [7
 
  </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/
-report/figures/balance-checks-1.png>]
+report/figures/balance-checks-1.png>] [8]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8] [9]
-Overfull \hbox (61.94182pt too wide) in paragraph at lines 584--597
+[9]
+Overfull \hbox (61.94182pt too wide) in paragraph at lines 591--604
  [][] 
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/scale-1.png, id=145, 770.88pt x 770.88pt>
+eport/figures/scale-1.png, id=148, 770.88pt x 770.88pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/scale-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/scale-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/scale-1.png  used on input line 616.
+_mm/wording-experiment/report/figures/scale-1.png  used on input line 637.
 (pdftex.def)             Requested size: 281.85587pt x 281.84525pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/addative-1.png, id=146, 1156.32pt x 770.88pt>
+eport/figures/addative-1.png, id=149, 1156.32pt x 770.88pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/addative-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/addative-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/addative-1.png  used on input line 644.
+_mm/wording-experiment/report/figures/addative-1.png  used on input line 665.
 (pdftex.def)             Requested size: 281.85587pt x 187.89684pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/wuttke-1.png, id=147, 1156.32pt x 770.88pt>
+eport/figures/wuttke-1.png, id=150, 1156.32pt x 770.88pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/wuttke-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/wuttke-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/wuttke-1.png  used on input line 672.
+_mm/wording-experiment/report/figures/wuttke-1.png  used on input line 693.
 (pdftex.def)             Requested size: 281.85587pt x 187.89684pt.
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/irt-1.png, id=148, 1156.32pt x 770.88pt>
+eport/figures/irt-1.png, id=151, 1156.32pt x 770.88pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/irt-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/irt-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/irt-1.png  used on input line 684.
+_mm/wording-experiment/report/figures/irt-1.png  used on input line 705.
 (pdftex.def)             Requested size: 281.85587pt x 187.89684pt.
+[10] [11 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-exp
+eriment/report/figures/scale-1.png> </Users/marikenvandervelden/Dropbox/Papers/
+veni_project_mm/wording-experiment/report/figures/addative-1.png>]
+Overfull \hbox (10.92365pt too wide) in paragraph at lines 734--734
+ []|\T1/lmr/m/n/10.95 LogLikelihood|
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/r
-eport/figures/irt-2.png, id=149, 1156.32pt x 770.88pt>
+eport/figures/irt-2.png, id=169, 1156.32pt x 770.88pt>
 File: /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experim
 ent/report/figures/irt-2.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/irt-2.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/irt-2.png  used on input line 709.
+_mm/wording-experiment/report/figures/irt-2.png  used on input line 745.
 (pdftex.def)             Requested size: 281.85587pt x 187.89684pt.
-[10
-
-] [11 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experi
-ment/report/figures/scale-1.png> </Users/marikenvandervelden/Dropbox/Papers/ven
-i_project_mm/wording-experiment/report/figures/addative-1.png>] [12 </Users/mar
-ikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experiment/report/figur
-es/wuttke-1.png> </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wor
-ding-experiment/report/figures/irt-1.png>] [13 </Users/marikenvandervelden/Drop
-box/Papers/veni_project_mm/wording-experiment/report/figures/irt-2.png>]
+[12] [13 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-exp
+eriment/report/figures/wuttke-1.png> </Users/marikenvandervelden/Dropbox/Papers
+/veni_project_mm/wording-experiment/report/figures/irt-1.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1276,29 +1295,31 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 871.
-[15] [16] [17] [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 871.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
+nt/report/figures/irt-2.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 904.
+[15] [16] [17] [18] [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 904.
 (./appendix.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 871.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 871.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 904.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 904.
 Package rerunfilecheck Info: File `appendix.out' has not changed.
-(rerunfilecheck)             Checksum: ACA7C5B26D565FBEF5C392D3A2751EF7;918.
+(rerunfilecheck)             Checksum: 2480328610FDBBA206AEA31D91218A53;918.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25192 strings out of 492616
- 451344 string characters out of 6129481
- 559064 words of memory out of 5000000
- 28730 multiletter control sequences out of 15000+600000
+ 25197 strings out of 492616
+ 451409 string characters out of 6129481
+ 561240 words of memory out of 5000000
+ 28732 multiletter control sequences out of 15000+600000
  568448 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,63p,822b,835s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,63p,822b,848s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2019/texmf-d
@@ -1306,10 +1327,10 @@ ist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/lm/lmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
 /lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10
 .pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on appendix.pdf (18 pages, 480143 bytes).
+Output written on appendix.pdf (19 pages, 487926 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

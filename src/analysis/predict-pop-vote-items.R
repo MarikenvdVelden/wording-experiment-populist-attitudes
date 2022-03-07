@@ -2,7 +2,7 @@ Ethnic <- c(0,1)
 
 for(i in 1:length(Ethnic)){
   df <- d %>%
-    filter(ethnic == Ethnic[i]) %>%
+    dplyr::filter(ethnic == Ethnic[i]) %>%
     mutate(pop_vote = ifelse(D6 == "AfD", 1,
                              ifelse(D6 == "Left", 1, 0)),
            Linke_vote = ifelse(D6 == "Left", 1,0)) %>%
@@ -224,7 +224,7 @@ exp <- exp %>%
                 ethnic = dplyr::recode(ethnic,
                                        `1` = "Ethnic Conception",
                                        `0` = "Civic Conception")) %>%
-  filter(term == "scale") 
+  dplyr::filter(term == "scale") 
 
 exp1 <- exp %>%
   ggplot(aes(x = y, 
