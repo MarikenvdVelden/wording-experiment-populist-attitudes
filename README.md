@@ -20,7 +20,7 @@ In addition, we report the exploratory results for:
 	- Alternative model specification H1, [code](src/analysis/explorative_analysis.R)
 	- Interactions with Age, Region, Ideology, and Attitudes towards Pluralism, [code](src/analysis/explorative_analysis.R)
 
-To delve further into the testing measurement invariance, we report evidence for non-equivalence:
+* To delve further into the testing measurement invariance, we report evidence for non-equivalence:
 	- CFA, [code](src/analysis/explorative_cfa.R)
 	- IRT Analysis, [code](src/analysis/IRT.R)
 	- Additive Scaling, [code](src/analysis/additive-scale.R)
