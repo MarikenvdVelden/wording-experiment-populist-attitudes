@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.28)  9 SEP 2022 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.28)  9 SEP 2022 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,12 +555,12 @@ Package: amsthm 2020/05/29 v2.20.6
 \dth@everypar=\toks40
 )
 \c@hypo=\count318
-Package hyperref Info: Option `breaklinks' set `true' on input line 150.
+Package hyperref Info: Option `breaklinks' set `true' on input line 152.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 150.
+(hyperref)                setting the option has no effect on input line 152.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 150.
+Package hyperref Info: Option `colorlinks' set `true' on input line 152.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
@@ -624,7 +624,7 @@ LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 194.
+h' as default language. on input line 196.
 (./accepted-manuscript.aux
 
 LaTeX Warning: Label `fig:results-h1' multiply defined.
@@ -638,24 +638,24 @@ LaTeX Warning: Label `tab:mi-cfa' multiply defined.
 )
 \openout1 = `accepted-manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 194.
-LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -713,7 +713,7 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 \makeMPintoPDFobject=\count337
 \everyMPtoPDFconversion=\toks46
 )
-Package hyperref Info: Link coloring ON on input line 194.
+Package hyperref Info: Link coloring ON on input line 196.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -725,9 +725,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 194.
-LaTeX Info: Redefining \pageref on input line 194.
-LaTeX Info: Redefining \nameref on input line 194.
+LaTeX Info: Redefining \ref on input line 196.
+LaTeX Info: Redefining \pageref on input line 196.
+LaTeX Info: Redefining \nameref on input line 196.
 (./accepted-manuscript.out) (./accepted-manuscript.out)
 \@outlinefile=\write3
 \openout3 = `accepted-manuscript.out'.
@@ -739,78 +739,78 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 194.
-LaTeX Font Info:    Calculating math sizes for size <18> on input line 205.
+or `english'. on input line 196.
+LaTeX Font Info:    Calculating math sizes for size <18> on input line 207.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-05.
+07.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-05.
+07.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-205.
+207.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-205.
+207.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18> on input line 205.
+(Font)              <18> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12.59995> on input line 205.
+(Font)              <12.59995> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 205.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 205
+(Font)              <9> on input line 207.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 207
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 205
+LaTeX Font Info:    Trying to load font information for U+msb on input line 207
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-05.
+07.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 205.
+(Font)              <6> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 205.
+(Font)              <5> on input line 207.
 
-Underfull \hbox (badness 2538) in paragraph at lines 205--205
+Underfull \hbox (badness 2538) in paragraph at lines 207--207
 [][]\T1/lmr/m/n/9 Replication files are avail-able on the au-thor's Github ac-c
 ount ([][]$https : / / github . com / MarikenvdVelden /
  []
 
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 21
-1.
+3.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <11> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 211.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 213.
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-21.
+23.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 339.
+(Font)              <10.95> on input line 341.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 339.
+(Font)              <8> on input line 341.
 [2]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -822,7 +822,7 @@ ent/report/figures/h1-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/h1-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/h1-1.png  used on input line 434.
+_mm/wording-experiment/report/figures/h1-1.png  used on input line 436.
 (pdftex.def)             Requested size: 399.29463pt x 332.74377pt.
 [3] [4 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-exper
 iment/report/figures/h1-1.png>]
@@ -833,7 +833,7 @@ ent/report/figures/h2-1.png Graphic file (type png)
 <use /Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-experime
 nt/report/figures/h2-1.png>
 Package pdftex.def Info: /Users/marikenvandervelden/Dropbox/Papers/veni_project
-_mm/wording-experiment/report/figures/h2-1.png  used on input line 499.
+_mm/wording-experiment/report/figures/h2-1.png  used on input line 501.
 (pdftex.def)             Requested size: 469.75502pt x 234.87692pt.
 [5] [6 </Users/marikenvandervelden/Dropbox/Papers/veni_project_mm/wording-exper
 iment/report/figures/h2-1.png>]
@@ -841,12 +841,12 @@ iment/report/figures/h2-1.png>]
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7]
-Overfull \hbox (10.92365pt too wide) in paragraph at lines 661--661
+Overfull \hbox (10.92365pt too wide) in paragraph at lines 663--663
  []|\T1/lmr/m/n/10.95 LogLikelihood|
  []
 
 [8] [9]
-Overfull \hbox (45.79803pt too wide) in paragraph at lines 844--850
+Overfull \hbox (45.79803pt too wide) in paragraph at lines 846--852
 \T1/lmr/m/n/10.95 Vote Choice.'' \T1/lmr/m/it/10.95 Re-vue Fran-caise de Sci-en
 ce Poli-tique \T1/lmr/m/n/10.95 68 (5): 847--72. [][]https://doi.org/10.3917/rf
 sp.685.0847
@@ -862,27 +862,27 @@ Package rerunfilecheck Info: File `accepted-manuscript.out' has not changed.
 Here is how much of TeX's memory you used:
  20401 strings out of 478268
  375130 string characters out of 5846347
- 641205 words of memory out of 5000000
+ 641295 words of memory out of 5000000
  38221 multiletter control sequences out of 15000+600000
- 546443 words of font info for 86 fonts, out of 8000000 for 9000
+ 547710 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,11n,79p,370b,779s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/
 texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/font
 s/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pu
-blic/lm/lmbx9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmb
-xi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-dist/
-fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/lm/lmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lm
-ri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><
+blic/lm/lmbxi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
+mr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/f
+onts/type1/public/lm/lmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
+mri9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on accepted-manuscript.pdf (11 pages, 412887 bytes).
+Output written on accepted-manuscript.pdf (11 pages, 404423 bytes).
 PDF statistics:
  253 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams
