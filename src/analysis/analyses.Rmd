@@ -187,10 +187,10 @@ kbl(exp1, booktabs =T, caption = "Ethnic Conception Hypothesis - OLS Effect of E
   column_spec(3, width = "2cm") %>%
   column_spec(4, width = "8cm")
 
-#(pe2 + pe3)/ (pe4 + pe5)
+(pe2 + pe3)/ (pe4 + pe5)
 ```
 
-```{r "h1-extra", fig.align="center", fig.height=6, fig.width=12, echo = FALSE, fig.show = "hide"}
+```{r "h1-extra", fig.align="center", fig.height=6, fig.width=12, echo = FALSE, fig.show = "hide", eval = FALSE}
 p1 + pe2 + 
   plot_layout(widths = c(1, 1.25))
 ```

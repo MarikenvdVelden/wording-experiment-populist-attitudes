@@ -68,6 +68,7 @@ knitr::opts_chunk$set(echo = FALSE,
 options(kableExtra.latex.load_packages = FALSE)
 options(tinytex.verbose = TRUE)
 options(scipen = 1, digits = 2)
+knitr::opts_chunk$set(fig.pos = "h", out.extra = "")
 # Uncomment below if you want code captions
 # oldSource <- knitr::knit_hooks$get("source")
 # knitr::knit_hooks$set(source = function(x, options) {
@@ -249,7 +250,9 @@ We therefore add this covariate to the regression analyses.
 
 \newpage
 # Pre-Registered and Explorative Analysis
+## Differences in Ethnic and Civic Conceptions of the People
 Table \ref{tab:h1} demonstrates the results as visualized in Figure 1 in the paper.
+
 ```{r "h1", fig.align="center", fig.height=5, fig.width=6}
 p1 <- d %>% 
   mutate(ethnic = recode(ethnic, `1` = "Ethnic Conception",  `0` = "Civic Conception")) %>%
@@ -267,7 +270,7 @@ p1 <- d %>%
          lower = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[1],
          higher = t.test(unlist(`Civic Conception`), unlist(`Ethnic Conception`))$conf.int[2],
          name = recode(name,
-                       `POST_2` = "DV: People, not politicians, should make the most  important political decisions",
+                       `POST_2` = "DV: People, not politicians, should make the most important political decisions",
                        `POST_3` = "DV: MPs should follow the will of the people")) %>%
   select(var = name, p_value, t_value, means_difference, lower, higher) %>%
   pivot_longer(cols = p_value:higher) %>%
@@ -280,7 +283,7 @@ p1 <- d %>%
   ungroup()
 
 tmp <- p1 %>%
-  filter(var == "DV: People, not politicians, should make the most  important political decisions") %>%
+  filter(var == "DV: People, not politicians, should make the most important political decisions") %>%
   select(`Statistical Values` = name, `DV: People, not politicians, should make the most  important political decisions` = value)
 
 tmpp <- p1 %>%
@@ -290,16 +293,16 @@ tmpp <- p1 %>%
 p1 <- tmp %>%
   add_column(tmpp) 
 
-kbl(p1, booktabs =T, caption = "\\label{tab:h1}Table Results H1") %>%
+kbl(p1, booktabs =T, caption = "\\label{tab:h1}Differences in Ethnic and Civic Conceptions of the People") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "4cm") %>%
   column_spec(2, width = "4cm")  %>%
   column_spec(3, width = "4cm")
-
 ```
 \newpage
 
+## Average Marginal Effects for Ethnic Conception of the People
 Table \ref{tab:h2a} and \ref{tab:h2b} demonstrate the results as visualized in Figure 2 in the paper.
 ```{r "h2a", fig.align="center", fig.height=5, fig.width=6}
 df <- d %>%
@@ -315,7 +318,7 @@ h2a <- regression2(df, a, ethnic) %>%
   select(`Dependent Variable` = y, `Levels of National Exclusivity` = a,
          AME = value, `CI: Lower Bound` = lower, `CI: Upper Bound` = upper) 
 
-kbl(h2a, booktabs =T, caption = "\\label{tab:h2a}Table Results H2a") %>%
+kbl(h2a, booktabs =T, caption = "\\label{tab:h2a}Average Marginal Effects for Ethnic Conception of the People") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F, fixed_thead = T, position = "center") %>%
   column_spec(1, width = "5cm") %>%
@@ -346,6 +349,11 @@ kbl(h2b, booktabs =T, caption = "\\label{tab:h2b}Table Results H2b") %>%
   column_spec(3, width = "2cm") %>%
   column_spec(4, width = "2cm") %>%
   column_spec(5, width = "2cm")
+```
+
+## Exploration with Age, Region, Ideoligy and Attitude towards Political Pluralism
+```{r results-explor, out.width = "100%", fig.align = 'center', fig.cap = "\\label{fig:results-h2}Average Marginal Effects for Ethnic Conception of the People"}
+knitr::include_graphics(here("report/figures", "explorative-2.png"))
 ```
 
 \newpage
@@ -386,6 +394,8 @@ mi %>%
 ```{r oa-cfa2, out.width = "60%", fig.align = 'center', fig.cap = "\\label{fig:cfa}CFA Distribution"}
 knitr::include_graphics(here::here("report/figures", "scale-1.png"))
 ```
+
+\newpage
 ## Additive scale
 ```{r "oa-addative", fig.align="center", fig.height=8, fig.width=12}
 source(here("src/analysis/additive-scale.R"))
@@ -402,6 +412,7 @@ kbl(add1, booktabs =T, caption = "Addative Scaling Analysis") %>%
 knitr::include_graphics(here::here("report/figures", "addative-1.png"))
 ```
 
+\newpage
 ## Wüttke et al. Approach
 ```{r "oa-wuttke", fig.align="center", fig.height=8, fig.width=12}
 source(here("src/analysis/wuttke-approach.R"))
@@ -417,6 +428,8 @@ kbl(wa1, booktabs =T, caption = "Wüttke et al. Approach") %>%
 knitr::include_graphics(here::here("report/figures", "wuttke-1.png"))
 ```
 
+
+\newpage
 ## IRT Analyse
 ```{r "oa-irt-code", fig.align="center", fig.height=8, fig.width=12, results="hide", fig.show='hide',message=FALSE,warning=FALSE}
 source(here("src/analysis/IRT.R"))
@@ -550,3 +563,6 @@ kbl(dv3, booktabs =T, caption = "Table Results DV: Left Vote") %>%
   column_spec(4, width = "2cm") %>%
   column_spec(5, width = "2cm")
 ```
+
+\newpage
+# References

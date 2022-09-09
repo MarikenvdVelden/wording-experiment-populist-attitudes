@@ -267,7 +267,7 @@ regression7 <- function(df, scale){
   return(m)
 }
 
-theme_ipsum <- function(base_family="Arial Narrow", base_size = 11.5,
+theme_ipsum <- function(base_family="Arial Narrow", base_size = 14,
                         plot_title_family=base_family, plot_title_size = 18,
                         plot_title_face="bold", plot_title_margin = 10,
                         subtitle_family=base_family, subtitle_size = 12,
@@ -277,7 +277,7 @@ theme_ipsum <- function(base_family="Arial Narrow", base_size = 11.5,
                         caption_family = base_family, caption_size = 9,
                         caption_face = "italic", caption_margin = 10,
                         axis_text_size = base_size,
-                        axis_title_family = subtitle_family, axis_title_size = 9,
+                        axis_title_family = subtitle_family, axis_title_size = 12,
                         axis_title_face = "plain", axis_title_just = "rt",
                         plot_margin = margin(30, 30, 30, 30),
                         grid_col = "#cccccc", grid = TRUE,
