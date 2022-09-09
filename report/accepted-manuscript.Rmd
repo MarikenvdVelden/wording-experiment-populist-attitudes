@@ -43,7 +43,7 @@ author:
   - affiliation: Radboud University Nijmegen
   - name: Mariken A.C.G. van der Velden
   - affiliation: Vrije Universiteit Amsterdam
-thanks: "Replication files are available on the author's Github account (https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md). **Current version**: `r format(Sys.time(), '%B %d, %Y')`;"
+thanks: "Replication files are available on the author's Github account (https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes). **Current version**: `r format(Sys.time(), '%B %d, %Y')`;"
 anonymous: FALSE
 abstract: "Populists believe in the sovereignty of the people. Yet, the people can be construed in ethnic terms or in civic terms. Using a novel wording experiment in Germany (N=7,034), we examine whether ethnic or civic conceptions of 'the people' affect respondents' adherence agreement to key populist attitude items. '_Volk_' in German has an ethno-nationalist connotation and has been used throughout history to signify 'ethnic Germans'. The concept '_Bürger_', or citizens, by contrast, lacks an ethnic undercurrent. Similar ethnic connotations of 'the people' are also common in other languages. We find that there are statistically significant differences between items framed in an ethnic and a civic manner -- and that this differs per item. This relationship is significantly moderated by respondents' degree of exclusive national identity and voting behaviour for the radical right. Our findings suggest that the way in which the people is conceptualized has important implications for the measurement of populist attitudes. When populist attitudes are measured with an ethnic understanding of the 'the people', the construct is biased toward right-wing populism, inhibiting the measurement of populism as a `thin-ideology'. Moreover, we demonstrate the importance of careful translations in comparative research, since some translated synonyms carry different meanings, and thereby change the concept under investigation."
 
@@ -114,7 +114,7 @@ Using an civic conception leads to higher scores on the populist attitude scale 
 This suggest that the way in which the people is conceptualized has important implications for the measurement of populist attitudes as well as for its explanatory power. Our findings also suggest that political scientists should pay much more attention to the translations they commission for their surveys. While new survey items are carefully constructed, translations are often not put to the same scrutiny. We demonstrate that using some English synonyms (e.g. _Volk_ for the 'people') slightly changes the concept; instead of measuring populist attitudes, we introduce nativist as well as populist attitudes. Hence, by careless translations we run the risk of colluding the measure.
 
 [^1]: A scale is measurement invariant across groups if subjects with identical levels of the latent construct have the same expected raw-score on the measure [@drasgow1985equivalence].
-[^2]: All analytical material for replication can be found in our online Research Compendium: https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md (anonymized for the review process).
+[^2]: All analytical material for replication can be found in our online Research Compendium: https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes.
 
 # A Civic versus Ethnic Conception of "the People"
 To test whether an ethnic or civic framing of the people affects respondents' agreement with key populist items we conduct a wording experiment. 
@@ -126,7 +126,7 @@ Quotas for age, gender, and education were included to ensure the representative
 We have `3,507` respondents in the group that received the ethnic phrasing and `3,527` respondents in the group with the civic phrasing. 
 This large sample size allows us to detect also small effects of question wording differences.[^3]
 
-[^3]: A power analysis is conducted and reported on our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md). 
+[^3]: A power analysis is conducted and reported on our [Online Research Compendium](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes). 
 
 ```{r dv, topcaption=TRUE}
 source(here::here("src/lib/functions.R"))
@@ -159,7 +159,7 @@ knitr::include_graphics(here("report/figures", "h1-1.png"))
 To examine whether civic conceptions of the people elicit different responses than ethnic concepts, we experimentally vary the wording of two of the six items in the scale proposed by @akkerman2014, see Table \ref{tab:popatt}. 
 In the original Akkerman et al. scale deployed in the Netherlands, the items `POP1` and `POP2` were phrased in ethnic terms (i,e., with reference to _het volk_). 
 We randomize whether respondents received a ethnic framing (i.e., with reference to 'the people; or _das Volk_) or a civic framing (i.e., with reference to 'citizens', or _Bürger_). 
-A balance test, reported in our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md), demonstrates that the allocation of the treatment was fully random.
+A balance test, reported in our [Online Research Compendium](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes), demonstrates that the allocation of the treatment was fully random.
 The upper two items in Table \ref{tab:popatt} shows the differences in wording for the two items `POP1` and `POP2` in English and German. 
 All the other items were kept constant.[^4].
 
@@ -169,7 +169,7 @@ Figure \ref{fig:results-h1} shows the results of a difference of means test for 
 The negative coefficient for `POP2` indicates that when 'the people' is conceived as _das Volk_ respondents are more likely to agree with the item's statement compared to the civic wording of _Bürger_.
 Yet, as the results show, the difference is small in substantive terms. 
 
-[^5]: Our [Online Research Compendium](https://anonymous.4open.science/r/wording-experiment-populist-attitudes-F3B2/README.md) demonstrates that there are no other socio-demographic variables that mediate the effect. 
+[^5]: Our [Online Research Compendium](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes) demonstrates that there are no other socio-demographic variables that mediate the effect. 
 
 _How does the effect of an ethnic conception of the people vis-à-vis a civic conception vary across respondents?_
 The left-hand panel of Figure \ref{fig:results-h2} shows the results of an OLS regression analysis[^6] with the an interaction between the treatment and a variable measuring whether or not the respondent voted for the far right party _Alternative für Deutschland_ -- for more details see Table A.6 in the OA).
@@ -194,7 +194,7 @@ Overall, we see that the difference between an ethnic and civic wording is only 
 Both the analyses from the left and right-hand panel of \ref{fig:results-h2} suggest that far right voters and respondents with an exclusive national identity interpret 'the people' (_das Volk_) in an ethno-cultural way. 
 The results of Figures \ref{fig:results-h1} and \ref{fig:results-h2} seem to suggest that the assumption of measurement invariance is not met, as we find statistically significant difference for the `POP2` (''the people, not politicians, should make the most important political decisions'') item.
 
-In addition, we have explored how the effect of an ethnic conception of the people vis-à-vis a civic conception vary across age and region. People that are born during or closely after WWII  as well as people born and/or living in certain regions in Germany (e.g. the East or Bavaria) could potentially have a different reaction to the two conceptions of the people -- all figures can be found in the Online Appendix (Figure A-2, p. A9) as well as in our Online Research Compendium.
+In addition, we have explored how the effect of an ethnic conception of the people vis-à-vis a civic conception vary across age and region. People that are born during or closely after WWII  as well as people born and/or living in certain regions in Germany (e.g. the East or Bavaria) could potentially have a different reaction to the two conceptions of the people -- all figures can be found in the Online Appendix (Figure A-2, p. A9) as well as in our [Online Research Compendium](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes).
 **_Age_.** We demonstrate in the upper-left panel of Figure A-2 in the OA that for younger age groups (i.e. all age groups younger than 50 years old) there is no difference for the civic and ethnic conception of the people. Yet, for the older population (50 years old and more) we see that people receiving the ethnic treatment report higher levels of agreement with the items compared to people receiving the civic treatment for both `POP1` (''The politicians need to follow the will of the people''), the effect size is about half a point (i.e. half a standard deviation) and `POP2` (''the people, not politicians, should make the most important political decisions''). The effect size is still small in substantive terms: between a `0.1` and `0.3` increase on a 5-point scale.
 **_Region_.** We show in the upper-right panel of Figure A-2 in the OA that while for most regions in Germany, there is no statistically significant difference between receiving an ethnic or a civic treatment. Yet, for the regions Sleswig-Holstein (i.e. the region bordering Denmark) and Hessen (mid-Germany), we see that people receiving the ethnic treatment report lower levels of agreement with the items compared to people receiving the civic treatment for both `POP1` and `POP2`. The same effect holds for the region Bremen for `POP1` and for Berlin and North-Rhine Westphalia for `POP2`. This indicates that in Western districts, people are sensitive to the ethnic conception of the 'people' and all else equal, under-report their populist attitudes by approximately `0.5` points on a 5-point scale.
 

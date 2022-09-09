@@ -2,7 +2,7 @@
 Online research compendium of the paper entitled _'Das Volk' or 'Bürger'? The Implications of Ethnic and Civic Conceptions of the People for the Measurement of Populist Attitudes_ . This repository combines the [pre-registration plan](https://github.com/MarikenvdVelden/wording-experiment-populist-attitudes/blob/master/docs/pap/pap.pdf) (see also [here](https://osf.io/d6q5b/)) with a data &amp; analysis compendium.
 
 ## Draft
-View the [draft of the paper here](report/draft.pdf). This Compendium functions as an online appendix, but [here](report/appendix.pdf) is also a downloadable version.
+View the paper accepted at the EJPR [here](report/accepted-manuscript.pdf). This Compendium functions as an online appendix, but [here](report/online_appendix.pdf) is also a downloadable version.
 
 ## Pre-Registration Plan
 * [Experiment](docs/pap/pap.pdf) The theoretical underpinnings and research design to test the implications of an ethnic or civic conception on the people for the measurement of populist attitudes.
